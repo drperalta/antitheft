@@ -27673,7 +27673,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -27684,7 +27684,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
 //
 //
 //
@@ -27702,7 +27701,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n  INDEX\n  "), _c("router-view")], 1)
+  return _c("div", [_c("router-view")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -27879,7 +27878,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "section" }, [_vm._v("\n  LOGIN\n")])
+  return _c("v-container", [
+    _c("img", {
+      staticClass: "logo",
+      attrs: { src: __webpack_require__(68) }
+    })
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -28005,7 +28009,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "section" }, [_vm._v("\n  REGISTER\n")])
+  return _c("v-container", { attrs: { "grid-list-xs": "" } }, [
+    _vm._v("\n  REGISTER\n")
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -28052,7 +28058,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n#navbar[data-v-6c4a3438]{\r\n  background-color: white;\r\n  -webkit-box-shadow: none;\r\n          box-shadow: none;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -28088,8 +28094,8 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "section" }, [
-    _vm._v("\n  DASHBOARD\n\n  "),
+  return _c("div", [
+    _vm._v("\n  DASHBOARD\n  "),
     _vm._v(" "),
     _c("div", { staticClass: "Main" }, [_c("router-view")], 1)
   ])
@@ -28218,7 +28224,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "section" }, [_vm._v("\n  OVERVIEW\n")])
+  return _c("v-container", [_vm._v("\n  OVERVIEW\n")])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -28344,7 +28350,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "section" }, [_vm._v("\n  KITS\n")])
+  return _c("v-container", [_vm._v("\n  KITS\n")])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -28470,7 +28476,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "section" }, [_vm._v("\n  PICTURES\n")])
+  return _c("v-container", [_vm._v("\n  PICTURES\n")])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -28596,7 +28602,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "section" }, [_vm._v("\n  LOGS\n")])
+  return _c("v-container", [_vm._v("\n  LOGS\n")])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -49862,6 +49868,12 @@ exports.push([module.i, "/*!\n* Vuetify v1.2.5\n* Forged by John Leider\n* Relea
 
 // exports
 
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/logo.png?450f0f75d851b2836360e8673cd1c24c";
 
 /***/ })
 /******/ ]);

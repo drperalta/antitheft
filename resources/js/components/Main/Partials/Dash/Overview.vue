@@ -1,7 +1,7 @@
 <template>
-  <section class="section">
+  <v-container>
     OVERVIEW
-  </section>
+  </v-container>
 </template>
 
 <script>

@@ -15,7 +15,9 @@
     </head>
     <body>
       <div id="app">
-        <App></App>
+        <v-app>
+          <App></App>
+        </v-app>
       </div>
 
       <script src="{{ mix('js/app.js') }}"></script>

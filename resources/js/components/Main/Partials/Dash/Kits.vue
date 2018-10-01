@@ -1,7 +1,7 @@
 <template>
-  <section class="section">
+  <v-container>
     KITS
-  </section>
+  </v-container>
 </template>
 
 <script>

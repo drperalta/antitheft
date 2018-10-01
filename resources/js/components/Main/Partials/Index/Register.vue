@@ -1,7 +1,7 @@
 <template lang="html">
-  <section class="section">
+  <v-container grid-list-xs>
     REGISTER
-  </section>
+  </v-container>
 </template>
 
 <script>

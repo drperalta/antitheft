@@ -1,7 +1,7 @@
 <template>
-  <section class="section">
-    <!-- NAVBAR -->
+  <div>
     DASHBOARD
+    <!-- NAVBAR -->
 
     <!-- SIDEBAR -->
 
@@ -9,7 +9,7 @@
     <div class="Main">
       <router-view></router-view>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -18,4 +18,9 @@ export default {
 </script>
 
 <style scoped>
+#navbar{
+  background-color: white;
+  box-shadow: none;
+}
+
 </style>

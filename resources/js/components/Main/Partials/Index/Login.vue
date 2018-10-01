@@ -1,7 +1,7 @@
 <template lang="html">
-  <section class="section">
-    LOGIN
-  </section>
+  <v-container>
+    <img class="logo" src="../../../../img/logo.png">
+  </v-container>
 </template>
 
 <script>

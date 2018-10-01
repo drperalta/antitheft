@@ -1,7 +1,7 @@
 <template>
-  <section class="section">
+  <v-container>
     LOGS
-  </section>
+  </v-container>
 </template>
 
 <script>
