@@ -1,6 +1,6 @@
-<template lang="html">
+<template>
   <section class="section">
-    REGISTER
+    KITS
   </section>
 </template>
 
