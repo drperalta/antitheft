@@ -1,7 +1,7 @@
 <template lang="html">
-  <v-container grid-list-xs>
-    FORGOTTEN PASSWORD
-  </v-container>
+  <div class="cont">
+      SEND EMAIL
+  </div>
 </template>
 
 <script>

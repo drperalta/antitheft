@@ -19420,7 +19420,7 @@ var render = function() {
             "div",
             { staticClass: "resetpassword" },
             [
-              _c("router-link", { attrs: { to: "/reset-password" } }, [
+              _c("router-link", { attrs: { to: "/send-email" } }, [
                 _c("a", { staticClass: "forgotPassword" }, [
                   _vm._v("Forgotten your password?")
                 ])

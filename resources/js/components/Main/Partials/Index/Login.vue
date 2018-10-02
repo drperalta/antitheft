@@ -8,7 +8,7 @@
       <el-input class="el-input" v-model="LoginDetails.password" placeholder="Password" :type="'password'"/>
       <!-- Forgotten Password -->
       <div class="resetpassword">
-        <router-link to="/reset-password">
+        <router-link to="/send-email">
           <a class="forgotPassword">Forgotten your password?</a>
         </router-link>
       </div><br>
