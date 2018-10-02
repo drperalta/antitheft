@@ -1,9 +1,6 @@
 <template>
-  <div class="main">
-    <v-container>
-      <img class="logo" src="../../img/logo.png">
-      <router-view></router-view>
-    </v-container>
+  <div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -13,7 +10,5 @@ export default {
 </script>
 
 <style scoped>
-.logo{
-  width: 110px
-}
+
 </style>
