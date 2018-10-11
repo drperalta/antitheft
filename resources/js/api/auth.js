@@ -1,0 +1,148 @@
+import router from '../router/router'
+
+export default function(Vue){
+    Vue.auth = {
+        register(context,data){
+
+            axios.post(
+                'api/auth/signup', data
+                ).then(response=>{
+                    context.success = true;
+                    console.log(response);
+                    this.clearData(data);
+                }).catch(error => {
+                    this.handleRegisterError(context,error);
+                })
+        },
+
+        login(context,data){
+            axios.post('api/auth/login', data
+            ).then(response => {
+                console.log(response)
+                this.setToken(response.data.access_token,response.data.expires_at)
+                context.loggedIn = this.isAuthenticated
+                router.go({ name: 'overview' })
+            }).catch(error => {
+                this.handleLoginError(context,error);
+            })
+
+        },
+
+        logout(){
+
+            axios.get('api/auth/logout', {
+                headers: { 'Authorization': 'Bearer ' + this.getToken() }
+            }).then(response => {
+                this.destroyToken();
+                router.go({ name: 'login' })
+                console.log(response);
+            })
+        },
+
+        user(){
+
+            if(this.isAuthenticated){
+                axios.get('api/auth/user', {
+                    headers: { 'Authorization': 'Bearer ' + this.getToken() }
+                }).then(response => {
+                    store.commit('SET_USER', response.data)
+                })
+            }
+            return Vue.auth
+        },
+
+        // addKit(context,data){
+        //     axios.post(
+        //         'api/kit',data).then(response =>{
+        //             if(response.status == 200){
+        //                 context.response = response.data.message
+        //                 console.log(response.data.message)
+        //             }
+        //         }), response => {
+        //             context.response = response.data
+        //             context.error = true
+        //         }
+        // },
+        // getKit(data){
+
+        //     if(this.isAuthenticated){
+        //         axios.get('api/auth/user', {
+        //             headers: { 'Authorization': 'Bearer ' + this.getToken() }
+        //         }).then(response => {
+        //             data.id = response.data.id;
+        //             data.fullname = response.data.fullname;
+        //             data.username = response.data.username;
+        //             data.email = response.data.email;
+        //             console.log(response);
+        //         })
+        //     }
+        //     return Vue.auth
+        // },
+        // clearData(data){
+        //     data.fullname = ''
+        //     data.username = ''
+        //     data.email = ''
+        //     data.password = ''
+        //     data.confirm_password = ''
+        // },
+
+        // handleRegisterError(context,error){
+        //     context.error = true;
+        //     var errorArray = Object.values(error.response.data.errors);
+        //     //context.errorMsg = errorArray[0][0];
+
+        //     if(error.response.data.errors.password[0] === "The password format is invalid."){
+        //         context.errorMsg = "The password should have at least one uppercase letter, one lowercase letter, and one number"
+        //     }else {
+        //         context.errorMsg = errorArray[0][0];
+        //     }
+        // },
+
+        // handleLoginError(context,error){
+        //     context.error = true;
+        //     var errorArray = error.response.data.message
+        //     context.errorMsg = errorArray;
+        // },
+
+        // //TOKEN HANDLING/////////////
+        // setToken(token, expiration){
+        //     localStorage.setItem('token', token)
+        //     localStorage.setItem('expiration', expiration)
+        // },
+        // getToken(){
+        //     var token = localStorage.getItem('token');
+        //     var expiration = localStorage.getItem('expiration');
+
+        //     if(!token || !expiration)
+        //         return null;
+
+        //     if(Date.now() > expiration){
+        //         this.destroyToken();
+        //         return null;
+        //     }else{
+        //         return token;
+        //     }
+
+        // },
+        // destroyToken(){
+        //     localStorage.removeItem('token')
+        //     localStorage.removeItem('expiration')
+
+        // },
+        isAuthenticated(){
+            if(this.getToken())
+                return true;
+            else
+                return false;
+        }
+
+    }
+
+    Object.defineProperties(Vue.prototype, {
+        $auth:{
+            get(){
+                return Vue.auth;
+            }
+        }
+    })
+}
