@@ -13758,7 +13758,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 
     routes: [{
         // INDEX ROUTES
-        path: '/', name: 'index', component: __WEBPACK_IMPORTED_MODULE_2__components_Main_Pages_Index_vue___default.a,
+        path: '/', name: 'index', component: __WEBPACK_IMPORTED_MODULE_2__components_Main_Pages_Index_vue___default.a, redirect: { path: 'login' },
         children: [{
             path: 'login',
             component: __WEBPACK_IMPORTED_MODULE_4__components_Main_Partials_Index_Login_vue___default.a

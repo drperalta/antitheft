@@ -23,7 +23,7 @@ let router = new Router({
     routes: [
         {
             // INDEX ROUTES
-            path: '/', name: 'index', component: Index,
+            path: '/', name: 'index', component: Index, redirect: {path: 'login'},
             children: [
                 {
                     path: 'login',
