@@ -31,7 +31,7 @@ let router = new Router({
                 },
                 {
                     path: 'register',
-                    omponent: Register
+                    component: Register
                 },
                 {
                     path: 'reset-password',

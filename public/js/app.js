@@ -13764,7 +13764,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
             component: __WEBPACK_IMPORTED_MODULE_4__components_Main_Partials_Index_Login_vue___default.a
         }, {
             path: 'register',
-            omponent: __WEBPACK_IMPORTED_MODULE_5__components_Main_Partials_Index_Register_vue___default.a
+            component: __WEBPACK_IMPORTED_MODULE_5__components_Main_Partials_Index_Register_vue___default.a
         }, {
             path: 'reset-password',
             component: __WEBPACK_IMPORTED_MODULE_6__components_Main_Partials_Index_ResetPassword___default.a
@@ -19606,7 +19606,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-58163812]{\r\n  text-decoration: none;\r\n  color: white;\r\n  opacity: 0.8;\n}\n.el-input[data-v-58163812]{\r\n  margin: 4px;\n}\n.signup[data-v-58163812]{\r\n  color: #428ccb;\r\n  margin-bottom: 20px;\n}\n.alreadyMember[data-v-58163812]{\r\n  margin-right: 15px;\r\n  font-size: 15px\n}\n.formBottom[data-v-58163812]{\r\n  margin-top: 40px;\r\n  float: right;\n}\n.registerButton[data-v-58163812]{\r\n  width: 130px;\r\n  color: white;\r\n  background-color: transparent;\n}\r\n", ""]);
+exports.push([module.i, "\na[data-v-58163812] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.el-input[data-v-58163812] {\n    margin: 4px;\n}\n.signup[data-v-58163812] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.alreadyMember[data-v-58163812] {\n    margin-right: 15px;\n    font-size: 15px\n}\n.formBottom[data-v-58163812] {\n    margin-top: 40px;\n    float: right;\n}\n.registerButton[data-v-58163812] {\n    width: 130px;\n    color: white;\n    background-color: transparent;\n}\n", ""]);
 
 // exports
 
@@ -19643,24 +19643,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      registerDetails: {
-        fullname: '',
-        username: '',
-        email: '',
-        password: '',
-        confirm_password: ''
-      },
-      error: false,
-      success: false,
-      errorMsg: null
-    };
-  },
+    data: function data() {
+        return {
+            registerDetails: {
+                fullname: '',
+                username: '',
+                email: '',
+                password: '',
+                confirm_password: ''
+            },
+            error: false,
+            success: false,
+            errorMsg: null
+        };
+    },
 
-  methods: {
-    register: function register() {}
-  }
+    methods: {
+        register: function register() {}
+    }
 });
 
 /***/ }),
@@ -85647,7 +85647,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\na[data-v-19158a9a] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.el-input[data-v-19158a9a] {\n    padding: 4px;\n}\n.changepassword[data-v-19158a9a] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.formBottom[data-v-19158a9a] {\n    margin-top: 20px;\n    padding: 4px;\n}\n.changePassButton[data-v-19158a9a] {\n    width: 100%;\n    color: white;\n    background-color: transparent;\n}\n", ""]);
 
 // exports
 
@@ -85664,8 +85664,37 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            ChangePassDetails: {
+                newPassword: '',
+                confirmPassword: ''
+            },
+
+            success: false,
+            error: false,
+            errorMsg: null
+        };
+    },
+
+    methods: {
+        changePassword: function changePassword() {
+            alert('Haha!');
+        }
+    }
+});
 
 /***/ }),
 /* 226 */
@@ -85675,7 +85704,75 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "cont" }, [_vm._v("\n    CHANGE PASSWORD\n")])
+  return _c(
+    "div",
+    { staticClass: "cont" },
+    [
+      _c("p", { staticClass: "changepassword" }, [_vm._v("CHANGE PASSWORD")]),
+      _vm._v(" "),
+      _vm.error
+        ? _c(
+            "el-alert",
+            { staticClass: "notification", attrs: { type: "error" } },
+            [_vm._v(_vm._s(_vm.errorMsg))]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _c(
+        "el-form",
+        { staticClass: "form" },
+        [
+          _c("el-input", {
+            staticClass: "el-input",
+            attrs: { placeholder: "New Password", type: "password" },
+            model: {
+              value: _vm.ChangePassDetails.newPassword,
+              callback: function($$v) {
+                _vm.$set(_vm.ChangePassDetails, "newPassword", $$v)
+              },
+              expression: "ChangePassDetails.newPassword"
+            }
+          }),
+          _vm._v(" "),
+          _c("el-input", {
+            staticClass: "el-input",
+            attrs: { placeholder: "Confirm Password", type: "password" },
+            model: {
+              value: _vm.ChangePassDetails.confirmPassword,
+              callback: function($$v) {
+                _vm.$set(_vm.ChangePassDetails, "confirmPassword", $$v)
+              },
+              expression: "ChangePassDetails.confirmPassword"
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "formBottom" },
+            [
+              _c(
+                "el-button",
+                {
+                  staticClass: "changePassButton",
+                  attrs: { plain: "", color: "#00afec", type: "submit" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.changePassword($event)
+                    }
+                  }
+                },
+                [_vm._v("Change Password")]
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
