@@ -67,6 +67,7 @@ a {
 
 .forgotPassword {
     font-size: 13px;
+    padding: 4px;
 }
 
 .needAccount {
@@ -77,10 +78,11 @@ a {
 .formBottom {
     margin-top: 40px;
     float: right;
+    padding: 4px;
 }
 
 .loginButton {
-    width: 130px;
+    width: 110px;
     color: white;
     background-color: transparent;
 }

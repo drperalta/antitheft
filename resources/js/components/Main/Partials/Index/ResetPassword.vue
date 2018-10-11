@@ -7,11 +7,12 @@
             <el-input class="el-input" v-model="ResetPassDetails.email" placeholder="Email" />
             <!-- Register Link  -->
             <div class="formBottom">
+                <!-- Send Email Button -->
+                <el-button class="sendButton" plain color="#00afec" type="submit" @click.prevent="sendEmail">Send Email</el-button>
+                <!-- Back to login Link-->
                 <router-link to="/login">
                     <a class="backToLogin">Nevermind, I got it.</a>
                 </router-link>
-                <!-- Send Email Button -->
-                <el-button class="sendButton" plain color="#00afec" type="submit" @click.prevent="sendEmail">Send Email</el-button>
             </div>
         </el-form>
     </div>
@@ -45,20 +46,24 @@ a {
     opacity: 0.8;
 }
 
+.el-input{
+    padding: 4px;
+}
+
 .resetpassword {
     color: #428ccb;
     margin-bottom: 20px;
 }
 
 .formBottom {
-    margin-top: 20px;
-    float: right;
+    margin-top: 10px;
+    padding: 4px;
 }
 
 .sendButton {
-    margin-left: 15px;
-    width: 130px;
+    width: 100%;
     color: white;
     background-color: transparent;
+    margin-bottom: 10px;
 }
 </style>
