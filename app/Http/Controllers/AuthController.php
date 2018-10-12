@@ -27,8 +27,8 @@ class AuthController extends Controller
             'email' => $request['email'],
             'password' => bcrypt($request['password']),
             'activation_token' => str_random(60),
-            'created_at' => Carbon::now('GMT+8'),
-            'updated_at' => Carbon::now('GMT+8')
+            'created_at' => Carbon::now()->setTimezone('GMT+8'),
+            'updated_at' => Carbon::now()->setTimezone('GMT+8')
         ]);
         $user->save();
         \Mail::to($user['email'])->send(new ConfirmEmail($user));
@@ -72,9 +72,9 @@ class AuthController extends Controller
                 $tokenResult = $user->createToken('Personal Access Token');
                 $token = $tokenResult->token;
                 if ($request->remember_me){
-                    $token->expires_at = Carbon::now()->addWeeks(1);
+                    $token->expires_at = Carbon::now()->addWeeks(1)->setTimezone('GMT+8');
                 }else {
-                    $token->expires_at = Carbon::now()->addHour();
+                    $token->expires_at = Carbon::now()->addHour()->setTimezone('GMT+8');
                 }
                 $token->save();
 
