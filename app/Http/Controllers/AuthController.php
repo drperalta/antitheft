@@ -17,7 +17,7 @@ class AuthController extends Controller
             'fullname' => 'required|string',
             'username' => 'required|unique:users',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6', //|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
+            'password' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/',
             'confirm_password' => 'sometimes|same:password'
         ]);
         $user = new User([
@@ -52,23 +52,26 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'email' => 'required|string|email',
+            'username' => 'required|string',
             'password' => 'required|string',
             'remember_me' => 'boolean'
         ]);
 
-        $credentials = request(['email', 'password']);
+        $credentials = request(['username', 'password']);
         if(!Auth::attempt($credentials))
             return response()->json([
-                'message' => 'Unauthorized'
+                'errors' => [ 'message' => ['Invalid username or password'] ]
             ], 401);
 
         $user = $request->user();
 
         $tokenResult = $user->createToken('Personal Access Token');
         $token = $tokenResult->token;
-        if ($request->remember_me)
-            $token->expires_at = Carbon::now()->addWeeks(1);
+        if ($request->remember_me){
+            $token->expires_at = Carbon::now('GMT+8')->addWeeks(1);
+        }else {
+            $token->expires_at = Carbon::now('GMT+8')->addHour();
+        }
         $token->save();
 
         return response()->json([
