@@ -4,15 +4,19 @@ export default function(Vue){
     Vue.auth = {
         register(context,data){
 
-            axios.post(
-                'api/auth/signup', data
-                ).then(response=>{
-                    context.success = true;
-                    console.log(response);
-                    this.clearData(data);
-                }).catch(error => {
-                    this.handleRegisterError(context,error);
-                })
+            axios.post( 'api/auth/register', data)
+            .then(response => {
+                context.success = true;
+                context.error = false;
+                context.errorMsg = "Successfully Created!"
+
+                console.log(response);
+                this.clearInput(data);
+            }).catch(error => {
+                context.success = false;
+                this.handleRegisterError(context,error);
+            })
+
         },
 
         login(context,data){
@@ -78,25 +82,26 @@ export default function(Vue){
         //     }
         //     return Vue.auth
         // },
-        // clearData(data){
-        //     data.fullname = ''
-        //     data.username = ''
-        //     data.email = ''
-        //     data.password = ''
-        //     data.confirm_password = ''
-        // },
 
-        // handleRegisterError(context,error){
-        //     context.error = true;
-        //     var errorArray = Object.values(error.response.data.errors);
-        //     //context.errorMsg = errorArray[0][0];
+        clearInput(data){
+            data.fullname = ''
+            data.username = ''
+            data.email = ''
+            data.password = ''
+            data.confirm_password = ''
+        },
 
-        //     if(error.response.data.errors.password[0] === "The password format is invalid."){
-        //         context.errorMsg = "The password should have at least one uppercase letter, one lowercase letter, and one number"
-        //     }else {
-        //         context.errorMsg = errorArray[0][0];
-        //     }
-        // },
+        handleRegisterError(context,error){
+            context.error = true;
+            var errorArray = Object.values(error.response.data.errors);
+            //context.errorMsg = errorArray[0][0];
+
+            if(error.response.data.errors.password[0] === "The password format is invalid."){
+                context.errorMsg = "The password should have at least one uppercase letter, one lowercase letter, and one number"
+            }else {
+                context.errorMsg = errorArray[0][0];
+            }
+        },
 
         // handleLoginError(context,error){
         //     context.error = true;
