@@ -94,7 +94,7 @@ export default function(Vue){
 
                 context.errorMsg = errorArray[0][0];
             }
-            if(type == 'REGISTER'){
+            else if(type == 'REGISTER'){
                 context.error = true;
                 var errorArray = Object.values(error.response.data.errors);
                 //context.errorMsg = errorArray[0][0];
