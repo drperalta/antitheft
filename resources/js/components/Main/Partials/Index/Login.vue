@@ -6,6 +6,9 @@
             <!-- Email and Password -->
             <el-input class="el-input" v-model="LoginDetails.email" placeholder="Email" />
             <el-input class="el-input" v-model="LoginDetails.password" placeholder="Password" :type="'password'" />
+            <div class="div-rememberMe">
+                <el-checkbox class="rememberMe" v-model="LoginDetails.remember_me">Remember Me</el-checkbox>
+            </div>
             <!-- Forgotten Password -->
             <div class="resetpassword">
                 <router-link to="/reset-password">
@@ -30,7 +33,8 @@
             return {
                 LoginDetails: {
                     email: '',
-                    password: ''
+                    password: '',
+                    remember_me: false
                 },
                 success: false,
                 error: false,
@@ -51,7 +55,11 @@ a {
     color: white;
     opacity: 0.8;
 }
-
+.notification{
+    margin-bottom: 8px;
+    background-color: rgba(255, 0, 0, 0.3);
+    color: whitesmoke;
+}
 .el-input {
     padding: 4px;
 }
@@ -63,11 +71,11 @@ a {
 
 .resetpassword {
     float: right;
+    padding: 4px;
 }
 
 .forgotPassword {
     font-size: 13px;
-    padding: 4px;
 }
 
 .needAccount {
@@ -85,5 +93,16 @@ a {
     width: 110px;
     color: white;
     background-color: transparent;
+}
+
+.rememberMe {
+    font-weight: 400;
+    color: white;
+}
+
+.div-rememberMe {
+    padding: 4px;
+    float: left;
+    margin: 0;
 }
 </style>

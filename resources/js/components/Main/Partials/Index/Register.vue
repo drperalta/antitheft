@@ -2,8 +2,8 @@
     <div class="cont">
         <p class="signup">SIGN UP</p>
 
-        <el-alert class="notification" type="error" v-if="error">{{errorMsg}}</el-alert>
-        <el-alert class="notification" type="success" v-if="success">Successfully Created!</el-alert>
+        <el-alert class="notification" id="error" type="error" v-if="error">{{errorMsg}}</el-alert>
+        <el-alert class="notification" id="success" type="success" v-if="success">Successfully Created!</el-alert>
         <el-form class="form" :model="registerDetails">
 
             <el-input class="el-input" v-model="registerDetails.fullname" placeholder="Full Name"></el-input>
@@ -40,7 +40,11 @@ export default {
     },
     methods:{
         register(){
+            this.error = false;
+            this.success = false;
+            this.errorMsg = null;
 
+            Vue.auth.register(this, this.registerDetails);
         }
     }
 }
@@ -52,9 +56,18 @@ a {
     color: white;
     opacity: 0.8;
 }
-
+.notification {
+    margin-bottom: 8px;
+    color: whitesmoke;
+}
+#error {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+#success {
+    background-color: rgba(0, 255, 0, 0.3);
+}
 .el-input {
-    margin: 4px;
+    padding: 4px;
 }
 
 .signup {
