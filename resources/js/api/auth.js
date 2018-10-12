@@ -6,8 +6,6 @@ export default function(Vue){
 
             axios.post( 'api/auth/register', data)
             .then(response => {
-                context.success = true;
-                context.error = false;
                 context.errorMsg = "Successfully Created!"
 
                 console.log(response);
@@ -102,11 +100,12 @@ export default function(Vue){
             }
         },
 
-        // handleLoginError(context,error){
-        //     context.error = true;
-        //     var errorArray = error.response.data.message
-        //     context.errorMsg = errorArray;
-        // },
+        handleLoginError(context,error){
+            context.error = true;
+            var errorArray = Object.values(error.response.data.errors);
+
+            context.errorMsg = errorArray[0][0];
+        },
 
         // //TOKEN HANDLING/////////////
         // setToken(token, expiration){

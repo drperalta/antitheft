@@ -1,10 +1,10 @@
 <template lang="html">
     <div class="cont">
         <p class="singin">SIGN IN</p>
-        <el-alert class="notification" type="error" v-if="error">{{errorMsg}}</el-alert>
+        <el-alert class="notification" type="error" v-if="error" :title="errorMsg"/>
         <el-form class="form">
-            <!-- Email and Password -->
-            <el-input class="el-input" v-model="LoginDetails.email" placeholder="Email" />
+            <!-- Username and Password -->
+            <el-input class="el-input" v-model="LoginDetails.username" placeholder="Username" />
             <el-input class="el-input" v-model="LoginDetails.password" placeholder="Password" :type="'password'" />
             <div class="div-rememberMe">
                 <el-checkbox class="rememberMe" v-model="LoginDetails.remember_me">Remember Me</el-checkbox>
@@ -32,7 +32,7 @@
         data() {
             return {
                 LoginDetails: {
-                    email: '',
+                    username: '',
                     password: '',
                     remember_me: false
                 },

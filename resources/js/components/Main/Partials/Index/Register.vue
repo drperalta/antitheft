@@ -1,11 +1,11 @@
 <template lang="html">
     <div class="cont">
         <p class="signup">SIGN UP</p>
-
+        <!-- Alerts  -->
         <el-alert class="notification" id="error" type="error" v-if="error">{{errorMsg}}</el-alert>
         <el-alert class="notification" id="success" type="success" v-if="success">Successfully Created!</el-alert>
-        <el-form class="form" :model="registerDetails">
-
+        <el-form class="form">
+            <!-- Inputs  -->
             <el-input class="el-input" v-model="RegisterDetails.fullname" placeholder="Full Name"></el-input>
             <el-input class="el-input" v-model="RegisterDetails.username" placeholder="Username"></el-input>
             <el-input class="el-input" v-model="RegisterDetails.email" placeholder="Email"></el-input>
@@ -16,6 +16,7 @@
                 <router-link to="/login">
                     <a class="alreadyMember">Already a member? Sign In</a>
                 </router-link>
+                <!-- Sign Up Button  -->
                 <el-button class="registerButton" plain color="#00afec" type="submit" @click.prevent="register">Sign Up</el-button>
             </div>
         </el-form>
