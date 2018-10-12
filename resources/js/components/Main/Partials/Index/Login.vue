@@ -43,7 +43,11 @@
         },
         methods: {
             login() {
-                alert('Haha!');
+                this.error = false;
+                this.success = false;
+                this.errorMsg = null;
+
+                Vue.auth.login(this, this.LoginDetails);
             }
         }
     }
@@ -55,6 +59,7 @@ a {
     color: white;
     opacity: 0.8;
 }
+
 .notification{
     margin-bottom: 8px;
     background-color: rgba(255, 0, 0, 0.3);

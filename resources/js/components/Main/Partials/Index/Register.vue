@@ -6,11 +6,11 @@
         <el-alert class="notification" id="success" type="success" v-if="success">Successfully Created!</el-alert>
         <el-form class="form" :model="registerDetails">
 
-            <el-input class="el-input" v-model="registerDetails.fullname" placeholder="Full Name"></el-input>
-            <el-input class="el-input" v-model="registerDetails.username" placeholder="Username"></el-input>
-            <el-input class="el-input" v-model="registerDetails.email" placeholder="Email"></el-input>
-            <el-input class="el-input" v-model="registerDetails.password" placeholder="Password" :type="'password'"></el-input>
-            <el-input class="el-input" v-model="registerDetails.confirm_password" placeholder="Confirm Password" :type="'password'"></el-input>
+            <el-input class="el-input" v-model="RegisterDetails.fullname" placeholder="Full Name"></el-input>
+            <el-input class="el-input" v-model="RegisterDetails.username" placeholder="Username"></el-input>
+            <el-input class="el-input" v-model="RegisterDetails.email" placeholder="Email"></el-input>
+            <el-input class="el-input" v-model="RegisterDetails.password" placeholder="Password" :type="'password'"></el-input>
+            <el-input class="el-input" v-model="RegisterDetails.confirm_password" placeholder="Confirm Password" :type="'password'"></el-input>
 
             <div class="formBottom">
                 <router-link to="/login">
@@ -26,7 +26,7 @@
 export default {
     data(){
         return{
-        registerDetails:{
+        RegisterDetails:{
             fullname: '',
             username:'',
             email: '',
@@ -44,7 +44,7 @@ export default {
             this.success = false;
             this.errorMsg = null;
 
-            Vue.auth.register(this, this.registerDetails);
+            Vue.auth.register(this, this.RegisterDetails);
         }
     }
 }

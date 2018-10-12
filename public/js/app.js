@@ -19421,7 +19421,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         login: function login() {
-            alert('Haha!');
+            this.error = false;
+            this.success = false;
+            this.errorMsg = null;
+
+            Vue.auth.login(this, this.LoginDetails);
         }
     }
 });
@@ -19681,7 +19685,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            registerDetails: {
+            RegisterDetails: {
                 fullname: '',
                 username: '',
                 email: '',
@@ -19700,7 +19704,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.success = false;
             this.errorMsg = null;
 
-            Vue.auth.register(this, this.registerDetails);
+            Vue.auth.register(this, this.RegisterDetails);
         }
     }
 });
@@ -19749,11 +19753,11 @@ var render = function() {
             staticClass: "el-input",
             attrs: { placeholder: "Full Name" },
             model: {
-              value: _vm.registerDetails.fullname,
+              value: _vm.RegisterDetails.fullname,
               callback: function($$v) {
-                _vm.$set(_vm.registerDetails, "fullname", $$v)
+                _vm.$set(_vm.RegisterDetails, "fullname", $$v)
               },
-              expression: "registerDetails.fullname"
+              expression: "RegisterDetails.fullname"
             }
           }),
           _vm._v(" "),
@@ -19761,11 +19765,11 @@ var render = function() {
             staticClass: "el-input",
             attrs: { placeholder: "Username" },
             model: {
-              value: _vm.registerDetails.username,
+              value: _vm.RegisterDetails.username,
               callback: function($$v) {
-                _vm.$set(_vm.registerDetails, "username", $$v)
+                _vm.$set(_vm.RegisterDetails, "username", $$v)
               },
-              expression: "registerDetails.username"
+              expression: "RegisterDetails.username"
             }
           }),
           _vm._v(" "),
@@ -19773,11 +19777,11 @@ var render = function() {
             staticClass: "el-input",
             attrs: { placeholder: "Email" },
             model: {
-              value: _vm.registerDetails.email,
+              value: _vm.RegisterDetails.email,
               callback: function($$v) {
-                _vm.$set(_vm.registerDetails, "email", $$v)
+                _vm.$set(_vm.RegisterDetails, "email", $$v)
               },
-              expression: "registerDetails.email"
+              expression: "RegisterDetails.email"
             }
           }),
           _vm._v(" "),
@@ -19785,11 +19789,11 @@ var render = function() {
             staticClass: "el-input",
             attrs: { placeholder: "Password", type: "password" },
             model: {
-              value: _vm.registerDetails.password,
+              value: _vm.RegisterDetails.password,
               callback: function($$v) {
-                _vm.$set(_vm.registerDetails, "password", $$v)
+                _vm.$set(_vm.RegisterDetails, "password", $$v)
               },
-              expression: "registerDetails.password"
+              expression: "RegisterDetails.password"
             }
           }),
           _vm._v(" "),
@@ -19797,11 +19801,11 @@ var render = function() {
             staticClass: "el-input",
             attrs: { placeholder: "Confirm Password", type: "password" },
             model: {
-              value: _vm.registerDetails.confirm_password,
+              value: _vm.RegisterDetails.confirm_password,
               callback: function($$v) {
-                _vm.$set(_vm.registerDetails, "confirm_password", $$v)
+                _vm.$set(_vm.RegisterDetails, "confirm_password", $$v)
               },
-              expression: "registerDetails.confirm_password"
+              expression: "RegisterDetails.confirm_password"
             }
           }),
           _vm._v(" "),
@@ -85293,9 +85297,7 @@ exports.default = {
 
             axios.post('api/auth/login', data).then(function (response) {
                 console.log(response);
-                _this2.setToken(response.data.access_token, response.data.expires_at);
-                context.loggedIn = _this2.isAuthenticated;
-                __WEBPACK_IMPORTED_MODULE_0__router_router__["a" /* default */].go({ name: 'overview' });
+                //router.go({ name: 'overview' })
             }).catch(function (error) {
                 _this2.handleLoginError(context, error);
             });

@@ -20,12 +20,11 @@ export default function(Vue){
         },
 
         login(context,data){
-            axios.post('api/auth/login', data
-            ).then(response => {
+
+            axios.post('api/auth/login', data)
+            .then(response => {
                 console.log(response)
-                this.setToken(response.data.access_token,response.data.expires_at)
-                context.loggedIn = this.isAuthenticated
-                router.go({ name: 'overview' })
+                //router.go({ name: 'overview' })
             }).catch(error => {
                 this.handleLoginError(context,error);
             })
