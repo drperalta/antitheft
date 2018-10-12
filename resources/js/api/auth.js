@@ -12,7 +12,7 @@ export default function(Vue){
                 this.clearInput(data);
             }).catch(error => {
                 context.success = false;
-                this.handleRegisterError(context,error);
+                this.handleError('REGISTER',context, error);
             })
 
         },
@@ -24,7 +24,7 @@ export default function(Vue){
                 console.log(response)
                 //router.go({ name: 'overview' })
             }).catch(error => {
-                this.handleLoginError(context,error);
+                this.handleError('LOGIN',context, error);
             })
 
         },
@@ -87,24 +87,24 @@ export default function(Vue){
             data.password = ''
             data.confirm_password = ''
         },
+        handleError(type,context,error){
+            if(type == 'LOGIN'){
+                context.error = true;
+                var errorArray = Object.values(error.response.data.errors);
 
-        handleRegisterError(context,error){
-            context.error = true;
-            var errorArray = Object.values(error.response.data.errors);
-            //context.errorMsg = errorArray[0][0];
-
-            if(error.response.data.errors.password[0] === "The password format is invalid."){
-                context.errorMsg = "The password should have at least one uppercase letter, one lowercase letter, and one number"
-            }else {
                 context.errorMsg = errorArray[0][0];
             }
-        },
+            if(type == 'REGISTER'){
+                context.error = true;
+                var errorArray = Object.values(error.response.data.errors);
+                //context.errorMsg = errorArray[0][0];
 
-        handleLoginError(context,error){
-            context.error = true;
-            var errorArray = Object.values(error.response.data.errors);
-
-            context.errorMsg = errorArray[0][0];
+                if(error.response.data.errors.password[0] === "The password format is invalid."){
+                    context.errorMsg = "The password should have at least one uppercase letter, one lowercase letter, and one number"
+                }else {
+                    context.errorMsg = errorArray[0][0];
+                }
+            }
         },
 
         // //TOKEN HANDLING/////////////

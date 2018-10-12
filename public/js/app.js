@@ -87300,7 +87300,7 @@ exports.default = {
                 _this.clearInput(data);
             }).catch(function (error) {
                 context.success = false;
-                _this.handleRegisterError(context, error);
+                _this.handleError('REGISTER', context, error);
             });
         },
         login: function login(context, data) {
@@ -87310,7 +87310,7 @@ exports.default = {
                 console.log(response);
                 //router.go({ name: 'overview' })
             }).catch(function (error) {
-                _this2.handleLoginError(context, error);
+                _this2.handleError('LOGIN', context, error);
             });
         },
         logout: function logout() {
@@ -87372,22 +87372,24 @@ exports.default = {
             data.password = '';
             data.confirm_password = '';
         },
-        handleRegisterError: function handleRegisterError(context, error) {
-            context.error = true;
-            var errorArray = Object.values(error.response.data.errors);
-            //context.errorMsg = errorArray[0][0];
+        handleError: function handleError(type, context, error) {
+            if (type == 'LOGIN') {
+                context.error = true;
+                var errorArray = Object.values(error.response.data.errors);
 
-            if (error.response.data.errors.password[0] === "The password format is invalid.") {
-                context.errorMsg = "The password should have at least one uppercase letter, one lowercase letter, and one number";
-            } else {
                 context.errorMsg = errorArray[0][0];
             }
-        },
-        handleLoginError: function handleLoginError(context, error) {
-            context.error = true;
-            var errorArray = Object.values(error.response.data.errors);
+            if (type == 'REGISTER') {
+                context.error = true;
+                var errorArray = Object.values(error.response.data.errors);
+                //context.errorMsg = errorArray[0][0];
 
-            context.errorMsg = errorArray[0][0];
+                if (error.response.data.errors.password[0] === "The password format is invalid.") {
+                    context.errorMsg = "The password should have at least one uppercase letter, one lowercase letter, and one number";
+                } else {
+                    context.errorMsg = errorArray[0][0];
+                }
+            }
         },
 
 
