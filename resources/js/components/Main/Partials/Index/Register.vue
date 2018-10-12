@@ -3,7 +3,7 @@
         <p class="signup">SIGN UP</p>
         <!-- Alerts  -->
         <el-alert class="notification" id="error" type="error" v-if="error">{{errorMsg}}</el-alert>
-        <el-alert class="notification" id="success" type="success" v-if="success">Successfully Created!</el-alert>
+        <el-alert class="notification" id="success" type="success" v-if="success">{{successMsg}}</el-alert>
         <el-form class="form">
             <!-- Inputs  -->
             <el-input class="el-input" v-model="RegisterDetails.fullname" placeholder="Full Name"></el-input>
@@ -36,7 +36,8 @@ export default {
         },
         error: false,
         success: false,
-        errorMsg: null
+        errorMsg: null,
+        successMsg: null
         }
     },
     methods:{

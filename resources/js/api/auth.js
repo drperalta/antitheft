@@ -6,7 +6,8 @@ export default function(Vue){
 
             axios.post( 'api/auth/register', data)
             .then(response => {
-                context.errorMsg = "Successfully Created!"
+                context.successMsg = "Successfully Created!"
+                context.success = true;
 
                 console.log(response);
                 this.clearInput(data);

@@ -21264,7 +21264,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             },
             error: false,
             success: false,
-            errorMsg: null
+            errorMsg: null,
+            successMsg: null
         };
     },
 
@@ -21311,7 +21312,7 @@ var render = function() {
               staticClass: "notification",
               attrs: { id: "success", type: "success" }
             },
-            [_vm._v("Successfully Created!")]
+            [_vm._v(_vm._s(_vm.successMsg))]
           )
         : _vm._e(),
       _vm._v(" "),
@@ -87294,7 +87295,8 @@ exports.default = {
             var _this = this;
 
             axios.post('api/auth/register', data).then(function (response) {
-                context.errorMsg = "Successfully Created!";
+                context.successMsg = "Successfully Created!";
+                context.success = true;
 
                 console.log(response);
                 _this.clearInput(data);
