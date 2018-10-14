@@ -18,8 +18,8 @@ class AuthController extends Controller
             'fullname' => 'required|string',
             'username' => 'required|unique:users',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/',
-            'confirm_password' => 'sometimes|same:password'
+            'password' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/|same:confirm_password',
+            'confirm_password' => 'sometimes'
         ]);
         $user = new User([
             'fullname' => $request['fullname'],

@@ -20600,7 +20600,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.index[data-v-2e17d91c] {\n    width: 100vw;\n    height: 100vh;\n    background: url(" + escape(__webpack_require__(107)) + ")\n}\n.logo[data-v-2e17d91c] {\n    width: 110px\n}\n.vContainer[data-v-2e17d91c] {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    max-width: 380px;\n    text-align: center;\n}\n.title[data-v-2e17d91c] {\n    display: block;\n    font-weight: 600;\n    margin-bottom: 8px;\n    color: white;\n}\n", ""]);
+exports.push([module.i, "\n.index[data-v-2e17d91c] {\r\n    width: 100vw;\r\n    height: 100vh;\r\n    background: url(" + escape(__webpack_require__(107)) + ")\n}\n.logo[data-v-2e17d91c] {\r\n    width: 110px\n}\n.vContainer[data-v-2e17d91c] {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    max-width: 380px;\r\n    text-align: center;\n}\n.title[data-v-2e17d91c] {\r\n    display: block;\r\n    font-weight: 600;\r\n    margin-bottom: 8px;\r\n    color: white;\n}\r\n", ""]);
 
 // exports
 
@@ -20934,7 +20934,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-f297c6ec] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.notification[data-v-f297c6ec]{\n    margin-bottom: 8px;\n    background-color: rgba(255, 0, 0, 0.3);\n    color: whitesmoke;\n}\n.el-input[data-v-f297c6ec] {\n    padding: 4px;\n}\n.singin[data-v-f297c6ec] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.resetpassword[data-v-f297c6ec] {\n    float: right;\n    padding: 4px;\n}\n.forgotPassword[data-v-f297c6ec] {\n    font-size: 13px;\n}\n.needAccount[data-v-f297c6ec] {\n    margin-right: 15px;\n    font-size: 15px\n}\n.formBottom[data-v-f297c6ec] {\n    margin-top: 40px;\n    float: right;\n    padding: 4px;\n}\n.loginButton[data-v-f297c6ec] {\n    width: 110px;\n    color: white;\n    background-color: transparent;\n}\n.rememberMe[data-v-f297c6ec] {\n    font-weight: 400;\n    color: white;\n}\n.div-rememberMe[data-v-f297c6ec] {\n    padding: 4px;\n    float: left;\n    margin: 0;\n}\n", ""]);
+exports.push([module.i, "\na[data-v-f297c6ec] {\r\n    text-decoration: none;\r\n    color: white;\r\n    opacity: 0.8;\n}\n.notification[data-v-f297c6ec]{\r\n    margin-bottom: 8px;\r\n    background-color: rgba(255, 0, 0, 0.3);\r\n    color: whitesmoke;\n}\n.el-input[data-v-f297c6ec] {\r\n    padding: 4px;\n}\n.singin[data-v-f297c6ec] {\r\n    color: #428ccb;\r\n    margin-bottom: 20px;\n}\n.resetpassword[data-v-f297c6ec] {\r\n    float: right;\r\n    padding: 4px;\n}\n.forgotPassword[data-v-f297c6ec] {\r\n    font-size: 13px;\n}\n.needAccount[data-v-f297c6ec] {\r\n    margin-right: 15px;\r\n    font-size: 15px\n}\n.formBottom[data-v-f297c6ec] {\r\n    margin-top: 40px;\r\n    float: right;\r\n    padding: 4px;\n}\n.loginButton[data-v-f297c6ec] {\r\n    width: 110px;\r\n    color: white;\r\n    background-color: transparent;\n}\n.rememberMe[data-v-f297c6ec] {\r\n    font-weight: 400;\r\n    color: white;\n}\n.div-rememberMe[data-v-f297c6ec] {\r\n    padding: 4px;\r\n    float: left;\r\n    margin: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -21215,7 +21215,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-58163812] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.notification[data-v-58163812] {\n    margin-bottom: 8px;\n    color: whitesmoke;\n}\n#error[data-v-58163812] {\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-58163812] {\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-58163812] {\n    padding: 4px;\n}\n.signup[data-v-58163812] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.alreadyMember[data-v-58163812] {\n    margin-right: 15px;\n    font-size: 15px\n}\n.formBottom[data-v-58163812] {\n    margin-top: 40px;\n    float: right;\n}\n.registerButton[data-v-58163812] {\n    width: 130px;\n    color: white;\n    background-color: transparent;\n}\n", ""]);
+exports.push([module.i, "\na[data-v-58163812] {\r\n    text-decoration: none;\r\n    color: white;\r\n    opacity: 0.8;\n}\n.notification[data-v-58163812] {\r\n    margin-bottom: 8px;\r\n    color: whitesmoke;\n}\n#error[data-v-58163812] {\r\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-58163812] {\r\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-58163812] {\r\n    padding: 4px;\n}\n.signup[data-v-58163812] {\r\n    color: #428ccb;\r\n    margin-bottom: 20px;\n}\n.alreadyMember[data-v-58163812] {\r\n    margin-right: 15px;\r\n    font-size: 15px\n}\n.formBottom[data-v-58163812] {\r\n    margin-top: 40px;\r\n    float: right;\n}\n.registerButton[data-v-58163812] {\r\n    width: 130px;\r\n    color: white;\r\n    background-color: transparent;\n}\r\n", ""]);
 
 // exports
 
@@ -21510,7 +21510,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-5988d8ab] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.el-input[data-v-5988d8ab]{\n    padding: 4px;\n}\n.resetpassword[data-v-5988d8ab] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.formBottom[data-v-5988d8ab] {\n    margin-top: 10px;\n    padding: 4px;\n}\n.sendButton[data-v-5988d8ab] {\n    width: 100%;\n    color: white;\n    background-color: transparent;\n    margin-bottom: 10px;\n}\n", ""]);
+exports.push([module.i, "\na[data-v-5988d8ab] {\r\n    text-decoration: none;\r\n    color: white;\r\n    opacity: 0.8;\n}\n.el-input[data-v-5988d8ab]{\r\n    padding: 4px;\n}\n.resetpassword[data-v-5988d8ab] {\r\n    color: #428ccb;\r\n    margin-bottom: 20px;\n}\n.formBottom[data-v-5988d8ab] {\r\n    margin-top: 10px;\r\n    padding: 4px;\n}\n.sendButton[data-v-5988d8ab] {\r\n    width: 100%;\r\n    color: white;\r\n    background-color: transparent;\r\n    margin-bottom: 10px;\n}\r\n", ""]);
 
 // exports
 
@@ -21730,7 +21730,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-19158a9a] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.el-input[data-v-19158a9a] {\n    padding: 4px;\n}\n.changepassword[data-v-19158a9a] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.formBottom[data-v-19158a9a] {\n    margin-top: 20px;\n    padding: 4px;\n}\n.changePassButton[data-v-19158a9a] {\n    width: 100%;\n    color: white;\n    background-color: transparent;\n}\n", ""]);
+exports.push([module.i, "\na[data-v-19158a9a] {\r\n    text-decoration: none;\r\n    color: white;\r\n    opacity: 0.8;\n}\n.el-input[data-v-19158a9a] {\r\n    padding: 4px;\n}\n.changepassword[data-v-19158a9a] {\r\n    color: #428ccb;\r\n    margin-bottom: 20px;\n}\n.formBottom[data-v-19158a9a] {\r\n    margin-top: 20px;\r\n    padding: 4px;\n}\n.changePassButton[data-v-19158a9a] {\r\n    width: 100%;\r\n    color: white;\r\n    background-color: transparent;\n}\r\n", ""]);
 
 // exports
 
