@@ -11,6 +11,8 @@ import Register from '../components/Main/Partials/Index/Register.vue'
 import ResetPassword from '../components/Main/Partials/Index/ResetPassword'
 import ChangePassword from '../components/Main/Partials/Index/ChangePassword'
 
+import ConfirmSuccess from '../components/Main/Partials/Index/ConfirmSuccess'
+
 import Overview from '../components/Main/Partials/Dash/Overview.vue'
 import Kits from '../components/Main/Partials/Dash/Kits.vue'
 import Pictures from '../components/Main/Partials/Dash/Pictures.vue'
@@ -27,41 +29,54 @@ let router = new Router({
             children: [
                 {
                     path: 'login',
-                    component: Login
+                    component: Login,
+                    meta: {forVisitors: true}
                 },
                 {
                     path: 'register',
-                    component: Register
+                    component: Register,
+                    meta: {forVisitors: true}
                 },
                 {
                     path: 'reset-password',
-                    component: ResetPassword
+                    component: ResetPassword,
+                    meta: {forVisitors: true}
                 },
                 {
                     path: 'change-password',
-                    component: ChangePassword
+                    component: ChangePassword,
+                    meta: {forVisitors: true}
+                },
+                {
+                    path: 'confirm-success',
+                    component: ConfirmSuccess,
+                    meta: {forVisitors: true}
                 }
             ]
         },
         // DASH ROUTES
         {
-            path: '/', name: 'overview', component: Dash,
+            path: '/', name: 'overview', component: Dash, meta: {forAuth: true},
             children: [
                 {
                     path: 'overview',
-                    component: Overview
+                    component: Overview,
+                    meta: {forAuth: true}
                 },
                 {
                     path: 'kits',
-                    component: Kits
+                    component: Kits,
+                    meta: {forAuth: true}
                 },
                 {
                     path: 'pictures',
-                    component: Pictures
+                    component: Pictures,
+                    meta: {forAuth: true}
                 },
                 {
                     path: 'logs',
-                    component: Logs
+                    component: Logs,
+                    meta: {forAuth: true}
                 },
             ]
         }

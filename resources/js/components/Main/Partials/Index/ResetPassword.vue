@@ -56,7 +56,6 @@ a {
 }
 
 .formBottom {
-    margin-top: 10px;
     padding: 4px;
 }
 

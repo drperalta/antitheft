@@ -21,6 +21,27 @@ Vue.use(Auth);
 
 window.axios=axios
 
+router.beforeEach(
+    (to,from,next) => {
+        if(to.matched.some(record => record.meta.forVisitors)){
+            if(Vue.auth.isAuthenticated()){
+                next({
+                    path: '/overview'
+                })
+            }else next()
+        }
+        else if(to.matched.some(record => record.meta.forAuth)){
+            if(!Vue.auth.isAuthenticated()){
+                next({
+                    path: '/login'
+                })
+            }else next()
+        }
+
+        else next()
+    }
+)
+
 let App = require('./components/Main/App.vue')
 
 const app = new Vue({

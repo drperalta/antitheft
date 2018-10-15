@@ -22,8 +22,8 @@ export default function(Vue){
 
             axios.post('api/auth/login', data)
             .then(response => {
-                console.log(response)
-                //router.go({ name: 'overview' })
+                this.setToken(response.data.access_token, response.data.expires_at)
+                router.push({ path: 'overview' })
             }).catch(error => {
                 this.handleError('LOGIN',context, error);
             })
@@ -108,31 +108,34 @@ export default function(Vue){
             }
         },
 
-        // //TOKEN HANDLING/////////////
-        // setToken(token, expiration){
-        //     localStorage.setItem('token', token)
-        //     localStorage.setItem('expiration', expiration)
-        // },
-        // getToken(){
-        //     var token = localStorage.getItem('token');
-        //     var expiration = localStorage.getItem('expiration');
+        //TOKEN HANDLING/////////////
+        setToken(token, expiration){
+            localStorage.setItem('token', token)
+            localStorage.setItem('expiration', expiration)
+        },
 
-        //     if(!token || !expiration)
-        //         return null;
+        getToken(){
+            var token = localStorage.getItem('token');
+            var expiration = localStorage.getItem('expiration');
 
-        //     if(Date.now() > expiration){
-        //         this.destroyToken();
-        //         return null;
-        //     }else{
-        //         return token;
-        //     }
+            if(!token || !expiration)
+                return null;
 
-        // },
+            if(Date.now() > expiration){
+                this.destroyToken();
+                return null;
+            }else{
+                return token;
+            }
+
+        },
+
         // destroyToken(){
         //     localStorage.removeItem('token')
         //     localStorage.removeItem('expiration')
 
         // },
+        
         isAuthenticated(){
             if(this.getToken())
                 return true;
