@@ -6,6 +6,9 @@
 
 <script>
 export default {
+  created(){
+    this.$root.dashboard.page.title = 'OVERVIEW'
+  }
 }
 </script>
 

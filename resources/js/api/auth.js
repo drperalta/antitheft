@@ -31,18 +31,15 @@ export default function(Vue){
         },
 
         logout(){
-
             axios.get('api/auth/logout', {
                 headers: { 'Authorization': 'Bearer ' + this.getToken() }
             }).then(response => {
                 this.destroyToken();
-                router.go({ name: 'login' })
-                console.log(response);
+                router.push({ path: 'login' })
             })
         },
 
         user(){
-
             if(this.isAuthenticated){
                 axios.get('api/auth/user', {
                     headers: { 'Authorization': 'Bearer ' + this.getToken() }
@@ -130,11 +127,11 @@ export default function(Vue){
 
         },
 
-        // destroyToken(){
-        //     localStorage.removeItem('token')
-        //     localStorage.removeItem('expiration')
+        destroyToken(){
+            localStorage.removeItem('token')
+            localStorage.removeItem('expiration')
 
-        // },
+        },
         
         isAuthenticated(){
             if(this.getToken())
