@@ -42,7 +42,7 @@
         <!-- NAVBAR -->
         <el-header class="navbar">
           <v-toolbar class="v-toolbar" flat>
-            <v-toolbar-title class="title">{{$root.dashboard.page.title}}</v-toolbar-title>
+            <v-toolbar-title class="title">{{$root.pageTitle}}</v-toolbar-title>
             <v-spacer></v-spacer>
             <div>
               <h1 class="name">{{userData.fullname}}</h1>
@@ -80,10 +80,11 @@
 
 <script>
 import router from '../../../router/router'
+import store from '../../../store/store'
+
 export default {
   data(){
     return{
-      userData: [],
       items:[
         {
           title: 'Accounts',
@@ -115,8 +116,13 @@ export default {
         Vue.auth.logout();
       }
     },
-    mounted(){
-      Vue.auth.setUserData(this, this.userData)
+  },
+  created(){
+      Vue.auth.user()
+  },
+  computed:{
+    userData(){
+      return store.state.userData[0]
     }
   }
 }

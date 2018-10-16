@@ -21,6 +21,7 @@
         "element-ui": "^2.4.8",
         "nprogress": "^0.2.0",
         "vue-router": "^3.0.1",
-        "vuetify": "^1.2.5"
+        "vuetify": "^1.2.5",
+        "vuex": "^3.0.1"
     }
 }

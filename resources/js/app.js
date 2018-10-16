@@ -3,6 +3,7 @@ window.Vue = require('vue');
 import Vue from 'vue'
 import axios from 'axios'
 import router from './router/router'
+import store from './store/store'
 
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
@@ -48,14 +49,10 @@ let App = require('./components/Main/App.vue')
 const app = new Vue({
     el: '#app',
     components: {App},
-    router,
-    data: function(){
+    router,store,
+    data(){
         return{
-            dashboard:{
-                page:{
-                    title:'fa'
-                }
-            }
-        };
+            pageTitle:''
+        }
     }
 });

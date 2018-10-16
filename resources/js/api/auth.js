@@ -1,5 +1,5 @@
 import router from '../router/router'
-
+import store from '../store/store'
 export default function(Vue){
     Vue.auth = {
         register(context,data){
@@ -44,7 +44,7 @@ export default function(Vue){
                 axios.get('api/auth/user', {
                     headers: { 'Authorization': 'Bearer ' + this.getToken() }
                 }).then(response => {
-                    store.commit('SET_USER', response.data)
+                    store.commit('SET_USERDATA', response.data)
                 })
             }
             return Vue.auth

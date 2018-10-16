@@ -5,9 +5,11 @@
 </template>
 
 <script>
+import store from '../../../../store/store'
+ 
 export default {
   created(){
-    this.$root.dashboard.page.title = 'OVERVIEW'
+    this.$root.pageTitle = 'OVERVIEW'
   }
 }
 </script>
