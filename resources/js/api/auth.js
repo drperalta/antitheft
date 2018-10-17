@@ -132,7 +132,7 @@ export default function(Vue){
             localStorage.removeItem('expiration')
 
         },
-        
+
         isAuthenticated(){
             if(this.getToken())
                 return true;

@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
+// AUTHENTICATION ROUTES
 Route::group([ 'prefix' => 'auth' ], function ()
 {
     Route::post('login', 'AuthController@login');
@@ -24,4 +25,12 @@ Route::group([ 'prefix' => 'auth' ], function ()
         Route::get('logout', 'AuthController@logout');
         Route::get('user', 'AuthController@user');
     });
+});
+
+// PASSWORD RESET ROUTES
+Route::group([ 'middleware' => 'api', 'prefix' => 'password'], function ()
+{
+    Route::post('create', 'PasswordResetController@create');
+    Route::get('find/{token}', 'PasswordResetController@find');
+    Route::post('reset', 'PasswordResetController@reset');
 });

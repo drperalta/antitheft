@@ -1,7 +1,8 @@
 <template lang="html">
     <div class="cont">
         <p class="resetpassword">RESET PASSWORD</p>
-        <el-alert class="notification" type="error" v-if="error">{{errorMsg}}</el-alert>
+        <el-alert id="error" class="notification" type="error" v-if="error">{{errorMsg}}</el-alert>
+        <el-alert id="success" class="notification" type="success" v-if="success">{{successMsg}}</el-alert>
         <el-form class="form">
             <!-- Email -->
             <el-input class="el-input" v-model="ResetPassDetails.email" placeholder="Email" />
@@ -28,12 +29,18 @@
 
                 success: false,
                 error: false,
-                errorMsg: null
+                errorMsg: null,
+                successMsg: null
             }
         },
         methods: {
             sendEmail() {
-                alert('Haha!');
+                this.success = false;
+                this.error = false;
+                this.errorMsg = null;
+                this. successMsg = null;
+
+                Vue.reset.create(this, this.ResetPassDetails)
             }
         }
     }
@@ -46,6 +53,16 @@ a {
     opacity: 0.8;
 }
 
+.notification {
+    margin-bottom: 8px;
+    color: whitesmoke;
+}
+#error {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+#success {
+    background-color: rgba(0, 255, 0, 0.3);
+}
 .el-input{
     padding: 4px;
 }
@@ -56,6 +73,7 @@ a {
 }
 
 .formBottom {
+    margin-top: 10px;
     padding: 4px;
 }
 

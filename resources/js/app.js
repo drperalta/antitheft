@@ -15,11 +15,14 @@ import locale from 'element-ui/lib/locale'
 
 
 import Auth from '../js/api/auth'
+import Reset from '../js/api/reset'
 
 Vue.use(Vuetify)
 Vue.use(ElementUI)
 locale.use(lang)
+
 Vue.use(Auth);
+Vue.use(Reset);
 
 window.axios=axios
 
@@ -50,6 +53,7 @@ const app = new Vue({
     el: '#app',
     components: {App},
     router,store,
+
     data(){
         return{
             pageTitle:''

@@ -63,7 +63,7 @@
           </v-toolbar>
           <v-divider></v-divider>
         </el-header>
-        
+
         <!-- MAIN -->
         <el-main class="main">
           <div class="Main">
@@ -73,8 +73,8 @@
         <!-- ///////////// -->
       </el-container>
     </el-container>
-    
-    
+
+
   </div>
 </template>
 
@@ -186,7 +186,7 @@ export default {
 .icon {
   margin-left: 12px;
   margin-right: 20px;
-  width: 10px;
+  width: 14px !important;
 }
 
 .name{
