@@ -18,7 +18,9 @@ Route::group([ 'prefix' => 'auth' ], function ()
 {
     Route::post('login', 'AuthController@login');
     Route::post('register', 'AuthController@register');
-    Route::get('signup/activate/{token}', 'AuthController@activate');
+    Route::get('signup/check/{token}', 'AuthController@check');
+    Route::get('signup/confirm/{token}', 'AuthController@confirm');
+    Route::get('setEmail/{token}', 'AuthController@setEmail');
 
     Route::group([ 'middleware' => 'auth:api' ], function()
     {

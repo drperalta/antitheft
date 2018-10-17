@@ -70,6 +70,7 @@ export default function(Vue){
                 store.commit('SET_EMAIL', response.data['email'])
             })
         },
+        
         check(context, token){
             axios.get('/api/password/check/'+token)
             .then(response => {

@@ -38,7 +38,7 @@ class AuthController extends Controller
 
     }
 
-    public function activate($token)
+    public function confirm($token)
     {
         $user = User::where('activation_token', $token)->first();
         if (!$user) {
@@ -50,8 +50,22 @@ class AuthController extends Controller
         $user->activation_token = '';
         $user->save();
 
+        return response()->json([
+            'message' => 'Successfully confirmed your Email'
+        ], 200);
+    }
+    
+    public function check($token){
 
-        return redirect('confirm-success');
+        $user = User::where('activation_token', $token)->first();
+        if (!$user) {
+            return response()->json([
+                'errors' => [ 'message' => ['This activation token is invalid.'] ]
+            ], 404);
+        }
+
+        return redirect('confirm-success/'.$token);
+
     }
     public function login(Request $request)
     {
@@ -111,5 +125,9 @@ class AuthController extends Controller
     public function user(Request $request)
     {
         return response()->json($request->user());
+    }
+
+    public function setEmail($token){
+        return User::select('email')->where('activation_token', $token)->first();
     }
 }

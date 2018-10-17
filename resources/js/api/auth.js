@@ -1,5 +1,7 @@
 import router from '../router/router'
 import store from '../store/store'
+import { Container } from 'element-ui';
+
 export default function(Vue){
     Vue.auth = {
         register(context,data){
@@ -48,6 +50,17 @@ export default function(Vue){
                 })
             }
             return Vue.auth
+        },
+        confirm(context, token){
+            axios.get('/api/auth/signup/confirm/'+token)
+            .then(response => {
+                context.success = true
+                context.successMsg = response.data.message
+
+                console.log(response)
+            }).catch(error => {
+                console.log(error)
+            })
         },
 
         // addKit(context,data){
@@ -138,7 +151,14 @@ export default function(Vue){
                 return true;
             else
                 return false;
-        }
+        },
+
+        setConfirmationEmail(token){
+            axios.get('/api/auth/setEmail/'+token)
+            .then(response => {
+                store.commit('SET_EMAIL', response.data['email'])
+            })
+        },
 
     }
 

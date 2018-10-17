@@ -7,7 +7,7 @@ Thanks for signing up! Please before you begin, you must confirm your account.
 
 
 @component('mail::button', ['url' => $confirmationLink])
-    Confirm Email
+    Open Link
 @endcomponent
 
 

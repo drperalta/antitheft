@@ -48,7 +48,7 @@ let router = new Router({
                     meta: {forVisitors: true}
                 },
                 {
-                    path: 'confirm-success',
+                    path: 'confirm-success/:activation_token',
                     component: ConfirmSuccess,
                     meta: {forVisitors: true}
                 }
