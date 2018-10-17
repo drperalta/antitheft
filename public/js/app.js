@@ -12214,7 +12214,9 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
 
     state: {
-        userData: []
+        userData: [],
+        userEmail: []
+
     },
 
     getters: {
@@ -12224,8 +12226,10 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
     mutations: {
         SET_USERDATA: function SET_USERDATA(state, data) {
             state.userData.push(data);
+        },
+        SET_EMAIL: function SET_EMAIL(state, data) {
+            state.userEmail.push(data);
         }
-
     },
 
     actions: {
@@ -12616,7 +12620,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
             component: __WEBPACK_IMPORTED_MODULE_6__components_Main_Partials_Index_ResetPassword___default.a,
             meta: { forVisitors: true }
         }, {
-            path: 'change-password',
+            path: 'change-password/:token',
             component: __WEBPACK_IMPORTED_MODULE_7__components_Main_Partials_Index_ChangePassword___default.a,
             meta: { forVisitors: true }
         }, {
@@ -23078,7 +23082,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-19158a9a] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.el-input[data-v-19158a9a] {\n    padding: 4px;\n}\n.changepassword[data-v-19158a9a] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.formBottom[data-v-19158a9a] {\n    margin-top: 20px;\n    padding: 4px;\n}\n.changePassButton[data-v-19158a9a] {\n    width: 100%;\n    color: white;\n    background-color: transparent;\n}\n", ""]);
+exports.push([module.i, "\na[data-v-19158a9a] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.notification[data-v-19158a9a] {\n    margin-bottom: 8px;\n    color: whitesmoke;\n}\n#error[data-v-19158a9a] {\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-19158a9a] {\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-19158a9a] {\n    padding: 4px;\n}\n.changepassword[data-v-19158a9a] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.formBottom[data-v-19158a9a] {\n    margin-top: 20px;\n    padding: 4px;\n}\n.changePassButton[data-v-19158a9a] {\n    width: 100%;\n    color: white;\n    background-color: transparent;\n}\n.backToLogin[data-v-19158a9a] {\n    width: 100%;\n    color: white;\n    background-color: transparent;\n    margin-bottom: 10px;\n}\n", ""]);
 
 // exports
 
@@ -23089,6 +23093,7 @@ exports.push([module.i, "\na[data-v-19158a9a] {\n    text-decoration: none;\n   
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store__ = __webpack_require__(9);
 //
 //
 //
@@ -23105,24 +23110,54 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             ChangePassDetails: {
-                newPassword: '',
-                confirmPassword: ''
+                email: '',
+                password: '',
+                confirm_password: '',
+                token: this.$route.params.token
             },
 
+            invalid: false,
             success: false,
             error: false,
-            errorMsg: null
+            errorMsg: null,
+            successMsg: null,
+            showForm: true
         };
     },
 
     methods: {
         changePassword: function changePassword() {
-            alert('Haha!');
+            this.ChangePassDetails.email = this.userEmail[0];
+            this.success = false;
+            this.error = false;
+            this.errorMsg = null;
+            this.successMsg = null;
+
+            Vue.reset.reset(this, this.ChangePassDetails);
+        }
+    },
+    created: function created() {
+        Vue.reset.check(this, this.$route.params.token);
+        Vue.reset.setEmail(this.$route.params.token);
+    },
+
+    computed: {
+        userEmail: function userEmail() {
+            return __WEBPACK_IMPORTED_MODULE_0__store_store__["a" /* default */].state.userEmail;
         }
     }
 });
@@ -23144,63 +23179,115 @@ var render = function() {
       _vm.error
         ? _c(
             "el-alert",
-            { staticClass: "notification", attrs: { type: "error" } },
+            {
+              staticClass: "notification",
+              attrs: { id: "error", type: "error" }
+            },
             [_vm._v(_vm._s(_vm.errorMsg))]
           )
         : _vm._e(),
       _vm._v(" "),
-      _c(
-        "el-form",
-        { staticClass: "form" },
-        [
-          _c("el-input", {
-            staticClass: "el-input",
-            attrs: { placeholder: "New Password", type: "password" },
-            model: {
-              value: _vm.ChangePassDetails.newPassword,
-              callback: function($$v) {
-                _vm.$set(_vm.ChangePassDetails, "newPassword", $$v)
-              },
-              expression: "ChangePassDetails.newPassword"
-            }
-          }),
-          _vm._v(" "),
-          _c("el-input", {
-            staticClass: "el-input",
-            attrs: { placeholder: "Confirm Password", type: "password" },
-            model: {
-              value: _vm.ChangePassDetails.confirmPassword,
-              callback: function($$v) {
-                _vm.$set(_vm.ChangePassDetails, "confirmPassword", $$v)
-              },
-              expression: "ChangePassDetails.confirmPassword"
-            }
-          }),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "formBottom" },
+      _vm.success
+        ? _c(
+            "el-alert",
+            {
+              staticClass: "notification",
+              attrs: { id: "success", type: "success" }
+            },
+            [_vm._v(_vm._s(_vm.successMsg))]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.showForm
+        ? _c(
+            "el-form",
+            { staticClass: "form" },
             [
+              _c("el-input", {
+                staticClass: "el-input",
+                attrs: { placeholder: "New Password", type: "password" },
+                model: {
+                  value: _vm.ChangePassDetails.password,
+                  callback: function($$v) {
+                    _vm.$set(_vm.ChangePassDetails, "password", $$v)
+                  },
+                  expression: "ChangePassDetails.password"
+                }
+              }),
+              _vm._v(" "),
+              _c("el-input", {
+                staticClass: "el-input",
+                attrs: { placeholder: "Confirm Password", type: "password" },
+                model: {
+                  value: _vm.ChangePassDetails.confirm_password,
+                  callback: function($$v) {
+                    _vm.$set(_vm.ChangePassDetails, "confirm_password", $$v)
+                  },
+                  expression: "ChangePassDetails.confirm_password"
+                }
+              }),
+              _vm._v(" "),
               _c(
-                "el-button",
-                {
-                  staticClass: "changePassButton",
-                  attrs: { plain: "", color: "#00afec", type: "submit" },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      return _vm.changePassword($event)
-                    }
-                  }
-                },
-                [_vm._v("Change Password")]
+                "div",
+                { staticClass: "formBottom" },
+                [
+                  _c(
+                    "el-button",
+                    {
+                      staticClass: "changePassButton",
+                      attrs: { plain: "", color: "#00afec", type: "submit" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.changePassword($event)
+                        }
+                      }
+                    },
+                    [_vm._v("Change Password")]
+                  )
+                ],
+                1
               )
             ],
             1
           )
-        ],
-        1
-      )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.invalid
+        ? _c(
+            "router-link",
+            { attrs: { to: "/login" } },
+            [
+              _c(
+                "el-button",
+                {
+                  staticClass: "backToLogin",
+                  attrs: { plain: "", color: "#00afec", type: "submit" }
+                },
+                [_vm._v("Back to Login")]
+              )
+            ],
+            1
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.success
+        ? _c(
+            "router-link",
+            { attrs: { to: "/login" } },
+            [
+              _c(
+                "el-button",
+                {
+                  staticClass: "backToLogin",
+                  attrs: { plain: "", color: "#00afec", type: "submit" }
+                },
+                [_vm._v("Back to Login")]
+              )
+            ],
+            1
+          )
+        : _vm._e()
     ],
     1
   )
@@ -89161,11 +89248,39 @@ if (false) {
             });
         },
         find: function find() {},
-        reset: function reset(context, data) {},
+        reset: function reset(context, data) {
+            var _this2 = this;
+
+            axios.post('/api/password/reset', data).then(function (response) {
+                context.success = true;
+                context.successMsg = response.data.message;
+                context.showForm = false;
+
+                _this2.handleSuccess(context, response);
+            }).catch(function (error) {
+                _this2.handleError('RESET', context, error);
+            });
+        },
         handleError: function handleError(type, context, error) {
 
             if (type == 'CREATE') {
                 context.error = true;
+                var errorArray = Object.values(error.response.data.errors);
+
+                context.errorMsg = errorArray[0][0];
+            } else if (type == 'RESET') {
+                context.error = true;
+                var errorArray = Object.values(error.response.data.errors);
+
+                if (error.response.data.errors.password[0] === "The password format is invalid.") {
+                    context.errorMsg = "The password should have at least one uppercase letter, one lowercase letter, and one number";
+                } else {
+                    context.errorMsg = errorArray[0][0];
+                }
+            } else if (type == 'CHECK') {
+                context.error = true;
+                context.invalid = true;
+                context.showForm = false;
                 var errorArray = Object.values(error.response.data.errors);
 
                 context.errorMsg = errorArray[0][0];
@@ -89177,6 +89292,20 @@ if (false) {
         },
         clearInput: function clearInput(data) {
             data.email = '';
+        },
+        setEmail: function setEmail(token) {
+            axios.get('/api/password/setEmail/' + token).then(function (response) {
+                __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].commit('SET_EMAIL', response.data['email']);
+            });
+        },
+        check: function check(context, token) {
+            var _this3 = this;
+
+            axios.get('/api/password/check/' + token).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                _this3.handleError('CHECK', context, error);
+            });
         }
     };
 });

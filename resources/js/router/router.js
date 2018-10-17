@@ -43,7 +43,7 @@ let router = new Router({
                     meta: {forVisitors: true}
                 },
                 {
-                    path: 'change-password',
+                    path: 'change-password/:token',
                     component: ChangePassword,
                     meta: {forVisitors: true}
                 },

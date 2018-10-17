@@ -7,7 +7,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
 
     state:{
-        userData: []
+        userData: [],
+        userEmail: [],
+
     },
 
     getters:{
@@ -18,8 +20,9 @@ export default new Vuex.Store({
         SET_USERDATA: (state, data) => {
             state.userData.push(data)
         },
-
-
+        SET_EMAIL: (state, data) => {
+            state.userEmail.push(data)
+        }
     },
 
     actions:{
