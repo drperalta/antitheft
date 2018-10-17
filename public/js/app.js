@@ -89156,9 +89156,8 @@ if (false) {
             var _this = this;
 
             axios.post('/api/password/create', data).then(function (response) {
-                context.success = true;
-                context.successMsg = response.data.message;
-                console.log(response);
+                _this.handleSuccess(context, response);
+                _this.clearInput(data);
             }).catch(function (error) {
                 _this.handleError('CREATE', context, error);
             });
@@ -89173,6 +89172,13 @@ if (false) {
 
                 context.errorMsg = errorArray[0][0];
             }
+        },
+        handleSuccess: function handleSuccess(context, response) {
+            context.success = true;
+            context.successMsg = response.data.message;
+        },
+        clearInput: function clearInput(data) {
+            data.email = '';
         }
     };
 });

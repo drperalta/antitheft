@@ -6,9 +6,8 @@ export default function(Vue){
         create(context, data){
             axios.post('/api/password/create', data)
             .then(response => {
-                context.success = true;
-                context.successMsg = response.data.message;
-                console.log(response)
+                this.handleSuccess(context, response)
+                this.clearInput(data)
             }).catch(error =>{
                 this.handleError('CREATE', context, error)
             })
@@ -29,6 +28,13 @@ export default function(Vue){
                 context.errorMsg = errorArray[0][0];
             }
 
-        }
+        },
+        handleSuccess(context, response){
+            context.success = true;
+            context.successMsg = response.data.message;
+        },
+        clearInput(data){
+            data.email = ''
+        },
     }
 }
