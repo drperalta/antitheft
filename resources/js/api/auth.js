@@ -55,6 +55,7 @@ export default function(Vue){
             axios.get('/api/auth/signup/confirm/'+token)
             .then(response => {
                 context.success = true
+                context.hide = true
                 context.successMsg = response.data.message
 
                 console.log(response)
@@ -116,6 +117,13 @@ export default function(Vue){
                     context.errorMsg = errorArray[0][0];
                 }
             }
+            else if(type ==  'CHECK'){
+                context.error = true;
+                context.hide = true;
+                var errorArray = Object.values(error.response.data.errors);
+
+                context.errorMsg = errorArray[0][0];
+            }
         },
 
         //TOKEN HANDLING/////////////
@@ -159,6 +167,14 @@ export default function(Vue){
                 store.commit('SET_EMAIL', response.data['email'])
             })
         },
+        check(context, token){
+            axios.get('/api/auth/signup/check/'+token)
+            .then(response => {
+                console.log(response)
+            }).catch(error => {
+                this.handleError('CHECK', context, error)
+            })
+        }
 
     }
 

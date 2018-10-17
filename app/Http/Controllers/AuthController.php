@@ -54,7 +54,7 @@ class AuthController extends Controller
             'message' => 'Successfully confirmed your Email'
         ], 200);
     }
-    
+
     public function check($token){
 
         $user = User::where('activation_token', $token)->first();
@@ -64,7 +64,7 @@ class AuthController extends Controller
             ], 404);
         }
 
-        return redirect('confirm-success/'.$token);
+        return redirect('confirm-email/'.$token);
 
     }
     public function login(Request $request)

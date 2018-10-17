@@ -1,12 +1,18 @@
 <template>
     <div class="cont">
         <p class="successconfirm">EMAIL CONFIRMATION</p>
-        <el-alert id="error" class="notification" type="error" v-if="error">{{errorMsg}}</el-alert>
-        <el-alert id="success" class="notification" type="success" v-if="success">{{successMsg}}</el-alert>
-        <p class="email" v-if="!success">{{this.userEmail[0]}}</p>
+        <el-alert id="error" class="notification" type="error" v-if="error" :closable="false" center>{{errorMsg}}</el-alert>
+        <el-alert id="success" class="notification" type="success" v-if="success" :closable="false" center>{{successMsg}}</el-alert>
+        <!-- Email -->
+        <el-card class="card" shadow="never" v-if="!hide" body-style="padding: 0">
+            <p class="email" >{{this.userEmail[0]}}</p>
+        </el-card>
         <!-- Confirm Email Button -->
-        <el-button v-if="!success" class="confirmEmail" plain color="#00afec" type="submit" @click="confirm">Confirm Email</el-button>
+        <el-button v-if="!hide" class="confirmEmail" plain color="#00afec" type="submit" @click="confirm">Confirm Email</el-button>
         <router-link to="/login" v-if="success">
+            <el-button class="backToLogin" plain color="#00afec" type="submit">Back to Login</el-button>
+        </router-link>
+        <router-link to="/login" v-if="error">
             <el-button class="backToLogin" plain color="#00afec" type="submit">Back to Login</el-button>
         </router-link>
     </div>
@@ -20,7 +26,8 @@ import store from '../../../../store/store'
                success: false,
                error: false,
                errorMsg: null,
-               successMsg: null
+               successMsg: null,
+               hide: false
             }
         },
         methods:{
@@ -29,6 +36,7 @@ import store from '../../../../store/store'
             }
         },
         created(){
+            Vue.auth.check(this, this.$route.params.activation_token)
             Vue.auth.setConfirmationEmail(this.$route.params.activation_token)
         },
         computed:{
@@ -41,7 +49,7 @@ import store from '../../../../store/store'
 
 <style scoped>
 .notification {
-    margin-bottom: 8px;
+    margin-bottom: 15px;
     color: whitesmoke;
 }
 #error {
@@ -67,9 +75,13 @@ import store from '../../../../store/store'
     background-color: transparent;
     margin-bottom: 10px;
 }
+.card{
+    height: 40px;
+    padding: 6px;
+    margin-bottom: 20px;
+}
 .email{
     font-size: 16px;
-    color: white;
-    font-weight: 300;
+    font-weight: 400;
 }
 </style>

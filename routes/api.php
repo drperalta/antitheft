@@ -18,6 +18,7 @@ Route::group([ 'prefix' => 'auth' ], function ()
 {
     Route::post('login', 'AuthController@login');
     Route::post('register', 'AuthController@register');
+
     Route::get('signup/check/{token}', 'AuthController@check');
     Route::get('signup/confirm/{token}', 'AuthController@confirm');
     Route::get('setEmail/{token}', 'AuthController@setEmail');

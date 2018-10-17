@@ -1,8 +1,8 @@
 <template lang="html">
     <div class="cont">
         <p class="changepassword">CHANGE PASSWORD</p>
-        <el-alert id="error" class="notification" type="error" v-if="error">{{errorMsg}}</el-alert>
-        <el-alert id="success" class="notification" type="success" v-if="success">{{successMsg}}</el-alert>
+        <el-alert id="error" class="notification" type="error" v-if="error" :closable="false" center>{{errorMsg}}</el-alert>
+        <el-alert id="success" class="notification" type="success" v-if="success" :closable="false" center>{{successMsg}}</el-alert>
         <el-form class="form" v-if="showForm">
             <!-- New Password and Confirm Password -->
             <el-input class="el-input" v-model="ChangePassDetails.password" placeholder="New Password" :type="'password'" />

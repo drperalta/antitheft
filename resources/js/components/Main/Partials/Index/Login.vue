@@ -1,7 +1,7 @@
 <template lang="html">
     <div class="cont">
         <p class="singin">SIGN IN</p>
-        <el-alert class="notification" type="error" v-if="error" :title="errorMsg"/>
+        <el-alert class="notification" type="error" v-if="error" :title="errorMsg" :closable="false" center/>
         <el-form class="form">
             <!-- Username and Password -->
             <el-input class="el-input" v-model="LoginDetails.username" placeholder="Username" />

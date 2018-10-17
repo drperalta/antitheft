@@ -1,8 +1,8 @@
 <template lang="html">
     <div class="cont">
         <p class="resetpassword">RESET PASSWORD</p>
-        <el-alert id="error" class="notification" type="error" v-if="error">{{errorMsg}}</el-alert>
-        <el-alert id="success" class="notification" type="success" v-if="success">{{successMsg}}</el-alert>
+        <el-alert id="error" class="notification" type="error" v-if="error" :closable="false" center>{{errorMsg}}</el-alert>
+        <el-alert id="success" class="notification" type="success" v-if="success" :closable="false" center>{{successMsg}}</el-alert>
         <el-form class="form">
             <!-- Email -->
             <el-input class="el-input" v-model="ResetPassDetails.email" placeholder="Email" />

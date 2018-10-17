@@ -11,7 +11,7 @@ import Register from '../components/Main/Partials/Index/Register.vue'
 import ResetPassword from '../components/Main/Partials/Index/ResetPassword'
 import ChangePassword from '../components/Main/Partials/Index/ChangePassword'
 
-import ConfirmSuccess from '../components/Main/Partials/Index/ConfirmSuccess'
+import ConfirmEmail from '../components/Main/Partials/Index/ConfirmEmail'
 
 import Overview from '../components/Main/Partials/Dash/Overview.vue'
 import Kits from '../components/Main/Partials/Dash/Kits.vue'
@@ -48,8 +48,8 @@ let router = new Router({
                     meta: {forVisitors: true}
                 },
                 {
-                    path: 'confirm-success/:activation_token',
-                    component: ConfirmSuccess,
+                    path: 'confirm-email/:activation_token',
+                    component: ConfirmEmail,
                     meta: {forVisitors: true}
                 }
             ]
