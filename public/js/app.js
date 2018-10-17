@@ -23301,7 +23301,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.successconfirm[data-v-0686c552] {\r\n    color: #428ccb;\r\n    margin-bottom: 20px;\n}\n.backToLogin[data-v-0686c552] {\r\n    width: 100%;\r\n    color: white;\r\n    background-color: transparent;\r\n    margin-bottom: 10px;\n}\r\n", ""]);
+exports.push([module.i, "\n.successconfirm[data-v-0686c552] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.backToLogin[data-v-0686c552] {\n    width: 100%;\n    color: white;\n    background-color: transparent;\n    margin-bottom: 10px;\n}\n", ""]);
 
 // exports
 
@@ -23327,7 +23327,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            email: ''
+            //
         };
     }
 });
@@ -23347,8 +23347,6 @@ var render = function() {
       _c("p", { staticClass: "successconfirm" }, [
         _vm._v("CONFIRMATION SUCCESS")
       ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "email" }, [_vm._v(_vm._s(this.email))]),
       _vm._v(" "),
       _c(
         "router-link",
@@ -88989,7 +88987,7 @@ exports.default = {
 
             if (!token || !expiration) return null;
 
-            if (Date.now() > expiration) {
+            if (Date.now('GMT+8') > expiration) {
                 this.destroyToken();
                 return null;
             } else {

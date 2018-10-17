@@ -34,6 +34,8 @@ router.beforeEach(
                     path: '/overview'
                 })
             }else next()
+
+
         }
         else if(to.matched.some(record => record.meta.forAuth)){
             if(!Vue.auth.isAuthenticated()){

@@ -67,6 +67,7 @@ class PasswordResetController extends Controller
         }
         if (Carbon::parse($passwordReset->updated_at)->addMinutes(720)->setTimezone('GMT+8')->isPast()) {
             $passwordReset->delete();
+
             return response()->json([
                 'errors' => [ 'message' => ['This password reset token is invalid.'] ]
             ], 404);

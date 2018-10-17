@@ -49,6 +49,8 @@ class AuthController extends Controller
         $user->active = true;
         $user->activation_token = '';
         $user->save();
+
+
         return redirect('confirm-success');
     }
     public function login(Request $request)

@@ -1,7 +1,7 @@
 <template>
     <div class="cont">
         <p class="successconfirm">CONFIRMATION SUCCESS</p>
-        <p class="email">{{this.email}}</p>
+        <!-- <p class="email">{{this.email}}</p> -->
         <!-- Send Email Button -->
         <router-link to="/login">
             <el-button class="backToLogin" plain color="#00afec" type="submit">Back to Login</el-button>
@@ -13,7 +13,7 @@
     export default {
         data(){
             return {
-                email: ''
+               //
             }
         }
     }

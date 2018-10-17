@@ -12,6 +12,7 @@ export default function(Vue){
                 this.handleError('CREATE', context, error)
             })
         },
+
         find(){
 
         },

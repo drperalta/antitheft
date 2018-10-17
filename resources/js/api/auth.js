@@ -118,7 +118,7 @@ export default function(Vue){
             if(!token || !expiration)
                 return null;
 
-            if(Date.now() > expiration){
+            if(Date.now('GMT+8') > expiration){
                 this.destroyToken();
                 return null;
             }else{
