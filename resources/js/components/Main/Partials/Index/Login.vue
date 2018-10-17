@@ -2,10 +2,10 @@
     <div class="cont">
         <p class="singin">SIGN IN</p>
         <el-alert class="notification" type="error" v-if="error" :title="errorMsg" :closable="false" center/>
-        <el-form class="form">
+        <el-form class="form" @submit.native.prevent="login">
             <!-- Username and Password -->
-            <el-input class="el-input" v-model="LoginDetails.username" placeholder="Username" />
-            <el-input class="el-input" v-model="LoginDetails.password" placeholder="Password" :type="'password'" />
+            <el-input class="el-input" v-model="LoginDetails.username" placeholder="Username" :disabled="isLoading" />
+            <el-input class="el-input" v-model="LoginDetails.password" placeholder="Password" type="password" :disabled="isLoading" />
             <div class="div-rememberMe">
                 <el-checkbox class="rememberMe" v-model="LoginDetails.remember_me">Remember Me</el-checkbox>
             </div>
@@ -21,7 +21,7 @@
                     <a class="needAccount">Need and account? Sign Up</a>
                 </router-link>
                 <!-- Login Button -->
-                <el-button class="loginButton" plain color="#00afec" type="submit" @click.prevent="login">Sign In</el-button>
+                <el-button class="loginButton" plain color="#00afec" native-type="submit" :loading="isLoading">Sign In</el-button>
             </div>
         </el-form>
     </div>
@@ -38,7 +38,8 @@
                 },
                 success: false,
                 error: false,
-                errorMsg: null
+                errorMsg: null,
+                isLoading: false
             }
         },
         methods: {
@@ -47,8 +48,19 @@
                 this.success = false;
                 this.errorMsg = null;
 
+                this.isLoading = true
+
                 Vue.auth.login(this, this.LoginDetails);
             }
+        },
+        mounted () {
+            this.$root.$on('login:success', () => {
+                this.isLoading = false
+            })
+
+            this.$root.$on('login:error', () => {
+                this.isLoading = false
+            })
         }
     }
 </script>

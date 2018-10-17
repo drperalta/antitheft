@@ -1,6 +1,5 @@
 import router from '../router/router'
 import store from '../store/store'
-import { Container } from 'element-ui';
 
 export default function(Vue){
     Vue.auth = {
@@ -8,12 +7,16 @@ export default function(Vue){
 
             axios.post( 'api/auth/register', data)
             .then(response => {
+                context.$root.$emit('register:success')
+
                 context.successMsg = "Successfully Created!"
                 context.success = true;
 
                 console.log(response);
                 this.clearInput(data);
             }).catch(error => {
+                context.$root.$emit('register:error')
+
                 context.success = false;
                 this.handleError('REGISTER',context, error);
             })
@@ -24,9 +27,13 @@ export default function(Vue){
 
             axios.post('api/auth/login', data)
             .then(response => {
+                context.$root.$emit('login:success')
+
                 this.setToken(response.data.access_token, response.data.expires_at)
                 router.push({ path: 'overview' })
             }).catch(error => {
+                context.$root.$emit('login:error')
+
                 this.handleError('LOGIN',context, error);
             })
 

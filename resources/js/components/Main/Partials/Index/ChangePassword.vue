@@ -3,14 +3,14 @@
         <p class="changepassword">CHANGE PASSWORD</p>
         <el-alert id="error" class="notification" type="error" v-if="error" :closable="false" center>{{errorMsg}}</el-alert>
         <el-alert id="success" class="notification" type="success" v-if="success" :closable="false" center>{{successMsg}}</el-alert>
-        <el-form class="form" v-if="showForm">
+        <el-form class="form" v-if="showForm" @submit.native.prevent="changePassword">
             <!-- New Password and Confirm Password -->
-            <el-input class="el-input" v-model="ChangePassDetails.password" placeholder="New Password" :type="'password'" />
-            <el-input class="el-input" v-model="ChangePassDetails.confirm_password" placeholder="Confirm Password" :type="'password'" />
+            <el-input class="el-input" v-model="ChangePassDetails.password" placeholder="New Password" :type="'password'" :disabled="isLoading" />
+            <el-input class="el-input" v-model="ChangePassDetails.confirm_password" placeholder="Confirm Password" :type="'password'" :disabled="isLoading" />
 
             <div class="formBottom">
                 <!-- Change Password Button -->
-                <el-button class="changePassButton" plain color="#00afec" type="submit" @click.prevent="changePassword">Change Password</el-button>
+                <el-button class="changePassButton" plain color="#00afec" native-type="submit" :loading="isLoading">Change Password</el-button>
             </div>
         </el-form>
         <router-link to="/login" v-if="invalid">
@@ -39,7 +39,8 @@ import store from '../../../../store/store'
                 error: false,
                 errorMsg: null,
                 successMsg: null,
-                showForm: true
+                showForm: true,
+                isLoading: false
             }
         },
         methods: {
@@ -49,6 +50,8 @@ import store from '../../../../store/store'
                 this.error = false;
                 this.errorMsg = null;
                 this.successMsg = null;
+                
+                this.isLoading = true
 
                 Vue.reset.reset(this, this.ChangePassDetails)
             }
@@ -62,6 +65,15 @@ import store from '../../../../store/store'
             userEmail(){
                 return store.state.userEmail
             }
+        },
+        mounted() {
+            this.$root.$on('change:success', () => {
+                this.isLoading = false
+            })
+
+            this.$root.$on('change:error', () => {
+                this.isLoading = false
+            })
         }
     }
 </script>

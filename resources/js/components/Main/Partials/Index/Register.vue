@@ -4,20 +4,20 @@
         <!-- Alerts  -->
         <el-alert class="notification" id="error" type="error" v-if="error" :closable="false" center>{{errorMsg}}</el-alert>
         <el-alert class="notification" id="success" type="success" v-if="success" :closable="false" center>{{successMsg}}</el-alert>
-        <el-form class="form">
+        <el-form class="form" @submit.native.prevent="register">
             <!-- Inputs  -->
-            <el-input class="el-input" v-model="RegisterDetails.fullname" placeholder="Full Name"></el-input>
-            <el-input class="el-input" v-model="RegisterDetails.username" placeholder="Username"></el-input>
-            <el-input class="el-input" v-model="RegisterDetails.email" placeholder="Email"></el-input>
-            <el-input class="el-input" v-model="RegisterDetails.password" placeholder="Password" :type="'password'"></el-input>
-            <el-input class="el-input" v-model="RegisterDetails.confirm_password" placeholder="Confirm Password" :type="'password'"></el-input>
+            <el-input class="el-input" v-model="RegisterDetails.fullname" placeholder="Full Name" :disabled="isLoading"></el-input>
+            <el-input class="el-input" v-model="RegisterDetails.username" placeholder="Username" :disabled="isLoading"></el-input>
+            <el-input class="el-input" v-model="RegisterDetails.email" placeholder="Email" :disabled="isLoading"></el-input>
+            <el-input class="el-input" v-model="RegisterDetails.password" placeholder="Password" :type="'password'" :disabled="isLoading"></el-input>
+            <el-input class="el-input" v-model="RegisterDetails.confirm_password" placeholder="Confirm Password" :type="'password'" :disabled="isLoading"></el-input>
 
             <div class="formBottom">
                 <router-link to="/login">
                     <a class="alreadyMember">Already a member? Sign In</a>
                 </router-link>
                 <!-- Sign Up Button  -->
-                <el-button class="registerButton" plain color="#00afec" type="submit" @click.prevent="register">Sign Up</el-button>
+                <el-button class="registerButton" plain color="#00afec" native-type="submit" :loading="isLoading">Sign Up</el-button>
             </div>
         </el-form>
     </div>
@@ -37,7 +37,8 @@ export default {
         error: false,
         success: false,
         errorMsg: null,
-        successMsg: null
+        successMsg: null,
+        isLoading: false
         }
     },
     methods:{
@@ -46,8 +47,20 @@ export default {
             this.success = false;
             this.errorMsg = null;
 
+            this.isLoading = true
+
             Vue.auth.register(this, this.RegisterDetails);
         }
+    },
+
+    mounted() {
+        this.$root.$on('register:success', () => {
+            this.isLoading = false
+        })
+
+        this.$root.$on('register:error', () => {
+            this.isLoading = false
+        })
     }
 }
 </script>

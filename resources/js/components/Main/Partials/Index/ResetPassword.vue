@@ -3,13 +3,13 @@
         <p class="resetpassword">RESET PASSWORD</p>
         <el-alert id="error" class="notification" type="error" v-if="error" :closable="false" center>{{errorMsg}}</el-alert>
         <el-alert id="success" class="notification" type="success" v-if="success" :closable="false" center>{{successMsg}}</el-alert>
-        <el-form class="form">
+        <el-form class="form" @submit.native.prevent="sendEmail">
             <!-- Email -->
-            <el-input class="el-input" v-model="ResetPassDetails.email" placeholder="Email" />
+            <el-input class="el-input" v-model="ResetPassDetails.email" placeholder="Email" :disabled="isLoading" />
             <!-- Register Link  -->
             <div class="formBottom">
                 <!-- Send Email Button -->
-                <el-button class="sendButton" plain color="#00afec" type="submit" @click.prevent="sendEmail">Send Email</el-button>
+                <el-button class="sendButton" plain color="#00afec" native-type="submit" :loading="isLoading">Send Email</el-button>
                 <!-- Back to login Link-->
                 <router-link to="/login">
                     <a class="backToLogin">Nevermind, I got it.</a>
@@ -30,7 +30,8 @@
                 success: false,
                 error: false,
                 errorMsg: null,
-                successMsg: null
+                successMsg: null,
+                isLoading: false
             }
         },
         methods: {
@@ -38,10 +39,22 @@
                 this.success = false;
                 this.error = false;
                 this.errorMsg = null;
-                this. successMsg = null;
+                this.successMsg = null;
+
+                this.isLoading = true
 
                 Vue.reset.create(this, this.ResetPassDetails)
             }
+        },
+
+        mounted() {
+            this.$root.$on('reset:success', () => {
+                this.isLoading = false
+            })
+
+            this.$root.$on('reset:error', () => {
+                this.isLoading = false
+            })
         }
     }
 </script>

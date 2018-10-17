@@ -12513,7 +12513,7 @@ $exports.store = store;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Main_Partials_Index_ResetPassword___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_Main_Partials_Index_ResetPassword__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Main_Partials_Index_ChangePassword__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Main_Partials_Index_ChangePassword___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_Main_Partials_Index_ChangePassword__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Main_Partials_Index_ConfirmEmail__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Main_Partials_Index_ConfirmEmail__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Main_Partials_Index_ConfirmEmail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_Main_Partials_Index_ConfirmEmail__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Main_Partials_Dash_Overview_vue__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Main_Partials_Dash_Overview_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_Main_Partials_Dash_Overview_vue__);
@@ -52973,7 +52973,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.index[data-v-2e17d91c] {\n    width: 100vw;\n    height: 100vh;\n    background: url(" + escape(__webpack_require__(110)) + ")\n}\n.logo[data-v-2e17d91c] {\n    width: 110px\n}\n.vContainer[data-v-2e17d91c] {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    max-width: 380px;\n    text-align: center;\n}\n.title[data-v-2e17d91c] {\n    display: block;\n    font-weight: 600;\n    margin-bottom: 8px;\n    color: white;\n}\n", ""]);
+exports.push([module.i, "\n.index[data-v-2e17d91c] {\r\n    width: 100vw;\r\n    height: 100vh;\r\n    background: url(" + escape(__webpack_require__(110)) + ")\n}\n.logo[data-v-2e17d91c] {\r\n    width: 110px\n}\n.vContainer[data-v-2e17d91c] {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    max-width: 380px;\r\n    text-align: center;\n}\n.title[data-v-2e17d91c] {\r\n    display: block;\r\n    font-weight: 600;\r\n    margin-bottom: 8px;\r\n    color: white;\n}\r\n", ""]);
 
 // exports
 
@@ -53163,7 +53163,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.v-divider[data-v-6c4a3438]{\n  margin: 0 !important;\n}\n.main-container[data-v-6c4a3438] {\n  margin: 0;\n  padding: 0;\n}\n.navbar[data-v-6c4a3438]{\n  background-color: white;\n  padding: 0;\n  height: 77px !important;\n}\n.v-toolbar[data-v-6c4a3438]{\n  box-shadow: none;\n  padding-top: 10px;\n  padding-bottom: 10px;\n  height: 77px;\n}\n.title[data-v-6c4a3438]{\n  font-weight: 600;\n}\n.sidebar[data-v-6c4a3438]{\n  height: 100vh;\n}\n.main[data-v-6c4a3438]{\n  padding: 0;\n}\n.side-title[data-v-6c4a3438] {\n  text-align: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.side-title h1[data-v-6c4a3438]{\n  font-weight: 800;\n  font-size: 16px !important;\n  display: inline-flex;\n  color: rgb(20, 48, 107);\n}\n.side-title h2[data-v-6c4a3438]{\n  font-weight: 800;\n  font-size: 16px !important;\n  display: inline-flex;\n  color:   steelblue;\n}\n.side-menu[data-v-6c4a3438] {\n  margin-top: 10px;\n}\n.side-menu span[data-v-6c4a3438]{\n  font-weight: 500;\n}\n.icon[data-v-6c4a3438] {\n  margin-left: 12px;\n  margin-right: 20px;\n  width: 14px !important;\n}\n.name[data-v-6c4a3438]{\n  font-weight: 600;\n  font-size: 18px;\n  right: 0;\n}\n.email[data-v-6c4a3438]{\n  font-weight: 400;\n  font-size: 12px;\n}\n.button[data-v-6c4a3438]{\n  width: 57px !important;\n  height: 57px !important;\n  margin: 0;\n  padding: 0;\n}\n.divider[data-v-6c4a3438]{\n  margin-left: 15px !important;\n  margin-right: 24px !important;\n  max-height: 57px !important;\n  min-height: 57px !important;\n}\n", ""]);
+exports.push([module.i, "\n.v-divider[data-v-6c4a3438]{\r\n  margin: 0 !important;\n}\n.main-container[data-v-6c4a3438] {\r\n  margin: 0;\r\n  padding: 0;\n}\n.navbar[data-v-6c4a3438]{\r\n  background-color: white;\r\n  padding: 0;\r\n  height: 77px !important;\n}\n.v-toolbar[data-v-6c4a3438]{\r\n  box-shadow: none;\r\n  padding-top: 10px;\r\n  padding-bottom: 10px;\r\n  height: 77px;\n}\n.title[data-v-6c4a3438]{\r\n  font-weight: 600;\n}\n.sidebar[data-v-6c4a3438]{\r\n  height: 100vh;\n}\n.main[data-v-6c4a3438]{\r\n  padding: 0;\n}\n.side-title[data-v-6c4a3438] {\r\n  text-align: center;\r\n  padding-top: 10px;\r\n  padding-bottom: 10px;\n}\n.side-title h1[data-v-6c4a3438]{\r\n  font-weight: 800;\r\n  font-size: 16px !important;\r\n  display: inline-flex;\r\n  color: rgb(20, 48, 107);\n}\n.side-title h2[data-v-6c4a3438]{\r\n  font-weight: 800;\r\n  font-size: 16px !important;\r\n  display: inline-flex;\r\n  color:   steelblue;\n}\n.side-menu[data-v-6c4a3438] {\r\n  margin-top: 10px;\n}\n.side-menu span[data-v-6c4a3438]{\r\n  font-weight: 500;\n}\n.icon[data-v-6c4a3438] {\r\n  margin-left: 12px;\r\n  margin-right: 20px;\r\n  width: 14px !important;\n}\n.name[data-v-6c4a3438]{\r\n  font-weight: 600;\r\n  font-size: 18px;\r\n  right: 0;\n}\n.email[data-v-6c4a3438]{\r\n  font-weight: 400;\r\n  font-size: 12px;\n}\n.button[data-v-6c4a3438]{\r\n  width: 57px !important;\r\n  height: 57px !important;\r\n  margin: 0;\r\n  padding: 0;\n}\n.divider[data-v-6c4a3438]{\r\n  margin-left: 15px !important;\r\n  margin-right: 24px !important;\r\n  max-height: 57px !important;\r\n  min-height: 57px !important;\n}\r\n", ""]);
 
 // exports
 
@@ -54540,7 +54540,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-f297c6ec] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.notification[data-v-f297c6ec]{\n    margin-bottom: 8px;\n    background-color: rgba(255, 0, 0, 0.3);\n    color: whitesmoke;\n}\n.el-input[data-v-f297c6ec] {\n    padding: 4px;\n}\n.singin[data-v-f297c6ec] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.resetpassword[data-v-f297c6ec] {\n    float: right;\n    padding: 4px;\n}\n.forgotPassword[data-v-f297c6ec] {\n    font-size: 13px;\n}\n.needAccount[data-v-f297c6ec] {\n    margin-right: 15px;\n    font-size: 15px\n}\n.formBottom[data-v-f297c6ec] {\n    margin-top: 40px;\n    float: right;\n    padding: 4px;\n}\n.loginButton[data-v-f297c6ec] {\n    width: 110px;\n    color: white;\n    background-color: transparent;\n}\n.rememberMe[data-v-f297c6ec] {\n    font-weight: 400;\n    color: white;\n}\n.div-rememberMe[data-v-f297c6ec] {\n    padding: 4px;\n    float: left;\n    margin: 0;\n}\n", ""]);
+exports.push([module.i, "\na[data-v-f297c6ec] {\r\n    text-decoration: none;\r\n    color: white;\r\n    opacity: 0.8;\n}\n.notification[data-v-f297c6ec]{\r\n    margin-bottom: 8px;\r\n    background-color: rgba(255, 0, 0, 0.3);\r\n    color: whitesmoke;\n}\n.el-input[data-v-f297c6ec] {\r\n    padding: 4px;\n}\n.singin[data-v-f297c6ec] {\r\n    color: #428ccb;\r\n    margin-bottom: 20px;\n}\n.resetpassword[data-v-f297c6ec] {\r\n    float: right;\r\n    padding: 4px;\n}\n.forgotPassword[data-v-f297c6ec] {\r\n    font-size: 13px;\n}\n.needAccount[data-v-f297c6ec] {\r\n    margin-right: 15px;\r\n    font-size: 15px\n}\n.formBottom[data-v-f297c6ec] {\r\n    margin-top: 40px;\r\n    float: right;\r\n    padding: 4px;\n}\n.loginButton[data-v-f297c6ec] {\r\n    width: 110px;\r\n    color: white;\r\n    background-color: transparent;\n}\n.rememberMe[data-v-f297c6ec] {\r\n    font-weight: 400;\r\n    color: white;\n}\n.div-rememberMe[data-v-f297c6ec] {\r\n    padding: 4px;\r\n    float: left;\r\n    margin: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -54591,7 +54591,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             },
             success: false,
             error: false,
-            errorMsg: null
+            errorMsg: null,
+            isLoading: false
         };
     },
 
@@ -54601,8 +54602,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.success = false;
             this.errorMsg = null;
 
+            this.isLoading = true;
+
             Vue.auth.login(this, this.LoginDetails);
         }
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        this.$root.$on('login:success', function () {
+            _this.isLoading = false;
+        });
+
+        this.$root.$on('login:error', function () {
+            _this.isLoading = false;
+        });
     }
 });
 
@@ -54634,11 +54648,19 @@ var render = function() {
       _vm._v(" "),
       _c(
         "el-form",
-        { staticClass: "form" },
+        {
+          staticClass: "form",
+          nativeOn: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.login($event)
+            }
+          }
+        },
         [
           _c("el-input", {
             staticClass: "el-input",
-            attrs: { placeholder: "Username" },
+            attrs: { placeholder: "Username", disabled: _vm.isLoading },
             model: {
               value: _vm.LoginDetails.username,
               callback: function($$v) {
@@ -54650,7 +54672,11 @@ var render = function() {
           _vm._v(" "),
           _c("el-input", {
             staticClass: "el-input",
-            attrs: { placeholder: "Password", type: "password" },
+            attrs: {
+              placeholder: "Password",
+              type: "password",
+              disabled: _vm.isLoading
+            },
             model: {
               value: _vm.LoginDetails.password,
               callback: function($$v) {
@@ -54710,12 +54736,11 @@ var render = function() {
                 "el-button",
                 {
                   staticClass: "loginButton",
-                  attrs: { plain: "", color: "#00afec", type: "submit" },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      return _vm.login($event)
-                    }
+                  attrs: {
+                    plain: "",
+                    color: "#00afec",
+                    "native-type": "submit",
+                    loading: _vm.isLoading
                   }
                 },
                 [_vm._v("Sign In")]
@@ -54826,7 +54851,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-58163812] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.notification[data-v-58163812] {\n    margin-bottom: 8px;\n    color: whitesmoke;\n}\n#error[data-v-58163812] {\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-58163812] {\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-58163812] {\n    padding: 4px;\n}\n.signup[data-v-58163812] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.alreadyMember[data-v-58163812] {\n    margin-right: 15px;\n    font-size: 15px\n}\n.formBottom[data-v-58163812] {\n    margin-top: 40px;\n    float: right;\n}\n.registerButton[data-v-58163812] {\n    width: 130px;\n    color: white;\n    background-color: transparent;\n}\n", ""]);
+exports.push([module.i, "\na[data-v-58163812] {\r\n    text-decoration: none;\r\n    color: white;\r\n    opacity: 0.8;\n}\n.notification[data-v-58163812] {\r\n    margin-bottom: 8px;\r\n    color: whitesmoke;\n}\n#error[data-v-58163812] {\r\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-58163812] {\r\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-58163812] {\r\n    padding: 4px;\n}\n.signup[data-v-58163812] {\r\n    color: #428ccb;\r\n    margin-bottom: 20px;\n}\n.alreadyMember[data-v-58163812] {\r\n    margin-right: 15px;\r\n    font-size: 15px\n}\n.formBottom[data-v-58163812] {\r\n    margin-top: 40px;\r\n    float: right;\n}\n.registerButton[data-v-58163812] {\r\n    width: 130px;\r\n    color: white;\r\n    background-color: transparent;\n}\r\n", ""]);
 
 // exports
 
@@ -54876,7 +54901,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             error: false,
             success: false,
             errorMsg: null,
-            successMsg: null
+            successMsg: null,
+            isLoading: false
         };
     },
 
@@ -54886,8 +54912,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.success = false;
             this.errorMsg = null;
 
+            this.isLoading = true;
+
             Vue.auth.register(this, this.RegisterDetails);
         }
+    },
+
+    mounted: function mounted() {
+        var _this = this;
+
+        this.$root.$on('register:success', function () {
+            _this.isLoading = false;
+        });
+
+        this.$root.$on('register:error', function () {
+            _this.isLoading = false;
+        });
     }
 });
 
@@ -54934,11 +54974,19 @@ var render = function() {
       _vm._v(" "),
       _c(
         "el-form",
-        { staticClass: "form" },
+        {
+          staticClass: "form",
+          nativeOn: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.register($event)
+            }
+          }
+        },
         [
           _c("el-input", {
             staticClass: "el-input",
-            attrs: { placeholder: "Full Name" },
+            attrs: { placeholder: "Full Name", disabled: _vm.isLoading },
             model: {
               value: _vm.RegisterDetails.fullname,
               callback: function($$v) {
@@ -54950,7 +54998,7 @@ var render = function() {
           _vm._v(" "),
           _c("el-input", {
             staticClass: "el-input",
-            attrs: { placeholder: "Username" },
+            attrs: { placeholder: "Username", disabled: _vm.isLoading },
             model: {
               value: _vm.RegisterDetails.username,
               callback: function($$v) {
@@ -54962,7 +55010,7 @@ var render = function() {
           _vm._v(" "),
           _c("el-input", {
             staticClass: "el-input",
-            attrs: { placeholder: "Email" },
+            attrs: { placeholder: "Email", disabled: _vm.isLoading },
             model: {
               value: _vm.RegisterDetails.email,
               callback: function($$v) {
@@ -54974,7 +55022,11 @@ var render = function() {
           _vm._v(" "),
           _c("el-input", {
             staticClass: "el-input",
-            attrs: { placeholder: "Password", type: "password" },
+            attrs: {
+              placeholder: "Password",
+              type: "password",
+              disabled: _vm.isLoading
+            },
             model: {
               value: _vm.RegisterDetails.password,
               callback: function($$v) {
@@ -54986,7 +55038,11 @@ var render = function() {
           _vm._v(" "),
           _c("el-input", {
             staticClass: "el-input",
-            attrs: { placeholder: "Confirm Password", type: "password" },
+            attrs: {
+              placeholder: "Confirm Password",
+              type: "password",
+              disabled: _vm.isLoading
+            },
             model: {
               value: _vm.RegisterDetails.confirm_password,
               callback: function($$v) {
@@ -55010,12 +55066,11 @@ var render = function() {
                 "el-button",
                 {
                   staticClass: "registerButton",
-                  attrs: { plain: "", color: "#00afec", type: "submit" },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      return _vm.register($event)
-                    }
+                  attrs: {
+                    plain: "",
+                    color: "#00afec",
+                    "native-type": "submit",
+                    loading: _vm.isLoading
                   }
                 },
                 [_vm._v("Sign Up")]
@@ -55126,7 +55181,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-5988d8ab] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.notification[data-v-5988d8ab] {\n    margin-bottom: 8px;\n    color: whitesmoke;\n}\n#error[data-v-5988d8ab] {\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-5988d8ab] {\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-5988d8ab]{\n    padding: 4px;\n}\n.resetpassword[data-v-5988d8ab] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.formBottom[data-v-5988d8ab] {\n    margin-top: 10px;\n    padding: 4px;\n}\n.sendButton[data-v-5988d8ab] {\n    width: 100%;\n    color: white;\n    background-color: transparent;\n    margin-bottom: 10px;\n}\n", ""]);
+exports.push([module.i, "\na[data-v-5988d8ab] {\r\n    text-decoration: none;\r\n    color: white;\r\n    opacity: 0.8;\n}\n.notification[data-v-5988d8ab] {\r\n    margin-bottom: 8px;\r\n    color: whitesmoke;\n}\n#error[data-v-5988d8ab] {\r\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-5988d8ab] {\r\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-5988d8ab]{\r\n    padding: 4px;\n}\n.resetpassword[data-v-5988d8ab] {\r\n    color: #428ccb;\r\n    margin-bottom: 20px;\n}\n.formBottom[data-v-5988d8ab] {\r\n    margin-top: 10px;\r\n    padding: 4px;\n}\n.sendButton[data-v-5988d8ab] {\r\n    width: 100%;\r\n    color: white;\r\n    background-color: transparent;\r\n    margin-bottom: 10px;\n}\r\n", ""]);
 
 // exports
 
@@ -55169,7 +55224,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             success: false,
             error: false,
             errorMsg: null,
-            successMsg: null
+            successMsg: null,
+            isLoading: false
         };
     },
 
@@ -55180,8 +55236,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.errorMsg = null;
             this.successMsg = null;
 
+            this.isLoading = true;
+
             Vue.reset.create(this, this.ResetPassDetails);
         }
+    },
+
+    mounted: function mounted() {
+        var _this = this;
+
+        this.$root.$on('reset:success', function () {
+            _this.isLoading = false;
+        });
+
+        this.$root.$on('reset:error', function () {
+            _this.isLoading = false;
+        });
     }
 });
 
@@ -55228,11 +55298,19 @@ var render = function() {
       _vm._v(" "),
       _c(
         "el-form",
-        { staticClass: "form" },
+        {
+          staticClass: "form",
+          nativeOn: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.sendEmail($event)
+            }
+          }
+        },
         [
           _c("el-input", {
             staticClass: "el-input",
-            attrs: { placeholder: "Email" },
+            attrs: { placeholder: "Email", disabled: _vm.isLoading },
             model: {
               value: _vm.ResetPassDetails.email,
               callback: function($$v) {
@@ -55250,12 +55328,11 @@ var render = function() {
                 "el-button",
                 {
                   staticClass: "sendButton",
-                  attrs: { plain: "", color: "#00afec", type: "submit" },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      return _vm.sendEmail($event)
-                    }
+                  attrs: {
+                    plain: "",
+                    color: "#00afec",
+                    "native-type": "submit",
+                    loading: _vm.isLoading
                   }
                 },
                 [_vm._v("Send Email")]
@@ -55372,7 +55449,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-19158a9a] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.notification[data-v-19158a9a] {\n    margin-bottom: 8px;\n    color: whitesmoke;\n}\n#error[data-v-19158a9a] {\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-19158a9a] {\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-19158a9a] {\n    padding: 4px;\n}\n.changepassword[data-v-19158a9a] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.formBottom[data-v-19158a9a] {\n    margin-top: 20px;\n    padding: 4px;\n}\n.changePassButton[data-v-19158a9a] {\n    width: 100%;\n    color: white;\n    background-color: transparent;\n}\n.backToLogin[data-v-19158a9a] {\n    width: 100%;\n    color: white;\n    background-color: transparent;\n    margin-bottom: 10px;\n}\n", ""]);
+exports.push([module.i, "\na[data-v-19158a9a] {\r\n    text-decoration: none;\r\n    color: white;\r\n    opacity: 0.8;\n}\n.notification[data-v-19158a9a] {\r\n    margin-bottom: 8px;\r\n    color: whitesmoke;\n}\n#error[data-v-19158a9a] {\r\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-19158a9a] {\r\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-19158a9a] {\r\n    padding: 4px;\n}\n.changepassword[data-v-19158a9a] {\r\n    color: #428ccb;\r\n    margin-bottom: 20px;\n}\n.formBottom[data-v-19158a9a] {\r\n    margin-top: 20px;\r\n    padding: 4px;\n}\n.changePassButton[data-v-19158a9a] {\r\n    width: 100%;\r\n    color: white;\r\n    background-color: transparent;\n}\n.backToLogin[data-v-19158a9a] {\r\n    width: 100%;\r\n    color: white;\r\n    background-color: transparent;\r\n    margin-bottom: 10px;\n}\r\n", ""]);
 
 // exports
 
@@ -55425,7 +55502,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             error: false,
             errorMsg: null,
             successMsg: null,
-            showForm: true
+            showForm: true,
+            isLoading: false
         };
     },
 
@@ -55436,6 +55514,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.error = false;
             this.errorMsg = null;
             this.successMsg = null;
+
+            this.isLoading = true;
 
             Vue.reset.reset(this, this.ChangePassDetails);
         }
@@ -55449,6 +55529,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         userEmail: function userEmail() {
             return __WEBPACK_IMPORTED_MODULE_0__store_store__["a" /* default */].state.userEmail;
         }
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        this.$root.$on('change:success', function () {
+            _this.isLoading = false;
+        });
+
+        this.$root.$on('change:error', function () {
+            _this.isLoading = false;
+        });
     }
 });
 
@@ -55496,11 +55587,23 @@ var render = function() {
       _vm.showForm
         ? _c(
             "el-form",
-            { staticClass: "form" },
+            {
+              staticClass: "form",
+              nativeOn: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.changePassword($event)
+                }
+              }
+            },
             [
               _c("el-input", {
                 staticClass: "el-input",
-                attrs: { placeholder: "New Password", type: "password" },
+                attrs: {
+                  placeholder: "New Password",
+                  type: "password",
+                  disabled: _vm.isLoading
+                },
                 model: {
                   value: _vm.ChangePassDetails.password,
                   callback: function($$v) {
@@ -55512,7 +55615,11 @@ var render = function() {
               _vm._v(" "),
               _c("el-input", {
                 staticClass: "el-input",
-                attrs: { placeholder: "Confirm Password", type: "password" },
+                attrs: {
+                  placeholder: "Confirm Password",
+                  type: "password",
+                  disabled: _vm.isLoading
+                },
                 model: {
                   value: _vm.ChangePassDetails.confirm_password,
                   callback: function($$v) {
@@ -55530,12 +55637,11 @@ var render = function() {
                     "el-button",
                     {
                       staticClass: "changePassButton",
-                      attrs: { plain: "", color: "#00afec", type: "submit" },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.changePassword($event)
-                        }
+                      attrs: {
+                        plain: "",
+                        color: "#00afec",
+                        "native-type": "submit",
+                        loading: _vm.isLoading
                       }
                     },
                     [_vm._v("Change Password")]
@@ -55598,11 +55704,273 @@ if (false) {
 }
 
 /***/ }),
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
+/* 140 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(141)
+}
+var normalizeComponent = __webpack_require__(6)
+/* script */
+var __vue_script__ = __webpack_require__(143)
+/* template */
+var __vue_template__ = __webpack_require__(144)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-60d5fe2b"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/Main/Partials/Index/ConfirmEmail.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-60d5fe2b", Component.options)
+  } else {
+    hotAPI.reload("data-v-60d5fe2b", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 141 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(142);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("b34ba164", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-60d5fe2b\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ConfirmEmail.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-60d5fe2b\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ConfirmEmail.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 142 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.notification[data-v-60d5fe2b] {\r\n    margin-bottom: 15px;\r\n    color: whitesmoke;\n}\n#error[data-v-60d5fe2b] {\r\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-60d5fe2b] {\r\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.successconfirm[data-v-60d5fe2b] {\r\n    color: #428ccb;\r\n    margin-bottom: 20px;\n}\n.confirmEmail[data-v-60d5fe2b] {\r\n    width: 100%;\r\n    color: white;\r\n    background-color: transparent;\r\n    margin-bottom: 10px;\n}\n.backToLogin[data-v-60d5fe2b]{\r\n    width: 100%;\r\n    color: white;\r\n    background-color: transparent;\r\n    margin-bottom: 10px;\n}\n.card[data-v-60d5fe2b]{\r\n    height: 40px;\r\n    padding: 6px;\r\n    margin-bottom: 20px;\n}\n.email[data-v-60d5fe2b]{\r\n    font-size: 16px;\r\n    font-weight: 400;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 143 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store__ = __webpack_require__(7);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            success: false,
+            error: false,
+            errorMsg: null,
+            successMsg: null,
+            hide: false
+        };
+    },
+
+    methods: {
+        confirm: function confirm() {
+            Vue.auth.confirm(this, this.$route.params.activation_token);
+        }
+    },
+    created: function created() {
+        Vue.auth.check(this, this.$route.params.activation_token);
+        Vue.auth.setConfirmationEmail(this.$route.params.activation_token);
+    },
+
+    computed: {
+        userEmail: function userEmail() {
+            return __WEBPACK_IMPORTED_MODULE_0__store_store__["a" /* default */].state.userEmail;
+        }
+    }
+});
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "cont" },
+    [
+      _c("p", { staticClass: "successconfirm" }, [
+        _vm._v("EMAIL CONFIRMATION")
+      ]),
+      _vm._v(" "),
+      _vm.error
+        ? _c(
+            "el-alert",
+            {
+              staticClass: "notification",
+              attrs: { id: "error", type: "error", closable: false, center: "" }
+            },
+            [_vm._v(_vm._s(_vm.errorMsg))]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.success
+        ? _c(
+            "el-alert",
+            {
+              staticClass: "notification",
+              attrs: {
+                id: "success",
+                type: "success",
+                closable: false,
+                center: ""
+              }
+            },
+            [_vm._v(_vm._s(_vm.successMsg))]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      !_vm.hide
+        ? _c(
+            "el-card",
+            {
+              staticClass: "card",
+              attrs: { shadow: "never", "body-style": "padding: 0" }
+            },
+            [
+              _c("p", { staticClass: "email" }, [
+                _vm._v(_vm._s(this.userEmail[0]))
+              ])
+            ]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      !_vm.hide
+        ? _c(
+            "el-button",
+            {
+              staticClass: "confirmEmail",
+              attrs: { plain: "", color: "#00afec", type: "submit" },
+              on: { click: _vm.confirm }
+            },
+            [_vm._v("Confirm Email")]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.success
+        ? _c(
+            "router-link",
+            { attrs: { to: "/login" } },
+            [
+              _c(
+                "el-button",
+                {
+                  staticClass: "backToLogin",
+                  attrs: { plain: "", color: "#00afec", type: "submit" }
+                },
+                [_vm._v("Back to Login")]
+              )
+            ],
+            1
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.error
+        ? _c(
+            "router-link",
+            { attrs: { to: "/login" } },
+            [
+              _c(
+                "el-button",
+                {
+                  staticClass: "backToLogin",
+                  attrs: { plain: "", color: "#00afec", type: "submit" }
+                },
+                [_vm._v("Back to Login")]
+              )
+            ],
+            1
+          )
+        : _vm._e()
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-60d5fe2b", module.exports)
+  }
+}
+
+/***/ }),
 /* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -88821,9 +89189,6 @@ exports.default = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__router_router__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_store__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_element_ui__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_element_ui___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_element_ui__);
-
 
 
 
@@ -88833,12 +89198,16 @@ exports.default = {
             var _this = this;
 
             axios.post('api/auth/register', data).then(function (response) {
+                context.$root.$emit('register:success');
+
                 context.successMsg = "Successfully Created!";
                 context.success = true;
 
                 console.log(response);
                 _this.clearInput(data);
             }).catch(function (error) {
+                context.$root.$emit('register:error');
+
                 context.success = false;
                 _this.handleError('REGISTER', context, error);
             });
@@ -88847,9 +89216,13 @@ exports.default = {
             var _this2 = this;
 
             axios.post('api/auth/login', data).then(function (response) {
+                context.$root.$emit('login:success');
+
                 _this2.setToken(response.data.access_token, response.data.expires_at);
                 __WEBPACK_IMPORTED_MODULE_0__router_router__["a" /* default */].push({ path: 'overview' });
             }).catch(function (error) {
+                context.$root.$emit('login:error');
+
                 _this2.handleError('LOGIN', context, error);
             });
         },
@@ -89013,9 +89386,12 @@ exports.default = {
             var _this = this;
 
             axios.post('/api/password/create', data).then(function (response) {
+                context.$root.$emit('reset:success');
+
                 _this.handleSuccess(context, response);
                 _this.clearInput(data);
             }).catch(function (error) {
+                context.$root.$emit('reset:error');
                 _this.handleError('CREATE', context, error);
             });
         },
@@ -89024,12 +89400,14 @@ exports.default = {
             var _this2 = this;
 
             axios.post('/api/password/reset', data).then(function (response) {
+                context.$root.$emit('change:success');
                 context.success = true;
                 context.successMsg = response.data.message;
                 context.showForm = false;
 
                 _this2.handleSuccess(context, response);
             }).catch(function (error) {
+                context.$root.$emit('change:error');
                 _this2.handleError('RESET', context, error);
             });
         },
@@ -89205,273 +89583,6 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-0d82aed4", module.exports)
-  }
-}
-
-/***/ }),
-/* 263 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(264)
-}
-var normalizeComponent = __webpack_require__(6)
-/* script */
-var __vue_script__ = __webpack_require__(266)
-/* template */
-var __vue_template__ = __webpack_require__(267)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-60d5fe2b"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/Main/Partials/Index/ConfirmEmail.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-60d5fe2b", Component.options)
-  } else {
-    hotAPI.reload("data-v-60d5fe2b", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 264 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(265);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(5)("b34ba164", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-60d5fe2b\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ConfirmEmail.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-60d5fe2b\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ConfirmEmail.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 265 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.notification[data-v-60d5fe2b] {\n    margin-bottom: 15px;\n    color: whitesmoke;\n}\n#error[data-v-60d5fe2b] {\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-60d5fe2b] {\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.successconfirm[data-v-60d5fe2b] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.confirmEmail[data-v-60d5fe2b] {\n    width: 100%;\n    color: white;\n    background-color: transparent;\n    margin-bottom: 10px;\n}\n.backToLogin[data-v-60d5fe2b]{\n    width: 100%;\n    color: white;\n    background-color: transparent;\n    margin-bottom: 10px;\n}\n.card[data-v-60d5fe2b]{\n    height: 40px;\n    padding: 6px;\n    margin-bottom: 20px;\n}\n.email[data-v-60d5fe2b]{\n    font-size: 16px;\n    font-weight: 400;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 266 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store__ = __webpack_require__(7);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            success: false,
-            error: false,
-            errorMsg: null,
-            successMsg: null,
-            hide: false
-        };
-    },
-
-    methods: {
-        confirm: function confirm() {
-            Vue.auth.confirm(this, this.$route.params.activation_token);
-        }
-    },
-    created: function created() {
-        Vue.auth.check(this, this.$route.params.activation_token);
-        Vue.auth.setConfirmationEmail(this.$route.params.activation_token);
-    },
-
-    computed: {
-        userEmail: function userEmail() {
-            return __WEBPACK_IMPORTED_MODULE_0__store_store__["a" /* default */].state.userEmail;
-        }
-    }
-});
-
-/***/ }),
-/* 267 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "cont" },
-    [
-      _c("p", { staticClass: "successconfirm" }, [
-        _vm._v("EMAIL CONFIRMATION")
-      ]),
-      _vm._v(" "),
-      _vm.error
-        ? _c(
-            "el-alert",
-            {
-              staticClass: "notification",
-              attrs: { id: "error", type: "error", closable: false, center: "" }
-            },
-            [_vm._v(_vm._s(_vm.errorMsg))]
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.success
-        ? _c(
-            "el-alert",
-            {
-              staticClass: "notification",
-              attrs: {
-                id: "success",
-                type: "success",
-                closable: false,
-                center: ""
-              }
-            },
-            [_vm._v(_vm._s(_vm.successMsg))]
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      !_vm.hide
-        ? _c(
-            "el-card",
-            {
-              staticClass: "card",
-              attrs: { shadow: "never", "body-style": "padding: 0" }
-            },
-            [
-              _c("p", { staticClass: "email" }, [
-                _vm._v(_vm._s(this.userEmail[0]))
-              ])
-            ]
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      !_vm.hide
-        ? _c(
-            "el-button",
-            {
-              staticClass: "confirmEmail",
-              attrs: { plain: "", color: "#00afec", type: "submit" },
-              on: { click: _vm.confirm }
-            },
-            [_vm._v("Confirm Email")]
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.success
-        ? _c(
-            "router-link",
-            { attrs: { to: "/login" } },
-            [
-              _c(
-                "el-button",
-                {
-                  staticClass: "backToLogin",
-                  attrs: { plain: "", color: "#00afec", type: "submit" }
-                },
-                [_vm._v("Back to Login")]
-              )
-            ],
-            1
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.error
-        ? _c(
-            "router-link",
-            { attrs: { to: "/login" } },
-            [
-              _c(
-                "el-button",
-                {
-                  staticClass: "backToLogin",
-                  attrs: { plain: "", color: "#00afec", type: "submit" }
-                },
-                [_vm._v("Back to Login")]
-              )
-            ],
-            1
-          )
-        : _vm._e()
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-60d5fe2b", module.exports)
   }
 }
 
