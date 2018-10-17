@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div v-loading.fullscreen.lock="logout">
+    <vue-progress-bar></vue-progress-bar>
     <el-container class="main-container">
       <!-- SIDEBAR -->
       <el-aside >
@@ -94,7 +95,8 @@ export default {
           title: 'Logout',
           command: 'logout'
         }
-      ]
+      ],
+      logout: false
     }
   },
   methods:{
@@ -113,7 +115,8 @@ export default {
       if(command == 'account'){
         router.push({path: 'account'})
       }else{
-        Vue.auth.logout();
+        this.logout = true;
+        Vue.auth.logout(this.logout);
       }
     },
   },

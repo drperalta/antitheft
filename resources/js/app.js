@@ -12,7 +12,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'element-ui/lib/theme-chalk/reset.css'
 import lang from 'element-ui/lib/locale/lang/en'
 import locale from 'element-ui/lib/locale'
-
+import VueProgressBar from 'vue-progressbar'
 
 import Auth from '../js/api/auth'
 import Reset from '../js/api/reset'
@@ -20,7 +20,7 @@ import Reset from '../js/api/reset'
 Vue.use(Vuetify)
 Vue.use(ElementUI)
 locale.use(lang)
-
+Vue.use(VueProgressBar)
 Vue.use(Auth);
 Vue.use(Reset);
 
@@ -28,6 +28,8 @@ window.axios=axios
 
 router.beforeEach(
     (to,from,next) => {
+        router.app.$Progress.start()
+
         if(to.matched.some(record => record.meta.forVisitors)){
             if(Vue.auth.isAuthenticated()){
                 next({
@@ -48,6 +50,10 @@ router.beforeEach(
         else next()
     }
 )
+
+router.afterEach(() => {
+    router.app.$Progress.finish()
+})
 
 let App = require('./components/Main/App.vue')
 
