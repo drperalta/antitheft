@@ -89237,27 +89237,47 @@ exports.default = {
                 _this.handleError('REGISTER', context, error);
             });
         },
-        login: function login(context, data) {
+        check: function check(context, token) {
             var _this2 = this;
+
+            axios.get('/api/auth/signup/check/' + token).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                _this2.handleError('CHECK', context, error);
+            });
+        },
+        confirm: function confirm(context, token) {
+            axios.get('/api/auth/signup/confirm/' + token).then(function (response) {
+                context.success = true;
+                context.hide = true;
+                context.successMsg = response.data.message;
+
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        },
+        login: function login(context, data) {
+            var _this3 = this;
 
             axios.post('api/auth/login', data).then(function (response) {
                 context.$root.$emit('login:success');
 
-                _this2.setToken(response.data.access_token, response.data.expires_at);
+                _this3.setToken(response.data.access_token, response.data.expires_at);
                 __WEBPACK_IMPORTED_MODULE_0__router_router__["a" /* default */].push({ path: 'overview' });
             }).catch(function (error) {
                 context.$root.$emit('login:error');
 
-                _this2.handleError('LOGIN', context, error);
+                _this3.handleError('LOGIN', context, error);
             });
         },
         logout: function logout() {
-            var _this3 = this;
+            var _this4 = this;
 
             axios.get('api/auth/logout', {
                 headers: { 'Authorization': 'Bearer ' + this.getToken() }
             }).then(function (response) {
-                _this3.destroyToken();
+                _this4.destroyToken();
                 __WEBPACK_IMPORTED_MODULE_0__router_router__["a" /* default */].push({ path: 'login' });
             });
         },
@@ -89270,17 +89290,6 @@ exports.default = {
                 });
             }
             return Vue.auth;
-        },
-        confirm: function confirm(context, token) {
-            axios.get('/api/auth/signup/confirm/' + token).then(function (response) {
-                context.success = true;
-                context.hide = true;
-                context.successMsg = response.data.message;
-
-                console.log(response);
-            }).catch(function (error) {
-                console.log(error);
-            });
         },
 
 
@@ -89373,15 +89382,6 @@ exports.default = {
         setConfirmationEmail: function setConfirmationEmail(token) {
             axios.get('/api/auth/setEmail/' + token).then(function (response) {
                 __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].commit('SET_EMAIL', response.data['email']);
-            });
-        },
-        check: function check(context, token) {
-            var _this4 = this;
-
-            axios.get('/api/auth/signup/check/' + token).then(function (response) {
-                console.log(response);
-            }).catch(function (error) {
-                _this4.handleError('CHECK', context, error);
             });
         }
     };

@@ -30,7 +30,7 @@ class ConfirmEmail extends Mailable
      */
     public function build()
     {
-        $url = url('/api/auth/signup/check/'.$this->data->activation_token);
+        $url = url('/api/auth/signup/open/'.$this->data->activation_token);
 
         $address = 'antitheftkit@gmail.com';
         $subject = 'Confirm your account';

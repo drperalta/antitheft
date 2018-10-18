@@ -22,7 +22,26 @@ export default function(Vue){
             })
 
         },
+        check(context, token){
+            axios.get('/api/auth/signup/check/'+token)
+            .then(response => {
+                console.log(response)
+            }).catch(error => {
+                this.handleError('CHECK', context, error)
+            })
+        },
+        confirm(context, token){
+            axios.get('/api/auth/signup/confirm/'+token)
+            .then(response => {
+                context.success = true
+                context.hide = true
+                context.successMsg = response.data.message
 
+                console.log(response)
+            }).catch(error => {
+                console.log(error)
+            })
+        },
         login(context,data){
 
             axios.post('api/auth/login', data)
@@ -58,19 +77,7 @@ export default function(Vue){
             }
             return Vue.auth
         },
-        confirm(context, token){
-            axios.get('/api/auth/signup/confirm/'+token)
-            .then(response => {
-                context.success = true
-                context.hide = true
-                context.successMsg = response.data.message
-
-                console.log(response)
-            }).catch(error => {
-                console.log(error)
-            })
-        },
-
+    
         // addKit(context,data){
         //     axios.post(
         //         'api/kit',data).then(response =>{
@@ -174,15 +181,6 @@ export default function(Vue){
                 store.commit('SET_EMAIL', response.data['email'])
             })
         },
-        check(context, token){
-            axios.get('/api/auth/signup/check/'+token)
-            .then(response => {
-                console.log(response)
-            }).catch(error => {
-                this.handleError('CHECK', context, error)
-            })
-        }
-
     }
 
     Object.defineProperties(Vue.prototype, {
