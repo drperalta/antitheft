@@ -16,18 +16,22 @@
 
         <!-- SIDEBAR MENU -->
         <div class="side-menu">
+            <!-- OVERVIEW -->
           <el-menu-item index="1" @click="overview">
             <v-icon class="icon">fa-th-large</v-icon>
             <span>Overview</span>
           </el-menu-item>
+          <!-- KITS -->
           <el-menu-item index="2" @click="kits">
             <v-icon class="icon">fa-hdd</v-icon>
             <span>Kits</span>
           </el-menu-item>
+          <!-- PICTURES -->
           <el-menu-item index="3" @click="pictures">
             <v-icon class="icon">fa-image</v-icon>
             <span>Pictures</span>
           </el-menu-item>
+          <!-- LOGS -->
           <el-menu-item index="4" @click="logs">
             <v-icon class="icon">fa-align-left</v-icon>
             <span>Logs</span>
@@ -42,13 +46,22 @@
         <!-- NAVBAR -->
         <el-header class="navbar">
           <v-toolbar class="v-toolbar" flat>
+
+            <!-- PAGE TITLE -->
             <v-toolbar-title class="title">{{$root.pageTitle}}</v-toolbar-title>
             <v-spacer></v-spacer>
+
+            <!-- BADGES -->
+
+
+            <!-- NAME AND EMAIL -->
             <div>
               <h1 class="name">{{userData.fullname}}</h1>
               <p class="email">{{userData.email}}</p>
             </div>
             <v-divider class="divider" vertical></v-divider>
+
+            <!-- OPTIONS -->
             <el-dropdown trigger="click" @command="handleCommand">
               <span>
                 <v-icon>fa-cog</v-icon>
@@ -212,4 +225,5 @@ export default {
   max-height: 57px !important;
   min-height: 57px !important;
 }
+
 </style>
