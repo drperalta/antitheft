@@ -22925,7 +22925,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-5988d8ab] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.notification[data-v-5988d8ab] {\n    margin-bottom: 8px;\n    color: whitesmoke;\n}\n#error[data-v-5988d8ab] {\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-5988d8ab] {\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-5988d8ab]{\n    padding: 4px;\n}\n.resetpassword[data-v-5988d8ab] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.formBottom[data-v-5988d8ab] {\n    margin-top: 10px;\n    padding: 4px;\n}\n.sendButton[data-v-5988d8ab] {\n    width: 100%;\n    color: white;\n    background-color: transparent;\n    margin-bottom: 10px;\n}\n", ""]);
+exports.push([module.i, "\na[data-v-5988d8ab] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.notification[data-v-5988d8ab] {\n    margin-bottom: 8px;\n    color: whitesmoke;\n}\n#error[data-v-5988d8ab] {\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-5988d8ab] {\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-5988d8ab]{\n    padding: 4px;\n}\n.resetpassword[data-v-5988d8ab] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.formBottom[data-v-5988d8ab] {\n    margin-top: 15px;\n    padding: 4px;\n}\n.sendButton[data-v-5988d8ab] {\n    width: 100%;\n    color: #00afec;\n    background-color: transparent;\n    margin: 0;\n    margin-bottom: 10px;\n    padding: 4px;\n}\n", ""]);
 
 // exports
 
@@ -23041,10 +23041,10 @@ var render = function() {
         : _vm._e(),
       _vm._v(" "),
       _c(
-        "el-form",
+        "v-form",
         {
           staticClass: "form",
-          nativeOn: {
+          on: {
             submit: function($event) {
               $event.preventDefault()
               return _vm.sendEmail($event)
@@ -23069,15 +23069,10 @@ var render = function() {
             { staticClass: "formBottom" },
             [
               _c(
-                "el-button",
+                "v-btn",
                 {
                   staticClass: "sendButton",
-                  attrs: {
-                    plain: "",
-                    color: "#00afec",
-                    "native-type": "submit",
-                    loading: _vm.isLoading
-                  }
+                  attrs: { outline: "", type: "submit", loading: _vm.isLoading }
                 },
                 [_vm._v("Send Email")]
               ),
@@ -23193,7 +23188,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-19158a9a] {\r\n    text-decoration: none;\r\n    color: white;\r\n    opacity: 0.8;\n}\n.notification[data-v-19158a9a] {\r\n    margin-bottom: 8px;\r\n    color: whitesmoke;\n}\n#error[data-v-19158a9a] {\r\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-19158a9a] {\r\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-19158a9a] {\r\n    padding: 4px;\n}\n.changepassword[data-v-19158a9a] {\r\n    color: #428ccb;\r\n    margin-bottom: 20px;\n}\n.formBottom[data-v-19158a9a] {\r\n    margin-top: 20px;\r\n    padding: 4px;\n}\n.changePassButton[data-v-19158a9a] {\r\n    width: 100%;\r\n    color: white;\r\n    background-color: transparent;\n}\n.backToLogin[data-v-19158a9a] {\r\n    width: 100%;\r\n    color: white;\r\n    background-color: transparent;\r\n    margin-bottom: 10px;\n}\r\n", ""]);
+exports.push([module.i, "\na[data-v-19158a9a] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.notification[data-v-19158a9a] {\n    margin-bottom: 8px;\n    color: whitesmoke;\n}\n#error[data-v-19158a9a] {\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-19158a9a] {\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-19158a9a] {\n    padding: 4px;\n}\n.changepassword[data-v-19158a9a] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.formBottom[data-v-19158a9a] {\n    margin-top: 20px;\n    padding: 4px;\n}\n.changePassButton[data-v-19158a9a] {\n    width: 100%;\n    color: #00afec;\n    background-color: transparent;\n    margin: 0;\n    margin-bottom: 10px;\n    padding: 4px;\n}\n.backToLogin[data-v-19158a9a] {\n    width: 100%;\n    color: #00afec;\n    background-color: transparent;\n    margin: 0;\n    margin-bottom: 10px;\n    padding: 4px;\n}\n", ""]);
 
 // exports
 
@@ -23330,10 +23325,10 @@ var render = function() {
       _vm._v(" "),
       _vm.showForm
         ? _c(
-            "el-form",
+            "v-form",
             {
               staticClass: "form",
-              nativeOn: {
+              on: {
                 submit: function($event) {
                   $event.preventDefault()
                   return _vm.changePassword($event)
@@ -23378,13 +23373,12 @@ var render = function() {
                 { staticClass: "formBottom" },
                 [
                   _c(
-                    "el-button",
+                    "v-btn",
                     {
                       staticClass: "changePassButton",
                       attrs: {
-                        plain: "",
-                        color: "#00afec",
-                        "native-type": "submit",
+                        outline: "",
+                        type: "submit",
                         loading: _vm.isLoading
                       }
                     },
@@ -23404,10 +23398,10 @@ var render = function() {
             { attrs: { to: "/login" } },
             [
               _c(
-                "el-button",
+                "v-btn",
                 {
                   staticClass: "backToLogin",
-                  attrs: { plain: "", color: "#00afec", type: "submit" }
+                  attrs: { outline: "", type: "submit" }
                 },
                 [_vm._v("Back to Login")]
               )
@@ -23422,10 +23416,10 @@ var render = function() {
             { attrs: { to: "/login" } },
             [
               _c(
-                "el-button",
+                "v-btn",
                 {
                   staticClass: "backToLogin",
-                  attrs: { plain: "", color: "#00afec", type: "submit" }
+                  attrs: { outline: "", type: "submit" }
                 },
                 [_vm._v("Back to Login")]
               )
@@ -23533,7 +23527,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.notification[data-v-60d5fe2b] {\n    margin-bottom: 15px;\n    color: whitesmoke;\n}\n#error[data-v-60d5fe2b] {\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-60d5fe2b] {\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.successconfirm[data-v-60d5fe2b] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.confirmEmail[data-v-60d5fe2b] {\n    width: 100%;\n    color: white;\n    background-color: transparent;\n    margin-bottom: 10px;\n}\n.backToLogin[data-v-60d5fe2b]{\n    width: 100%;\n    color: white;\n    background-color: transparent;\n    margin-bottom: 10px;\n}\n.card[data-v-60d5fe2b]{\n    height: 40px;\n    padding: 6px;\n    margin-bottom: 20px;\n}\n.email[data-v-60d5fe2b]{\n    font-size: 16px;\n    font-weight: 400;\n}\n", ""]);
+exports.push([module.i, "\n.notification[data-v-60d5fe2b] {\n    margin-bottom: 15px;\n    color: whitesmoke;\n}\n#error[data-v-60d5fe2b] {\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-60d5fe2b] {\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.successconfirm[data-v-60d5fe2b] {\n    color: #00afec;\n    margin-bottom: 20px;\n}\n.confirmEmail[data-v-60d5fe2b] {\n    width: 100%;\n    color: #00afec;\n    background-color: transparent;\n    margin: 0;\n    margin-bottom: 10px;\n    padding: 4px;\n}\n.backToLogin[data-v-60d5fe2b]{\n    width: 100%;\n    color: #00afec;\n    background-color: transparent;\n    margin: 0;\n    margin-bottom: 10px;\n    padding: 4px;\n}\n.card[data-v-60d5fe2b]{\n    height: 40px;\n    padding: 6px;\n    margin-bottom: 20px;\n}\n.email[data-v-60d5fe2b]{\n    font-size: 16px;\n    font-weight: 400;\n}\n", ""]);
 
 // exports
 
@@ -23655,10 +23649,10 @@ var render = function() {
       _vm._v(" "),
       !_vm.hide
         ? _c(
-            "el-button",
+            "v-btn",
             {
               staticClass: "confirmEmail",
-              attrs: { plain: "", color: "#00afec", type: "submit" },
+              attrs: { outline: "", type: "submit" },
               on: { click: _vm.confirm }
             },
             [_vm._v("Confirm Email")]
@@ -23671,10 +23665,10 @@ var render = function() {
             { attrs: { to: "/login" } },
             [
               _c(
-                "el-button",
+                "v-btn",
                 {
                   staticClass: "backToLogin",
-                  attrs: { plain: "", color: "#00afec", type: "submit" }
+                  attrs: { outline: "", type: "submit" }
                 },
                 [_vm._v("Back to Login")]
               )
@@ -23689,10 +23683,10 @@ var render = function() {
             { attrs: { to: "/login" } },
             [
               _c(
-                "el-button",
+                "v-btn",
                 {
                   staticClass: "backToLogin",
-                  attrs: { plain: "", color: "#00afec", type: "submit" }
+                  attrs: { outline: "", type: "submit" }
                 },
                 [_vm._v("Back to Login")]
               )

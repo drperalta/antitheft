@@ -8,12 +8,12 @@
             <p class="email" >{{this.userEmail[0]}}</p>
         </el-card>
         <!-- Confirm Email Button -->
-        <el-button v-if="!hide" class="confirmEmail" plain color="#00afec" type="submit" @click="confirm">Confirm Email</el-button>
+        <v-btn outline v-if="!hide" class="confirmEmail" type="submit" @click="confirm">Confirm Email</v-btn>
         <router-link to="/login" v-if="success">
-            <el-button class="backToLogin" plain color="#00afec" type="submit">Back to Login</el-button>
+            <v-btn outline class="backToLogin" type="submit">Back to Login</v-btn>
         </router-link>
         <router-link to="/login" v-if="error">
-            <el-button class="backToLogin" plain color="#00afec" type="submit">Back to Login</el-button>
+            <v-btn outline class="backToLogin" type="submit">Back to Login</v-btn>
         </router-link>
     </div>
 </template>
@@ -59,21 +59,25 @@ import store from '../../../../store/store'
     background-color: rgba(0, 255, 0, 0.3);
 }
 .successconfirm {
-    color: #428ccb;
+    color: #00afec;
     margin-bottom: 20px;
 }
 
 .confirmEmail {
     width: 100%;
-    color: white;
+    color: #00afec;
     background-color: transparent;
+    margin: 0;
     margin-bottom: 10px;
+    padding: 4px;
 }
 .backToLogin{
     width: 100%;
-    color: white;
+    color: #00afec;
     background-color: transparent;
+    margin: 0;
     margin-bottom: 10px;
+    padding: 4px;
 }
 .card{
     height: 40px;

@@ -3,19 +3,19 @@
         <p class="resetpassword">RESET PASSWORD</p>
         <el-alert id="error" class="notification" type="error" v-if="error" :closable="false" center>{{errorMsg}}</el-alert>
         <el-alert id="success" class="notification" type="success" v-if="success" :closable="false" center>{{successMsg}}</el-alert>
-        <el-form class="form" @submit.native.prevent="sendEmail">
+        <v-form class="form" @submit.prevent="sendEmail">
             <!-- Email -->
             <el-input class="el-input" v-model="ResetPassDetails.email" placeholder="Email" :disabled="isLoading" />
             <!-- Register Link  -->
             <div class="formBottom">
                 <!-- Send Email Button -->
-                <el-button class="sendButton" plain color="#00afec" native-type="submit" :loading="isLoading">Send Email</el-button>
+                <v-btn outline class="sendButton"type="submit" :loading="isLoading">Send Email</v-btn>
                 <!-- Back to login Link-->
                 <router-link to="/login">
                     <a class="backToLogin">Nevermind, I got it.</a>
                 </router-link>
             </div>
-        </el-form>
+        </v-form>
     </div>
 </template>
 
@@ -86,14 +86,16 @@ a {
 }
 
 .formBottom {
-    margin-top: 10px;
+    margin-top: 15px;
     padding: 4px;
 }
 
 .sendButton {
     width: 100%;
-    color: white;
+    color: #00afec;
     background-color: transparent;
+    margin: 0;
     margin-bottom: 10px;
+    padding: 4px;
 }
 </style>
