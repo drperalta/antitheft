@@ -1,6 +1,5 @@
 <template>
   <div v-loading.fullscreen.lock="logout">
-    <vue-progress-bar></vue-progress-bar>
     <el-container class="main-container">
       <!-- SIDEBAR -->
       <el-aside >

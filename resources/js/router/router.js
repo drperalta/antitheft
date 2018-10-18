@@ -3,6 +3,8 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
+import PageNotFound from '../components/PageNotFound.vue'
+
 import Index from '../components/Main/Pages/Index.vue'
 import Dash from '../components/Main/Pages/Dash.vue'
 
@@ -79,6 +81,11 @@ let router = new Router({
                     meta: {forAuth: true}
                 },
             ]
+        },
+
+        {
+            path: '*',
+            component: PageNotFound
         }
     ]
 })
