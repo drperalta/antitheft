@@ -2,7 +2,7 @@
     <div class="cont">
         <p class="singin">SIGN IN</p>
         <el-alert class="notification" type="error" v-if="error" :title="errorMsg" :closable="false" center/>
-        <el-form class="form" @submit.native.prevent="login">
+        <v-form class="form" @submit.prevent="login">
             <!-- Username and Password -->
             <el-input class="el-input" v-model="LoginDetails.username" placeholder="Username" :disabled="isLoading" />
             <el-input class="el-input" v-model="LoginDetails.password" placeholder="Password" type="password" :disabled="isLoading" />
@@ -14,16 +14,17 @@
                 <router-link to="/reset-password">
                     <a class="forgotPassword">Forgotten your password?</a>
                 </router-link>
-            </div><br>
+            </div>
             <!-- Register Link  -->
             <div class="formBottom">
-                <router-link to="/register">
-                    <a class="needAccount">Need and account? Sign Up</a>
-                </router-link>
                 <!-- Login Button -->
-                <el-button class="loginButton" plain color="#00afec" native-type="submit" :loading="isLoading">Sign In</el-button>
+                <v-btn outline class="loginButton" type="submit" :loading="isLoading">Sign In</v-btn>
+                <!-- REGISTRATION LINK -->
+                <router-link to="/register">
+                    <a >Need and account? Sign Up</a>
+                </router-link>
             </div>
-        </el-form>
+        </v-form>
     </div>
 </template>
 
@@ -82,7 +83,7 @@ a {
 }
 
 .singin {
-    color: #428ccb;
+    color: #00afec;
     margin-bottom: 20px;
 }
 
@@ -96,20 +97,22 @@ a {
 }
 
 .needAccount {
-    margin-right: 15px;
-    font-size: 15px
+    font-size: 15px;
+    margin-top: 10px;
 }
 
 .formBottom {
-    margin-top: 40px;
-    float: right;
+    margin-top: 50px;
     padding: 4px;
 }
 
 .loginButton {
-    width: 110px;
-    color: white;
+    width: 100%;
+    color: #00afec;
     background-color: transparent;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 4px;
 }
 
 .rememberMe {

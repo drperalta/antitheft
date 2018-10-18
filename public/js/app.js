@@ -22294,7 +22294,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-f297c6ec] {\r\n    text-decoration: none;\r\n    color: white;\r\n    opacity: 0.8;\n}\n.notification[data-v-f297c6ec]{\r\n    margin-bottom: 8px;\r\n    background-color: rgba(255, 0, 0, 0.3);\r\n    color: whitesmoke;\n}\n.el-input[data-v-f297c6ec] {\r\n    padding: 4px;\n}\n.singin[data-v-f297c6ec] {\r\n    color: #428ccb;\r\n    margin-bottom: 20px;\n}\n.resetpassword[data-v-f297c6ec] {\r\n    float: right;\r\n    padding: 4px;\n}\n.forgotPassword[data-v-f297c6ec] {\r\n    font-size: 13px;\n}\n.needAccount[data-v-f297c6ec] {\r\n    margin-right: 15px;\r\n    font-size: 15px\n}\n.formBottom[data-v-f297c6ec] {\r\n    margin-top: 40px;\r\n    float: right;\r\n    padding: 4px;\n}\n.loginButton[data-v-f297c6ec] {\r\n    width: 110px;\r\n    color: white;\r\n    background-color: transparent;\n}\n.rememberMe[data-v-f297c6ec] {\r\n    font-weight: 400;\r\n    color: white;\n}\n.div-rememberMe[data-v-f297c6ec] {\r\n    padding: 4px;\r\n    float: left;\r\n    margin: 0;\n}\r\n", ""]);
+exports.push([module.i, "\na[data-v-f297c6ec] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.notification[data-v-f297c6ec]{\n    margin-bottom: 8px;\n    background-color: rgba(255, 0, 0, 0.3);\n    color: whitesmoke;\n}\n.el-input[data-v-f297c6ec] {\n    padding: 4px;\n}\n.singin[data-v-f297c6ec] {\n    color: #00afec;\n    margin-bottom: 20px;\n}\n.resetpassword[data-v-f297c6ec] {\n    float: right;\n    padding: 4px;\n}\n.forgotPassword[data-v-f297c6ec] {\n    font-size: 13px;\n}\n.needAccount[data-v-f297c6ec] {\n    font-size: 15px;\n    margin-top: 10px;\n}\n.formBottom[data-v-f297c6ec] {\n    margin-top: 50px;\n    padding: 4px;\n}\n.loginButton[data-v-f297c6ec] {\n    width: 100%;\n    color: #00afec;\n    background-color: transparent;\n    margin: 0;\n    margin-bottom: 10px;\n    padding: 4px;\n}\n.rememberMe[data-v-f297c6ec] {\n    font-weight: 400;\n    color: white;\n}\n.div-rememberMe[data-v-f297c6ec] {\n    padding: 4px;\n    float: left;\n    margin: 0;\n}\n", ""]);
 
 // exports
 
@@ -22305,6 +22305,7 @@ exports.push([module.i, "\na[data-v-f297c6ec] {\r\n    text-decoration: none;\r\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -22401,10 +22402,10 @@ var render = function() {
         : _vm._e(),
       _vm._v(" "),
       _c(
-        "el-form",
+        "v-form",
         {
           staticClass: "form",
-          nativeOn: {
+          on: {
             submit: function($event) {
               $event.preventDefault()
               return _vm.login($event)
@@ -22474,31 +22475,23 @@ var render = function() {
             ],
             1
           ),
-          _c("br"),
           _vm._v(" "),
           _c(
             "div",
             { staticClass: "formBottom" },
             [
-              _c("router-link", { attrs: { to: "/register" } }, [
-                _c("a", { staticClass: "needAccount" }, [
-                  _vm._v("Need and account? Sign Up")
-                ])
-              ]),
-              _vm._v(" "),
               _c(
-                "el-button",
+                "v-btn",
                 {
                   staticClass: "loginButton",
-                  attrs: {
-                    plain: "",
-                    color: "#00afec",
-                    "native-type": "submit",
-                    loading: _vm.isLoading
-                  }
+                  attrs: { outline: "", type: "submit", loading: _vm.isLoading }
                 },
                 [_vm._v("Sign In")]
-              )
+              ),
+              _vm._v(" "),
+              _c("router-link", { attrs: { to: "/register" } }, [
+                _c("a", [_vm._v("Need and account? Sign Up")])
+              ])
             ],
             1
           )
@@ -22605,7 +22598,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-58163812] {\r\n    text-decoration: none;\r\n    color: white;\r\n    opacity: 0.8;\n}\n.notification[data-v-58163812] {\r\n    margin-bottom: 8px;\r\n    color: whitesmoke;\n}\n#error[data-v-58163812] {\r\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-58163812] {\r\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-58163812] {\r\n    padding: 4px;\n}\n.signup[data-v-58163812] {\r\n    color: #428ccb;\r\n    margin-bottom: 20px;\n}\n.alreadyMember[data-v-58163812] {\r\n    margin-right: 15px;\r\n    font-size: 15px\n}\n.formBottom[data-v-58163812] {\r\n    margin-top: 40px;\r\n    float: right;\n}\n.registerButton[data-v-58163812] {\r\n    width: 130px;\r\n    color: white;\r\n    background-color: transparent;\n}\r\n", ""]);
+exports.push([module.i, "\na[data-v-58163812] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.notification[data-v-58163812] {\n    margin-bottom: 8px;\n    color: whitesmoke;\n}\n#error[data-v-58163812] {\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-58163812] {\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-58163812] {\n    padding: 4px;\n}\n.signup[data-v-58163812] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.alreadyMember[data-v-58163812] {\n    font-size: 15px\n}\n.formBottom[data-v-58163812] {\n    margin-top: 25px;\n    padding: 4px;\n}\n.registerButton[data-v-58163812] {\n    width: 100%;\n    color: #00afec;\n    background-color: transparent;\n    margin: 0;\n    margin-bottom: 10px;\n    padding: 4px;\n}\n", ""]);
 
 // exports
 
@@ -22616,6 +22609,8 @@ exports.push([module.i, "\na[data-v-58163812] {\r\n    text-decoration: none;\r\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -22727,10 +22722,10 @@ var render = function() {
         : _vm._e(),
       _vm._v(" "),
       _c(
-        "el-form",
+        "v-form",
         {
           staticClass: "form",
-          nativeOn: {
+          on: {
             submit: function($event) {
               $event.preventDefault()
               return _vm.register($event)
@@ -22810,25 +22805,20 @@ var render = function() {
             "div",
             { staticClass: "formBottom" },
             [
+              _c(
+                "v-btn",
+                {
+                  staticClass: "registerButton",
+                  attrs: { outline: "", type: "submit", loading: _vm.isLoading }
+                },
+                [_vm._v("Sign Up")]
+              ),
+              _vm._v(" "),
               _c("router-link", { attrs: { to: "/login" } }, [
                 _c("a", { staticClass: "alreadyMember" }, [
                   _vm._v("Already a member? Sign In")
                 ])
-              ]),
-              _vm._v(" "),
-              _c(
-                "el-button",
-                {
-                  staticClass: "registerButton",
-                  attrs: {
-                    plain: "",
-                    color: "#00afec",
-                    "native-type": "submit",
-                    loading: _vm.isLoading
-                  }
-                },
-                [_vm._v("Sign Up")]
-              )
+              ])
             ],
             1
           )
@@ -22935,7 +22925,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-5988d8ab] {\r\n    text-decoration: none;\r\n    color: white;\r\n    opacity: 0.8;\n}\n.notification[data-v-5988d8ab] {\r\n    margin-bottom: 8px;\r\n    color: whitesmoke;\n}\n#error[data-v-5988d8ab] {\r\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-5988d8ab] {\r\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-5988d8ab]{\r\n    padding: 4px;\n}\n.resetpassword[data-v-5988d8ab] {\r\n    color: #428ccb;\r\n    margin-bottom: 20px;\n}\n.formBottom[data-v-5988d8ab] {\r\n    margin-top: 10px;\r\n    padding: 4px;\n}\n.sendButton[data-v-5988d8ab] {\r\n    width: 100%;\r\n    color: white;\r\n    background-color: transparent;\r\n    margin-bottom: 10px;\n}\r\n", ""]);
+exports.push([module.i, "\na[data-v-5988d8ab] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.notification[data-v-5988d8ab] {\n    margin-bottom: 8px;\n    color: whitesmoke;\n}\n#error[data-v-5988d8ab] {\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-5988d8ab] {\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-5988d8ab]{\n    padding: 4px;\n}\n.resetpassword[data-v-5988d8ab] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.formBottom[data-v-5988d8ab] {\n    margin-top: 10px;\n    padding: 4px;\n}\n.sendButton[data-v-5988d8ab] {\n    width: 100%;\n    color: white;\n    background-color: transparent;\n    margin-bottom: 10px;\n}\n", ""]);
 
 // exports
 

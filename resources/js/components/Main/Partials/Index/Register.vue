@@ -4,7 +4,7 @@
         <!-- Alerts  -->
         <el-alert class="notification" id="error" type="error" v-if="error" :closable="false" center>{{errorMsg}}</el-alert>
         <el-alert class="notification" id="success" type="success" v-if="success" :closable="false" center>{{successMsg}}</el-alert>
-        <el-form class="form" @submit.native.prevent="register">
+        <v-form class="form" @submit.prevent="register">
             <!-- Inputs  -->
             <el-input class="el-input" v-model="RegisterDetails.fullname" placeholder="Full Name" :disabled="isLoading"></el-input>
             <el-input class="el-input" v-model="RegisterDetails.username" placeholder="Username" :disabled="isLoading"></el-input>
@@ -13,13 +13,15 @@
             <el-input class="el-input" v-model="RegisterDetails.confirm_password" placeholder="Confirm Password" :type="'password'" :disabled="isLoading"></el-input>
 
             <div class="formBottom">
+                <!-- Sign Up Button  -->
+                <v-btn outline class="registerButton" type="submit" :loading="isLoading">Sign Up</v-btn>
+                <!-- Back to Login -->
                 <router-link to="/login">
                     <a class="alreadyMember">Already a member? Sign In</a>
                 </router-link>
-                <!-- Sign Up Button  -->
-                <el-button class="registerButton" plain color="#00afec" native-type="submit" :loading="isLoading">Sign Up</el-button>
+
             </div>
-        </el-form>
+        </v-form>
     </div>
 </template>
 
@@ -91,18 +93,20 @@ a {
 }
 
 .alreadyMember {
-    margin-right: 15px;
     font-size: 15px
 }
 
 .formBottom {
-    margin-top: 40px;
-    float: right;
+    margin-top: 25px;
+    padding: 4px;
 }
 
 .registerButton {
-    width: 130px;
-    color: white;
+    width: 100%;
+    color: #00afec;
     background-color: transparent;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 4px;
 }
 </style>
