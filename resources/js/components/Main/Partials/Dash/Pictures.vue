@@ -1,12 +1,12 @@
 <template>
-  <v-container>
+  <v-container class="container" justify-center>
     PICTURES
   </v-container>
 </template>
 
 <script>
 import store from '../../../../store/store'
- 
+
 export default {
   created(){
     this.$root.pageTitle = 'PICTURES'
@@ -15,4 +15,7 @@ export default {
 </script>
 
 <style scoped>
+.container{
+    height: 100%;
+}
 </style>

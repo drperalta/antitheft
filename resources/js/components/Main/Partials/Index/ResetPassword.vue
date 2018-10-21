@@ -9,7 +9,7 @@
             <!-- Register Link  -->
             <div class="formBottom">
                 <!-- Send Email Button -->
-                <v-btn outline class="sendButton"type="submit" :loading="isLoading">Send Email</v-btn>
+                <v-btn outline class="sendButton"type="submit" :loading="isLoading">Send Link</v-btn>
                 <!-- Back to login Link-->
                 <router-link to="/login">
                     <a class="backToLogin">Nevermind, I got it.</a>

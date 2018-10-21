@@ -2,8 +2,8 @@
   <div v-loading.fullscreen.lock="logout">
     <el-container class="main-container">
       <!-- SIDEBAR -->
-      <el-aside >
-        <el-menu class="sidebar">
+      <el-aside width="256" class="hidden-sm-and-down">
+        <el-menu class="sidebar" background-color="#262F3D" text-color="#C0C2C5" active-text-color="#4FC3F7" default-active="overview" :value="true" >
         <!-- SIDEBAR TITLE -->
         <div class="side-title">
           <img src="../../../img/logo.png" height="30px">
@@ -17,25 +17,25 @@
         <!-- SIDEBAR MENU -->
         <div class="side-menu">
             <!-- OVERVIEW -->
-          <el-menu-item index="1" @click="overview">
-            <v-icon class="icon">fa-th-large</v-icon>
-            <span>Overview</span>
-          </el-menu-item>
-          <!-- KITS -->
-          <el-menu-item index="2" @click="kits">
-            <v-icon class="icon">fa-hdd</v-icon>
-            <span>Kits</span>
-          </el-menu-item>
+          <el-menu-item index="overview" @click="overview" value="overview">
+            <v-icon class="icon">dashboard</v-icon>
+            <span class="side_title">Overview</span>
+          </el-menu-item><v-divider></v-divider>
           <!-- PICTURES -->
-          <el-menu-item index="3" @click="pictures">
-            <v-icon class="icon">fa-image</v-icon>
-            <span>Pictures</span>
-          </el-menu-item>
+          <el-menu-item index="pictures" @click="pictures" value="pictures">
+            <v-icon class="icon">photo</v-icon>
+            <span class="side_title">Pictures</span>
+          </el-menu-item><v-divider></v-divider>
           <!-- LOGS -->
-          <el-menu-item index="4" @click="logs">
-            <v-icon class="icon">fa-align-left</v-icon>
-            <span>Logs</span>
-          </el-menu-item>
+          <el-menu-item index="logs" @click="logs" value="logs">
+            <v-icon class="icon">subject</v-icon>
+            <span class="side_title">Logs</span>
+          </el-menu-item><v-divider></v-divider>
+          <!-- KITS -->
+          <el-menu-item index="kits" @click="kits" value="kits">
+            <v-icon class="icon">settings_cell</v-icon>
+            <span class="side_title">Kits</span>
+          </el-menu-item><v-divider></v-divider>
         </div>
 
         <!-- SIDEBAR FOOTER -->
@@ -47,15 +47,15 @@
         <el-header class="navbar">
           <v-toolbar class="v-toolbar" flat>
 
-            <!-- PAGE TITLE -->
-            <v-toolbar-title class="title">{{$root.pageTitle}}</v-toolbar-title>
+            <!-- SELECTED KIT -->
+
             <v-spacer></v-spacer>
 
             <!-- BADGES -->
 
 
             <!-- NAME AND EMAIL -->
-            <div>
+            <div class="hidden-xs-only">
               <h1 class="name">{{userData.fullname}}</h1>
               <p class="email">{{userData.email}}</p>
             </div>
@@ -79,11 +79,27 @@
 
         <!-- MAIN -->
         <el-main class="main">
-          <div class="Main">
-            <router-view></router-view>
-          </div>
+          <router-view></router-view>
         </el-main>
         <!-- ///////////// -->
+
+        <el-footer class="hidden-md-and-up">
+            <v-bottom-nav class="navbottom" :value="true" :active.sync="bottomNav" shift color="#262F3D">
+            <v-btn flat dark @click="overview" value="overview" color="#4FC3F7">
+                <v-icon>dashboard</v-icon>
+            </v-btn>
+            <v-btn flat dark @click="pictures" value="pictures" color="#4FC3F7">
+                <v-icon>photo</v-icon>
+            </v-btn>
+            <v-btn flat dark @click="logs" value="logs" color="#4FC3F7">
+                <v-icon>subject</v-icon>
+            </v-btn>
+            <v-btn flat dark @click="kits" value="kits" color="#4FC3F7">
+                <v-icon>settings_cell</v-icon>
+            </v-btn>
+            </v-bottom-nav>
+        </el-footer>
+
       </el-container>
     </el-container>
 
@@ -108,7 +124,8 @@ export default {
           command: 'logout'
         }
       ],
-      logout: false
+      logout: false,
+      bottomNav: 'overview'
     }
   },
   methods:{
@@ -119,9 +136,6 @@ export default {
 
     accounts(){
       alert('Accounts')
-    },
-    logout(){
-
     },
     handleCommand(command){
       if(command == 'account'){
@@ -154,6 +168,7 @@ export default {
 .navbar{
   background-color: white;
   padding: 0;
+  margin: 0;
   height: 77px !important;
 }
 .v-toolbar{
@@ -161,16 +176,17 @@ export default {
   padding-top: 10px;
   padding-bottom: 10px;
   height: 77px;
-}
-.title{
-  font-weight: 600;
+  background-color: #039BE5;
 }
 
 .sidebar{
   height: 100vh;
+  width: 256px;
+  border: 0px;
 }
 .main{
   padding: 0;
+  height: 100%;
 }
 .side-title {
   text-align: center;
@@ -179,39 +195,48 @@ export default {
 }
 
 .side-title h1{
-  font-weight: 800;
+  font-weight: 600;
   font-size: 16px !important;
   display: inline-flex;
-  color: rgb(20, 48, 107);
+  color: white;
 }
 .side-title h2{
-  font-weight: 800;
+  font-weight: 400;
   font-size: 16px !important;
   display: inline-flex;
-  color:   steelblue;
+  color:   whitesmoke;
 }
-
+.side_title {
+  font-weight: 500;
+  font-size: 14px;
+}
 .side-menu {
-  margin-top: 10px;
+    width: 256px !important;
 }
 .side-menu span{
   font-weight: 500;
 }
-
+.navbottom{
+    bottom: 0;
+    position: absolute;
+}
 .icon {
   margin-left: 12px;
   margin-right: 20px;
   width: 14px !important;
+  color: white;
 }
 
 .name{
   font-weight: 600;
   font-size: 18px;
   right: 0;
+  color: white;
 }
 .email{
   font-weight: 400;
   font-size: 12px;
+  color: lightblue;
 }
 .button{
   width: 57px !important;

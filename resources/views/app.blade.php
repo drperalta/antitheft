@@ -13,7 +13,9 @@
     <body>
       <div id="app">
         <v-app>
-          <App></App>
+            <v-content>
+                <App></App>
+            </v-content>
         </v-app>
       </div>
 
