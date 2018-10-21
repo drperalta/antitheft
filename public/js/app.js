@@ -23993,7 +23993,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.container[data-v-5c0265b4]{\n    height: 100%;\n}\n", ""]);
+exports.push([module.i, "\n.container[data-v-5c0265b4]{\n    height: 100%;\n}\n.toolbar[data-v-5c0265b4]{\n}\n.title[data-v-5c0265b4]{\n  font-weight: 600;\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-5c0265b4]{\n    margin: 0;\n}\n", ""]);
 
 // exports
 
@@ -24005,6 +24005,15 @@ exports.push([module.i, "\n.container[data-v-5c0265b4]{\n    height: 100%;\n}\n"
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store__ = __webpack_require__(7);
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -24029,9 +24038,27 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
-    { staticClass: "container", attrs: { "justify-center": "" } },
-    [_vm._v("\n  OVERVIEW\n")]
+    "div",
+    [
+      _c(
+        "v-toolbar",
+        { staticClass: "toolbar", attrs: { flat: "", height: "56px" } },
+        [
+          _c("v-toolbar-title", { staticClass: "title" }, [_vm._v("OVERVIEW")]),
+          _vm._v(" "),
+          _c("v-spacer")
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-divider", { staticClass: "divider" }),
+      _vm._v(" "),
+      _c("v-container", {
+        staticClass: "container",
+        attrs: { "justify-center": "" }
+      })
+    ],
+    1
   )
 }
 var staticRenderFns = []
@@ -24130,7 +24157,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.container[data-v-072ba7d0]{\n    height: 100%;\n}\n.toolbar[data-v-072ba7d0]{\n}\n.title[data-v-072ba7d0]{\n  font-weight: 600;\n  color: rgb(61, 61, 61);\n}\n.divider[data-v-072ba7d0]{\n    margin: 0;\n}\n", ""]);
+exports.push([module.i, "\n.container[data-v-072ba7d0]{\n    height: 100%;\n}\n.toolbar[data-v-072ba7d0]{\n}\n.title[data-v-072ba7d0]{\n  font-weight: 600;\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-072ba7d0]{\n    margin: 0;\n}\n", ""]);
 
 // exports
 
@@ -24302,7 +24329,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.container[data-v-efe90520]{\n    height: 100%;\n}\n", ""]);
+exports.push([module.i, "\n.container[data-v-efe90520]{\n    height: 100%;\n}\n.toolbar[data-v-efe90520]{\n}\n.title[data-v-efe90520]{\n  font-weight: 600;\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-efe90520]{\n    margin: 0;\n}\n", ""]);
 
 // exports
 
@@ -24314,6 +24341,15 @@ exports.push([module.i, "\n.container[data-v-efe90520]{\n    height: 100%;\n}\n"
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store__ = __webpack_require__(7);
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -24338,9 +24374,27 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
-    { staticClass: "container", attrs: { "justify-center": "" } },
-    [_vm._v("\n  PICTURES\n")]
+    "div",
+    [
+      _c(
+        "v-toolbar",
+        { staticClass: "toolbar", attrs: { flat: "", height: "56px" } },
+        [
+          _c("v-toolbar-title", { staticClass: "title" }, [_vm._v("PICTURES")]),
+          _vm._v(" "),
+          _c("v-spacer")
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-divider", { staticClass: "divider" }),
+      _vm._v(" "),
+      _c("v-container", {
+        staticClass: "container",
+        attrs: { "justify-center": "" }
+      })
+    ],
+    1
   )
 }
 var staticRenderFns = []
@@ -24439,7 +24493,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.container[data-v-e8fc872c]{\n    height: 100%;\n}\n", ""]);
+exports.push([module.i, "\n.container[data-v-e8fc872c]{\n    height: 100%;\n}\n.toolbar[data-v-e8fc872c]{\n}\n.title[data-v-e8fc872c]{\n  font-weight: 600;\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-e8fc872c]{\n    margin: 0;\n}\n", ""]);
 
 // exports
 
@@ -24451,6 +24505,15 @@ exports.push([module.i, "\n.container[data-v-e8fc872c]{\n    height: 100%;\n}\n"
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store__ = __webpack_require__(7);
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -24475,9 +24538,27 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
-    { staticClass: "container", attrs: { "justify-center": "" } },
-    [_vm._v("\n  LOGS\n")]
+    "div",
+    [
+      _c(
+        "v-toolbar",
+        { staticClass: "toolbar", attrs: { flat: "", height: "56px" } },
+        [
+          _c("v-toolbar-title", { staticClass: "title" }, [_vm._v("LOGS")]),
+          _vm._v(" "),
+          _c("v-spacer")
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-divider", { staticClass: "divider" }),
+      _vm._v(" "),
+      _c("v-container", {
+        staticClass: "container",
+        attrs: { "justify-center": "" }
+      })
+    ],
+    1
   )
 }
 var staticRenderFns = []

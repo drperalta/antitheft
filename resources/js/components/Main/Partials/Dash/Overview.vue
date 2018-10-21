@@ -1,7 +1,16 @@
 <template>
-  <v-container class="container" justify-center>
-    OVERVIEW
-  </v-container>
+    <div>
+        <v-toolbar flat class="toolbar" height="56px">
+             <!-- PAGE TITLE -->
+            <v-toolbar-title class="title">OVERVIEW</v-toolbar-title>
+            <v-spacer></v-spacer>
+
+        </v-toolbar>
+        <v-divider class="divider"></v-divider>
+        <v-container class="container" justify-center>
+
+        </v-container>
+    </div>
 </template>
 
 <script>
@@ -17,5 +26,14 @@ export default {
 <style scoped>
 .container{
     height: 100%;
+}
+.toolbar{
+}
+.title{
+  font-weight: 600;
+  color: rgb(68, 68, 68);
+}
+.divider{
+    margin: 0;
 }
 </style>

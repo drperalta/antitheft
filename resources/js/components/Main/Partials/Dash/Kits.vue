@@ -31,9 +31,10 @@ export default {
 }
 .toolbar{
 }
+
 .title{
   font-weight: 600;
-  color: rgb(61, 61, 61);
+  color: rgb(68, 68, 68);
 }
 .divider{
     margin: 0;
