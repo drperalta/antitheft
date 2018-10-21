@@ -89937,7 +89937,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.container[data-v-3d2ec509]{\n    text-align: center;\n}\n.title[data-v-3d2ec509] {\n  text-align: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.title h1[data-v-3d2ec509]{\n  font-weight: 600;\n  font-size: 16px !important;\n  display: inline-flex;\n}\n.title h2[data-v-3d2ec509]{\n  font-weight: 400;\n  font-size: 16px !important;\n  display: inline-flex;\n}\n", ""]);
+exports.push([module.i, "\n.container[data-v-3d2ec509]{\n    text-align: center;\n}\n.title[data-v-3d2ec509] {\n  text-align: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.title h1[data-v-3d2ec509]{\n  font-weight: 600;\n  font-size: 22px !important;\n  display: inline-flex;\n}\n.title h2[data-v-3d2ec509]{\n  font-weight: 400;\n  font-size: 22px !important;\n  display: inline-flex;\n}\n", ""]);
 
 // exports
 
@@ -89959,7 +89959,7 @@ var render = function() {
     [
       _c("div", { staticClass: "title" }, [
         _c("img", {
-          attrs: { src: __webpack_require__(60), height: "30px" }
+          attrs: { src: __webpack_require__(60), height: "50px" }
         }),
         _vm._v(" "),
         _c("br"),
@@ -89973,7 +89973,7 @@ var render = function() {
         "h1",
         {
           staticStyle: {
-            "font-size": "200px",
+            "font-size": "175px",
             "text-align": "center",
             "font-weight": "600",
             color: "dark-gray"
@@ -89981,8 +89981,12 @@ var render = function() {
         },
         [_vm._v("404")]
       ),
+      _vm._v(" "),
+      _c("p", { staticStyle: { color: "maroon", "font-size": "25px" } }, [
+        _vm._v("That’s an error.")
+      ]),
       _vm._v(
-        "\n        That’s an error.\n\nThe requested URL was not found on this server. That’s all we know.\n    "
+        "\n\n    The requested URL was not found on this server. That’s all we know.\n"
       )
     ]
   )
