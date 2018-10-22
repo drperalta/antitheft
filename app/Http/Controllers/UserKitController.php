@@ -17,7 +17,7 @@ class UserKitController extends Controller
             'serial_number' => 'required|unique:user_kits'
         ]);
         if(Kit::where('serial_number', $request['serial_number'])->exists()) {
-            $kit = new Kit([
+            $kit = new UserKit([
                 'user_id' => $request['user_id'],
                 'serial_number' => $request['serial_number'],
                 'name' => $request['name'],
@@ -29,7 +29,9 @@ class UserKitController extends Controller
                 'message' => 'Successfully Added!'
             ], 201);
          }else{
-            abort(402, "Invalid Serial Number");
+            return response()->json([
+                'error' => [ 'message' => 'Invalid Serial Number' ]
+            ], 400);
          }
     }
 }
