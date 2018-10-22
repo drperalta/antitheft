@@ -40,3 +40,9 @@ Route::group([ 'middleware' => 'api', 'prefix' => 'password'], function ()
     Route::get('setEmail/{token}' , 'PasswordResetController@setEmail');
     Route::get('check/{token}', 'PasswordResetController@check');
 });
+
+// KIT ROUTES
+Route::group(['prefix' => 'kit' ], function()
+{
+    Route::post('add', 'KitController@add');
+});
