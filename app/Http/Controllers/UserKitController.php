@@ -14,16 +14,15 @@ class UserKitController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'serial_number' => 'required|unique:userkits'
+            'serial_number' => 'required|unique:user_kits'
         ]);
         if(Kit::where('serial_number', $request['serial_number'])->exists()) {
             $kit = new Kit([
                 'user_id' => $request['user_id'],
                 'serial_number' => $request['serial_number'],
                 'name' => $request['name'],
-                'status' => 'offline',
-                'created_at' => time(),
-                'updated_at' => time()
+                'created_at' => Carbon::now()->setTimezone('GMT+8'),
+                'updated_at' => Carbon::now()->setTimezone('GMT+8')
             ]);
             $kit->save();
             return response()->json([

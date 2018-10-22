@@ -18,7 +18,7 @@ class CreateUserKitsTable extends Migration
             $table->integer('user_id');
             $table->string('serial_number');
             $table->string('name');
-            $table->string('status');
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }
