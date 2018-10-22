@@ -15,6 +15,7 @@ class CreateKitsTable extends Migration
     {
         Schema::create('kits', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('serial_number');
             $table->timestamps();
         });
     }

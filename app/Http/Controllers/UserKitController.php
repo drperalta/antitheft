@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Kit;
 use App\UserKit;
 
 class UserKitController extends Controller
@@ -14,7 +15,7 @@ class UserKitController extends Controller
             'name' => 'required',
             'serial_number' => 'required|unique:userkits'
         ]);
-        if(RegisteredKit::where('serial_number', $request['serial_number'])->exists()) {
+        if(Kit::where('serial_number', $request['serial_number'])->exists()) {
             $kit = new Kit([
                 'user_id' => $request['user_id'],
                 'serial_number' => $request['serial_number'],
