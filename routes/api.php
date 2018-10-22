@@ -46,3 +46,10 @@ Route::group(['prefix' => 'kit' ], function()
 {
     Route::post('add', 'KitController@add');
 });
+
+// USER KIT ROUTES
+Route::group([ 'middleware' => 'auth:api', 'prefix' => 'user'  ], function()
+{
+    Route::post('kit/add', 'UserKitController@add');
+    Route::get('user', 'AuthController@user');
+});
