@@ -44,6 +44,7 @@
 			<!-- NAVBAR -->
 			<el-header class="navbar">
                 <v-toolbar class="v-toolbar" flat>
+
                     <!-- SELECTED KIT -->
                     <el-select class="select" v-model="value" placeholder="Select your Kit">
                         <el-option v-for="kit in kits" :key="kit.id" :label="kit.name" :value="kit.id"></el-option>
