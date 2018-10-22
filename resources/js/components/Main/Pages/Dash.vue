@@ -3,7 +3,7 @@
 	<el-container class="main-container">
 		<!-- SIDEBAR -->
 		<el-aside width="256" class="hidden-sm-and-down">
-			<el-menu class="sidebar" background-color="#262F3D" text-color="#C0C2C5" active-text-color="#4FC3F7" default-active="overview" :value="true" >
+			<el-menu class="sidebar" background-color="#262F3D" text-color="#C0C2C5" active-text-color="#4FC3F7">
 				<!-- SIDEBAR TITLE -->
 				<div class="side-title">
 					<img src="../../../img/logo.png" height="30px">
@@ -17,22 +17,22 @@
 				<!-- SIDEBAR MENU -->
 				<div class="side-menu">
 					<!-- OVERVIEW -->
-					<el-menu-item index="overview" @click="overview" value="overview">
+					<el-menu-item index="overview" @click="overview">
 						<v-icon class="icon">dashboard</v-icon>
 						<span class="side_title">Overview</span>
 					</el-menu-item><v-divider></v-divider>
 					<!-- PICTURES -->
-					<el-menu-item index="pictures" @click="pictures" value="pictures">
+					<el-menu-item index="pictures" @click="pictures">
 						<v-icon class="icon">photo</v-icon>
 						<span class="side_title">Pictures</span>
 					</el-menu-item><v-divider></v-divider>
 					<!-- LOGS -->
-					<el-menu-item index="logs" @click="logs" value="logs">
+					<el-menu-item index="logs" @click="logs">
 						<v-icon class="icon">subject</v-icon>
 						<span class="side_title">Logs</span>
 					</el-menu-item><v-divider></v-divider>
 					<!-- KITS -->
-					<el-menu-item index="kits" @click="kits" value="kits">
+					<el-menu-item index="kits" @click="kits">
 						<v-icon class="icon">settings_cell</v-icon>
 						<span class="side_title">Kits</span>
 					</el-menu-item><v-divider></v-divider>
@@ -47,7 +47,7 @@
 
                     <!-- SELECTED KIT -->
                     <el-select class="select" v-model="value" placeholder="Select your Kit">
-                        <el-option v-for="kit in kits" :key="kit.id" :label="kit.name" :value="kit.id"></el-option>
+                        <el-option v-for="kit in Kit" :key="kit.id" :label="kit.name" :value="kit.id"></el-option>
                     </el-select>
                     <v-spacer></v-spacer>
                     <!-- BADGES -->
@@ -103,9 +103,6 @@
 </template>
 
 <script>
-import router from '../../../router/router'
-import store from '../../../store/store'
-
 export default {
     data(){
         return{
@@ -114,18 +111,19 @@ export default {
                 { title: 'Logout', command: 'logout' }
             ],
             logout: false,
-            bottomNav: 'overview'
+            bottomNav: 'overview',
+            value: ''
         }
     },
     methods:{
-        overview(){ router.push({path: 'overview'})},
-        kits(){ router.push({path: 'kits'})},
-        pictures(){ router.push({path: 'pictures'})},
-        logs(){ router.push({path: 'logs'})},
+        overview(){ this.$router.push({path: 'overview'})},
+        kits(){ this.$router.push({path: 'kits'})},
+        pictures(){ this.$router.push({path: 'pictures'})},
+        logs(){ this.$router.push({path: 'logs'})},
 
         handleCommand(command){
             if(command == 'account'){
-                router.push({path: 'account'})
+                this.$router.push({path: 'account'})
             }else{
                 this.logout = true;
                 Vue.auth.logout(this.logout);
@@ -136,12 +134,15 @@ export default {
     created(){
         Vue.auth.user()
     },
+    mounted(){
+        Vue.kit.set()
+    },
     computed:{
         userData(){
-            return store.state.userData[0]
+            return this.$store.state.userData[0]
         },
-        Kits(){
-            return store.state.kitData
+        Kit(){
+            return this.$store.state.kitData[0]
         }
     }
 }
