@@ -30,6 +30,6 @@ class UserKit extends Model
      * @var array
      */
     protected $hidden = [
-        'serial_number'
+        //
     ];
 }
