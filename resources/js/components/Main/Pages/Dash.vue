@@ -1,110 +1,104 @@
 <template>
-  <div v-loading.fullscreen.lock="logout">
-    <el-container class="main-container">
-      <!-- SIDEBAR -->
-      <el-aside width="256" class="hidden-sm-and-down">
-        <el-menu class="sidebar" background-color="#262F3D" text-color="#C0C2C5" active-text-color="#4FC3F7" default-active="overview" :value="true" >
-        <!-- SIDEBAR TITLE -->
-        <div class="side-title">
-          <img src="../../../img/logo.png" height="30px">
-          <br>
-          <h1 class="title">ANTI-THEFT</h1>
-          <h2 class="title">KIT</h2>
-        </div>
+<div v-loading.fullscreen.lock="logout">
+	<el-container class="main-container">
+		<!-- SIDEBAR -->
+		<el-aside width="256" class="hidden-sm-and-down">
+			<el-menu class="sidebar" background-color="#262F3D" text-color="#C0C2C5" active-text-color="#4FC3F7" default-active="overview" :value="true" >
+				<!-- SIDEBAR TITLE -->
+				<div class="side-title">
+					<img src="../../../img/logo.png" height="30px">
+					<br>
+					<h1 class="title">ANTI-THEFT</h1>
+					<h2 class="title">KIT</h2>
+				</div>
 
-        <v-divider></v-divider>
+				<v-divider></v-divider>
 
-        <!-- SIDEBAR MENU -->
-        <div class="side-menu">
-            <!-- OVERVIEW -->
-          <el-menu-item index="overview" @click="overview" value="overview">
-            <v-icon class="icon">dashboard</v-icon>
-            <span class="side_title">Overview</span>
-          </el-menu-item><v-divider></v-divider>
-          <!-- PICTURES -->
-          <el-menu-item index="pictures" @click="pictures" value="pictures">
-            <v-icon class="icon">photo</v-icon>
-            <span class="side_title">Pictures</span>
-          </el-menu-item><v-divider></v-divider>
-          <!-- LOGS -->
-          <el-menu-item index="logs" @click="logs" value="logs">
-            <v-icon class="icon">subject</v-icon>
-            <span class="side_title">Logs</span>
-          </el-menu-item><v-divider></v-divider>
-          <!-- KITS -->
-          <el-menu-item index="kits" @click="kits" value="kits">
-            <v-icon class="icon">settings_cell</v-icon>
-            <span class="side_title">Kits</span>
-          </el-menu-item><v-divider></v-divider>
-        </div>
+				<!-- SIDEBAR MENU -->
+				<div class="side-menu">
+					<!-- OVERVIEW -->
+					<el-menu-item index="overview" @click="overview" value="overview">
+						<v-icon class="icon">dashboard</v-icon>
+						<span class="side_title">Overview</span>
+					</el-menu-item><v-divider></v-divider>
+					<!-- PICTURES -->
+					<el-menu-item index="pictures" @click="pictures" value="pictures">
+						<v-icon class="icon">photo</v-icon>
+						<span class="side_title">Pictures</span>
+					</el-menu-item><v-divider></v-divider>
+					<!-- LOGS -->
+					<el-menu-item index="logs" @click="logs" value="logs">
+						<v-icon class="icon">subject</v-icon>
+						<span class="side_title">Logs</span>
+					</el-menu-item><v-divider></v-divider>
+					<!-- KITS -->
+					<el-menu-item index="kits" @click="kits" value="kits">
+						<v-icon class="icon">settings_cell</v-icon>
+						<span class="side_title">Kits</span>
+					</el-menu-item><v-divider></v-divider>
+				</div>
+			</el-menu>
+		</el-aside>
 
-        <!-- SIDEBAR FOOTER -->
-        </el-menu>
-      </el-aside>
+		<el-container>
+			<!-- NAVBAR -->
+			<el-header class="navbar">
+                <v-toolbar class="v-toolbar" flat>
+                    <!-- SELECTED KIT -->
+                    <el-select class="select" v-model="value" placeholder="Select your Kit">
+                        <el-option v-for="kit in kits" :key="kit.id" :label="kit.name" :value="kit.id"></el-option>
+                    </el-select>
+                    <v-spacer></v-spacer>
+                    <!-- BADGES -->
 
-      <el-container>
-        <!-- NAVBAR -->
-        <el-header class="navbar">
-          <v-toolbar class="v-toolbar" flat>
+                    <!-- NAME AND EMAIL -->
+                    <div class="hidden-xs-only">
+                        <h1 class="name">{{userData.fullname}}</h1>
+                        <p class="email">{{userData.email}}</p>
+                    </div>
+                    <v-divider class="divider" vertical></v-divider>
+                    <!-- OPTIONS -->
+                    <el-dropdown trigger="click" @command="handleCommand">
+                        <span>
+                            <v-icon>fa-cog</v-icon>
+                        </span>
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item v-for="item in items" :key="item.key" :command="item.command">{{item.title}}</el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>
+                </v-toolbar>
 
-            <!-- SELECTED KIT -->
+				<v-divider></v-divider>
+			</el-header>
 
-            <v-spacer></v-spacer>
+			<!-- MAIN -->
+			<el-main class="main">
+				<router-view></router-view>
+			</el-main>
 
-            <!-- BADGES -->
+			<!-- BOTTOM NAVBAR -->
+			<el-footer class="hidden-md-and-up">
+				<v-bottom-nav class="navbottom" :value="true" :active.sync="bottomNav" shift color="#262F3D">
+                    <v-btn flat dark @click="overview" value="overview" color="#4FC3F7">
+                        <v-icon>dashboard</v-icon>
+                    </v-btn>
 
+                    <v-btn flat dark @click="pictures" value="pictures" color="#4FC3F7">
+                        <v-icon>photo</v-icon>
+                    </v-btn>
 
-            <!-- NAME AND EMAIL -->
-            <div class="hidden-xs-only">
-              <h1 class="name">{{userData.fullname}}</h1>
-              <p class="email">{{userData.email}}</p>
-            </div>
-            <v-divider class="divider" vertical></v-divider>
+                    <v-btn flat dark @click="logs" value="logs" color="#4FC3F7">
+                        <v-icon>subject</v-icon>
+                    </v-btn>
 
-            <!-- OPTIONS -->
-            <el-dropdown trigger="click" @command="handleCommand">
-              <span>
-                <v-icon>fa-cog</v-icon>
-              </span>
-              <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item v-for="item in items"
-                  :key="item.key" :command="item.command">
-                  {{item.title}}
-                </el-dropdown-item>
-              </el-dropdown-menu>
-            </el-dropdown>
-          </v-toolbar>
-          <v-divider></v-divider>
-        </el-header>
-
-        <!-- MAIN -->
-        <el-main class="main">
-          <router-view></router-view>
-        </el-main>
-        <!-- ///////////// -->
-
-        <el-footer class="hidden-md-and-up">
-            <v-bottom-nav class="navbottom" :value="true" :active.sync="bottomNav" shift color="#262F3D">
-            <v-btn flat dark @click="overview" value="overview" color="#4FC3F7">
-                <v-icon>dashboard</v-icon>
-            </v-btn>
-            <v-btn flat dark @click="pictures" value="pictures" color="#4FC3F7">
-                <v-icon>photo</v-icon>
-            </v-btn>
-            <v-btn flat dark @click="logs" value="logs" color="#4FC3F7">
-                <v-icon>subject</v-icon>
-            </v-btn>
-            <v-btn flat dark @click="kits" value="kits" color="#4FC3F7">
-                <v-icon>settings_cell</v-icon>
-            </v-btn>
-            </v-bottom-nav>
-        </el-footer>
-
-      </el-container>
-    </el-container>
-
-
-  </div>
+                    <v-btn flat dark @click="kits" value="kits" color="#4FC3F7">
+                        <v-icon>settings_cell</v-icon>
+                    </v-btn>
+				</v-bottom-nav>
+			</el-footer>
+		</el-container>
+	</el-container>
+</div>
 </template>
 
 <script>
@@ -112,48 +106,43 @@ import router from '../../../router/router'
 import store from '../../../store/store'
 
 export default {
-  data(){
-    return{
-      items:[
-        {
-          title: 'Accounts',
-          command: 'account'
-        },
-        {
-          title: 'Logout',
-          command: 'logout'
+    data(){
+        return{
+            items:[
+                { title: 'Accounts', command: 'account' },
+                { title: 'Logout', command: 'logout' }
+            ],
+            logout: false,
+            bottomNav: 'overview'
         }
-      ],
-      logout: false,
-      bottomNav: 'overview'
-    }
-  },
-  methods:{
-    overview(){ router.push({path: 'overview'})},
-    kits(){ router.push({path: 'kits'})},
-    pictures(){ router.push({path: 'pictures'})},
-    logs(){ router.push({path: 'logs'})},
+    },
+    methods:{
+        overview(){ router.push({path: 'overview'})},
+        kits(){ router.push({path: 'kits'})},
+        pictures(){ router.push({path: 'pictures'})},
+        logs(){ router.push({path: 'logs'})},
 
-    accounts(){
-      alert('Accounts')
+        handleCommand(command){
+            if(command == 'account'){
+                router.push({path: 'account'})
+            }else{
+                this.logout = true;
+                Vue.auth.logout(this.logout);
+            }
+        },
     },
-    handleCommand(command){
-      if(command == 'account'){
-        router.push({path: 'account'})
-      }else{
-        this.logout = true;
-        Vue.auth.logout(this.logout);
-      }
+
+    created(){
+        Vue.auth.user()
     },
-  },
-  created(){
-      Vue.auth.user()
-  },
-  computed:{
-    userData(){
-      return store.state.userData[0]
+    computed:{
+        userData(){
+            return store.state.userData[0]
+        },
+        Kits(){
+            return store.state.kitData
+        }
     }
-  }
 }
 </script>
 
@@ -250,5 +239,4 @@ export default {
   max-height: 57px !important;
   min-height: 57px !important;
 }
-
 </style>

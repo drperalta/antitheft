@@ -19,9 +19,35 @@
 import store from '../../../../store/store'
 
 export default {
-  created(){
-    this.$root.pageTitle = 'KITS'
-  }
+    data(){
+        return{
+            kitDetails:{
+                user_id: '',
+                name: '',
+                serial_number:''
+            },
+            error: false,
+            success: true,
+            errorMsg: null,
+            successMsg: null
+        }
+    },
+    method:{
+        add(){
+            this.error = false;
+            this.success = false;
+            this.errorMsg = null;
+            this.successMsg = null;
+
+            Vue.kit.add(this,this.kitDetails);
+        },
+    },
+    created(){
+        this.$root.pageTitle = 'KITS'
+    },
+    computed:{
+        //
+    }
 }
 </script>
 

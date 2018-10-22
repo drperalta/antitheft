@@ -9,6 +9,7 @@ export default new Vuex.Store({
     state:{
         userData: [],
         userEmail: [],
+        kitData: [],
 
     },
 
@@ -22,6 +23,9 @@ export default new Vuex.Store({
         },
         SET_EMAIL: (state, data) => {
             state.userEmail.push(data)
+        },
+        SET_KITDATA: (state, data) => {
+            state.kitData.push(data)
         }
     },
 
