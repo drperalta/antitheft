@@ -13,8 +13,13 @@ export default new Vuex.Store({
 
     },
 
-    getters:{
-        //
+    getters: {
+        userData: (state) => {
+            return state.userData
+        },
+        kitData: (state) => {
+            return state.kitData
+        }
     },
 
     mutations:{
@@ -22,15 +27,19 @@ export default new Vuex.Store({
             state.userData.push(data)
         },
         SET_EMAIL: (state, data) => {
-            state.userEmail.push(data)
+            state.userEmail = data
         },
-        SET_KITDATA: (state, data) => {
-            state.kitData.push(data)
+        SET_KITDATA: (state) => {
+            axios.get('api/user/kit/set/' + state.userData[0].id, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } })
+            .then(response => {
+                state.kitData = response.data
+            })
+
         }
     },
 
     actions:{
-        //
+
     }
 
 

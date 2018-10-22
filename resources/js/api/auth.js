@@ -77,7 +77,7 @@ export default function(Vue){
             }
             return Vue.auth
         },
-    
+
         // addKit(context,data){
         //     axios.post(
         //         'api/kit',data).then(response =>{

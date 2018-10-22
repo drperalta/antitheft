@@ -5,7 +5,7 @@
         <el-alert id="success" class="notification" type="success" v-if="success" :closable="false" center>{{successMsg}}</el-alert>
         <!-- Email -->
         <el-card class="card" shadow="never" v-if="!hide" body-style="padding: 0">
-            <p class="email" >{{this.userEmail[0]}}</p>
+            <p class="email" >{{this.userEmail}}</p>
         </el-card>
         <!-- Confirm Email Button -->
         <v-btn outline v-if="!hide" class="confirmEmail" type="submit" @click="confirm">Confirm Email</v-btn>

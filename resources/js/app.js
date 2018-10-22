@@ -17,6 +17,7 @@ import VueProgressBar from 'vue-progressbar'
 
 import Auth from '../js/api/auth'
 import Reset from '../js/api/reset'
+import Kit from '../js/api/kit'
 
 Vue.use(Vuetify)
 Vue.use(ElementUI)
@@ -24,6 +25,7 @@ locale.use(lang)
 Vue.use(VueProgressBar)
 Vue.use(Auth);
 Vue.use(Reset);
+Vue.use(Kit);
 
 window.axios=axios
 

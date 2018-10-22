@@ -47,15 +47,15 @@
 
                     <!-- SELECTED KIT -->
                     <el-select class="select" v-model="value" placeholder="Select your Kit">
-                        <el-option v-for="kit in Kit" :key="kit.id" :label="kit.name" :value="kit.id"></el-option>
+                        <el-option v-for="kit in kitData" :key="kit.id" :label="kit.name" :value="kit.id"></el-option>
                     </el-select>
                     <v-spacer></v-spacer>
                     <!-- BADGES -->
 
                     <!-- NAME AND EMAIL -->
                     <div class="hidden-xs-only">
-                        <h1 class="name">{{userData.fullname}}</h1>
-                        <p class="email">{{userData.email}}</p>
+                        <h1 class="name">{{userData[0].fullname}}</h1>
+                        <p class="email">{{userData[0].email}}</p>
                     </div>
                     <v-divider class="divider" vertical></v-divider>
                     <!-- OPTIONS -->
@@ -103,6 +103,9 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import store from '../../../store/store'
+
 export default {
     data(){
         return{
@@ -135,15 +138,13 @@ export default {
         Vue.auth.user()
     },
     mounted(){
-        Vue.kit.set()
+        this.$store.commit('SET_KITDATA')
     },
     computed:{
-        userData(){
-            return this.$store.state.userData[0]
-        },
-        Kit(){
-            return this.$store.state.kitData[0]
-        }
+        ...mapGetters([
+            'userData',
+            'kitData'
+        ])
     }
 }
 </script>

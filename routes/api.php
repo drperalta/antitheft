@@ -51,5 +51,5 @@ Route::group(['prefix' => 'kit' ], function()
 Route::group([ 'middleware' => 'auth:api', 'prefix' => 'user'  ], function()
 {
     Route::post('kit/add', 'UserKitController@add');
-    Route::get('user', 'AuthController@user');
+    Route::get('kit/set/{id}', 'UserKitController@set');
 });

@@ -5,7 +5,7 @@
             <v-toolbar-title class="title">KITS</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items>
-                <v-btn flat>ADD</v-btn>
+                <v-btn flat @click="dialog = true;">ADD</v-btn>
             </v-toolbar-items>
         </v-toolbar>
         <v-divider class="divider"></v-divider>
@@ -29,7 +29,7 @@ export default {
             error: false,
             success: true,
             errorMsg: null,
-            successMsg: null
+            successMsg: null,
         }
     },
     method:{
@@ -44,6 +44,7 @@ export default {
     },
     created(){
         this.$root.pageTitle = 'KITS'
+
     },
     computed:{
         //

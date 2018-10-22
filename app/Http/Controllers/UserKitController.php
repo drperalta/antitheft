@@ -30,8 +30,14 @@ class UserKitController extends Controller
             ], 201);
          }else{
             return response()->json([
-                'error' => [ 'message' => 'Invalid Serial Number' ]
+                'errors' => [ 'message' => ['Invalid Serial Number'] ]
             ], 400);
          }
+    }
+
+    public function set($id){
+
+        return UserKit::select('id','serial_number','name')->where('user_id', $id)->get();
+
     }
 }
