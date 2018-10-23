@@ -12,8 +12,8 @@ export default function(Vue){
             { headers: { 'Authorization': 'Bearer ' + this.getToken() } })
             .then(response => {
 
-                context.success = true;
-                context.successMsg = response.data.message
+                context.addNotif.success = true;
+                context.addNotif.successMsg = response.data.message
 
                 store.dispatch('SET_KITDATA')
 
@@ -29,14 +29,13 @@ export default function(Vue){
               serial_number: serial
             },{ headers: { 'Authorization': 'Bearer ' + this.getToken() } })
             .then(response =>{
-                context.success = true;
-                context.successMsg = response.data.message
+                context.editNotif.success = true;
+                context.editNotif.successMsg = response.data.message
 
                 store.dispatch('SET_KITDATA')
 
             }).catch(error => {
-                
-                console.log(error)
+                handleError('EDIT', context, error)
             })
          },
         remove(id){
@@ -48,10 +47,16 @@ export default function(Vue){
         },
         handleError(type,context,error){
             if(type === 'ADD'){
-                context.error = true;
+                context.addNotif.error = true;
                 var errorArray = Object.values(error.response.data.errors);
 
-                context.errorMsg = errorArray[0][0];
+                context.addNotif.errorMsg = errorArray[0][0];
+            }
+            else if(type === 'EDIT'){
+                context.editNotif.error = true;
+                var errorArray = Object.values(error.response.data.errors);
+
+                context.editNotif.errorMsg = errorArray[0][0];
             }
         },
         clearInput(type,data){

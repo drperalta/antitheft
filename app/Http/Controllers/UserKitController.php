@@ -53,7 +53,7 @@ class UserKitController extends Controller
         }else{
             return response()->json([
                 'errors' => ['message' => ['Invalid Serial Number']]
-            ], 402);
+            ], 400);
         }
         
       }

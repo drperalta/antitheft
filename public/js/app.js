@@ -24403,6 +24403,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -24416,10 +24417,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             },
             kitID: '',
 
-            error: false,
-            success: false,
-            errorMsg: null,
-            successMsg: null,
+            editNotif: {
+                error: false,
+                success: false,
+                errorMsg: null,
+                successMsg: null
+            },
+            addNotif: {
+                error: false,
+                success: false,
+                errorMsg: null,
+                successMsg: null
+            },
 
             openModalAdd: false,
             openModalEdit: false
@@ -24428,18 +24437,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
     methods: {
         add: function add() {
-            this.error = false;
-            this.success = false;
-            this.errorMsg = null;
-            this.successMsg = null;
+            this.addNotif.error = false;
+            this.addNotif.success = false;
+            this.addNotif.errorMsg = null;
+            this.addNotif.successMsg = null;
 
             Vue.kit.add(this, this.kitDetails);
         },
         edit: function edit() {
-            this.error = false;
-            this.success = false;
-            this.errorMsg = null;
-            this.successMsg = null;
+            this.editNotif.error = false;
+            this.editNotif.success = false;
+            this.editNotif.errorMsg = null;
+            this.editNotif.successMsg = null;
 
             Vue.kit.edit(this, __WEBPACK_IMPORTED_MODULE_0__store_store__["a" /* default */].getters.editKitData.name, __WEBPACK_IMPORTED_MODULE_0__store_store__["a" /* default */].getters.editKitData.serial_number, this.kitID);
         },
@@ -24535,19 +24544,23 @@ var render = function() {
                         "v-container",
                         { attrs: { "grid-list-md": "" } },
                         [
-                          _vm.error
+                          _vm.addNotif.error
                             ? _c("el-alert", {
                                 staticClass: "notification",
-                                attrs: { type: "error", title: _vm.errorMsg }
+                                attrs: {
+                                  type: "error",
+                                  title: _vm.addNotif.errorMsg,
+                                  closable: false
+                                }
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.success
+                          _vm.addNotif.success
                             ? _c("el-alert", {
                                 staticClass: "notification",
                                 attrs: {
                                   type: "success",
-                                  title: _vm.successMsg,
+                                  title: _vm.addNotif.successMsg,
                                   closable: false
                                 }
                               })
@@ -24660,15 +24673,26 @@ var render = function() {
                         "v-container",
                         { attrs: { "grid-list-md": "" } },
                         [
-                          this.error
-                            ? _c(
-                                "el-alert",
-                                {
-                                  staticClass: "notification",
-                                  attrs: { type: "error" }
-                                },
-                                [_vm._v(_vm._s(this.errorMsg))]
-                              )
+                          _vm.editNotif.error
+                            ? _c("el-alert", {
+                                staticClass: "notification",
+                                attrs: {
+                                  type: "error",
+                                  title: _vm.editNotif.errorMsg,
+                                  closable: false
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.editNotif.success
+                            ? _c("el-alert", {
+                                staticClass: "notification",
+                                attrs: {
+                                  type: "success",
+                                  title: _vm.editNotif.successMsg,
+                                  closable: false
+                                }
+                              })
                             : _vm._e(),
                           _vm._v(" "),
                           _c("el-input", {
@@ -90594,8 +90618,8 @@ exports.default = {
                 serial_number: data.serial_number
             }, { headers: { 'Authorization': 'Bearer ' + this.getToken() } }).then(function (response) {
 
-                context.success = true;
-                context.successMsg = response.data.message;
+                context.addNotif.success = true;
+                context.addNotif.successMsg = response.data.message;
 
                 __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].dispatch('SET_KITDATA');
             }).catch(function (error) {
@@ -90609,13 +90633,12 @@ exports.default = {
                 name: name,
                 serial_number: serial
             }, { headers: { 'Authorization': 'Bearer ' + this.getToken() } }).then(function (response) {
-                context.success = true;
-                context.successMsg = response.data.message;
+                context.editNotif.success = true;
+                context.editNotif.successMsg = response.data.message;
 
                 __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].dispatch('SET_KITDATA');
             }).catch(function (error) {
-
-                console.log(error);
+                handleError('EDIT', context, error);
             });
         },
         remove: function remove(id) {
@@ -90625,10 +90648,15 @@ exports.default = {
         },
         handleError: function handleError(type, context, error) {
             if (type === 'ADD') {
-                context.error = true;
+                context.addNotif.error = true;
                 var errorArray = Object.values(error.response.data.errors);
 
-                context.errorMsg = errorArray[0][0];
+                context.addNotif.errorMsg = errorArray[0][0];
+            } else if (type === 'EDIT') {
+                context.editNotif.error = true;
+                var errorArray = Object.values(error.response.data.errors);
+
+                context.editNotif.errorMsg = errorArray[0][0];
             }
         },
         clearInput: function clearInput(type, data) {

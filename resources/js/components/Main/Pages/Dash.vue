@@ -73,7 +73,7 @@
 			</el-header>
 
 			<!-- MAIN -->
-			<el-main class="main">
+			<el-main class="main" >
 				<router-view></router-view>
 			</el-main>
 

@@ -7,8 +7,8 @@
                 <v-card-title class="headline grey lighten-4">Add Kit</v-card-title>
                 <v-card-text>
                     <v-container grid-list-md>
-                        <el-alert class="notification" type="error" v-if="error" :title="errorMsg"/>
-                        <el-alert class="notification" type="success" v-if="success" :title="successMsg" :closable="false"/>
+                        <el-alert class="notification" type="error" v-if="addNotif.error" :title="addNotif.errorMsg" :closable="false"/>
+                        <el-alert class="notification" type="success" v-if="addNotif.success" :title="addNotif.successMsg" :closable="false"/>
 
                         <el-input class="input" placeholder="Name" v-model="kitDetails.name"></el-input>
                         <el-input class="input" placeholder="Serial Number" v-model="kitDetails.serial_number"></el-input>
@@ -30,7 +30,8 @@
                 <v-card-title class="headline grey lighten-4">Edit Kit</v-card-title>
                 <v-card-text>
                     <v-container grid-list-md>
-                        <el-alert class="notification" type="error" v-if="this.error">{{this.errorMsg}}</el-alert>
+                        <el-alert class="notification" type="error" v-if="editNotif.error" :title="editNotif.errorMsg" :closable="false"/>
+                        <el-alert class="notification" type="success" v-if="editNotif.success" :title="editNotif.successMsg" :closable="false"/>
                         <el-input class="input" placeholder="Name" v-model="editKitData.name"></el-input>
                         <el-input class="input" placeholder="Serial Number" v-model="editKitData.serial_number"></el-input>
                     </v-container>
@@ -109,10 +110,18 @@ export default {
             },
             kitID: '',
 
-            error: false,
-            success: false,
-            errorMsg: null,
-            successMsg: null,
+            editNotif:{
+                error: false,
+                success: false,
+                errorMsg: null,
+                successMsg: null
+            },
+            addNotif:{
+                error: false,
+                success: false,
+                errorMsg: null,
+                successMsg: null
+            },
 
             openModalAdd: false,
             openModalEdit: false
@@ -120,18 +129,18 @@ export default {
     },
     methods:{
         add(){
-            this.error = false;
-            this.success = false;
-            this.errorMsg = null;
-            this.successMsg = null;
+            this.addNotif.error = false;
+            this.addNotif.success = false;
+            this.addNotif.errorMsg = null;
+            this.addNotif.successMsg = null;
 
             Vue.kit.add(this,this.kitDetails);
         },
         edit(){
-            this.error = false;
-            this.success = false;
-            this.errorMsg = null;
-            this.successMsg = null;
+            this.editNotif.error = false;
+            this.editNotif.success = false;
+            this.editNotif.errorMsg = null;
+            this.editNotif.successMsg = null;
 
             Vue.kit.edit(this, store.getters.editKitData.name, store.getters.editKitData.serial_number, this.kitID);
         },
