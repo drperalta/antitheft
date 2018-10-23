@@ -22,7 +22,11 @@ export default new Vuex.Store({
         },
         userEmail: (state) => {
             return state.userEmail
+        },
+        userID: (state) => {
+            return state.userData.id
         }
+
     },
 
     mutations:{
@@ -33,7 +37,6 @@ export default new Vuex.Store({
             state.userEmail.push(data)
         },
         SET_KITDATA: (state) => {
-
             axios.get('api/user/kit/set/' + state.userData.id, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } })
             .then(response => {
                 state.kitData = response.data

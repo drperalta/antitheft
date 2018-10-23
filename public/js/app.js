@@ -12023,7 +12023,11 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
         },
         userEmail: function userEmail(state) {
             return state.userEmail;
+        },
+        userID: function userID(state) {
+            return state.userData.id;
         }
+
     },
 
     mutations: {
@@ -12034,7 +12038,6 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
             state.userEmail.push(data);
         },
         SET_KITDATA: function SET_KITDATA(state) {
-
             axios.get('api/user/kit/set/' + state.userData.id, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } }).then(function (response) {
                 state.kitData = response.data;
             });
@@ -24271,7 +24274,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.container[data-v-072ba7d0]{\r\n    height: 100%;\n}\n.toolbar[data-v-072ba7d0]{\n}\n.title[data-v-072ba7d0]{\r\n  font-weight: 600;\r\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-072ba7d0]{\r\n    margin: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n.container[data-v-072ba7d0]{\r\n    height: 100%;\n}\n.toolbar[data-v-072ba7d0]{\n}\n.title[data-v-072ba7d0]{\r\n  font-weight: 600;\r\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-072ba7d0]{\r\n    margin: 0;\n}\n.input[data-v-072ba7d0]{\r\n    margin: 5px;\n}\n.notification[data-v-072ba7d0]{\r\n    margin-bottom: 15px;\n}\r\n", ""]);
 
 // exports
 
@@ -24300,6 +24303,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -24307,18 +24333,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             kitDetails: {
-                user_id: '',
                 name: '',
                 serial_number: ''
             },
             error: false,
-            success: true,
+            success: false,
             errorMsg: null,
-            successMsg: null
+            successMsg: null,
+
+            openModalAdd: false
         };
     },
 
-    method: {
+    methods: {
         add: function add() {
             this.error = false;
             this.success = false;
@@ -24326,6 +24353,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.successMsg = null;
 
             Vue.kit.add(this, this.kitDetails);
+        },
+        clear: function clear() {
+
+            this.error = false;
+            this.success = false;
+            this.errorMsg = null;
+            this.successMsg = null;
         }
     },
     created: function created() {
@@ -24349,6 +24383,131 @@ var render = function() {
     "div",
     [
       _c(
+        "v-layout",
+        { attrs: { row: "", "justify-center": "" } },
+        [
+          _c(
+            "v-dialog",
+            {
+              attrs: { "max-width": "420" },
+              model: {
+                value: _vm.openModalAdd,
+                callback: function($$v) {
+                  _vm.openModalAdd = $$v
+                },
+                expression: "openModalAdd"
+              }
+            },
+            [
+              _c(
+                "v-card",
+                [
+                  _c(
+                    "v-card-title",
+                    { staticClass: "headline grey lighten-4" },
+                    [_vm._v("Add Kit")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-text",
+                    [
+                      _c(
+                        "v-container",
+                        { attrs: { "grid-list-md": "" } },
+                        [
+                          _vm.error
+                            ? _c("el-alert", {
+                                staticClass: "notification",
+                                attrs: { type: "error", title: _vm.errorMsg }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.success
+                            ? _c("el-alert", {
+                                staticClass: "notification",
+                                attrs: {
+                                  type: "success",
+                                  title: _vm.successMsg,
+                                  closable: false
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _c("el-input", {
+                            staticClass: "input",
+                            attrs: { placeholder: "Name" },
+                            model: {
+                              value: _vm.kitDetails.name,
+                              callback: function($$v) {
+                                _vm.$set(_vm.kitDetails, "name", $$v)
+                              },
+                              expression: "kitDetails.name"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("el-input", {
+                            staticClass: "input",
+                            attrs: { placeholder: "Serial Number" },
+                            model: {
+                              value: _vm.kitDetails.serial_number,
+                              callback: function($$v) {
+                                _vm.$set(_vm.kitDetails, "serial_number", $$v)
+                              },
+                              expression: "kitDetails.serial_number"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-actions",
+                    [
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "green darken-1", flat: "" },
+                          nativeOn: {
+                            click: function($event) {
+                              _vm.openModalAdd = false
+                            }
+                          }
+                        },
+                        [_vm._v("Close")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "green darken-1", flat: "" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.add($event)
+                            }
+                          }
+                        },
+                        [_vm._v("Add")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
         "v-toolbar",
         { staticClass: "toolbar", attrs: { flat: "", height: "56px" } },
         [
@@ -24365,7 +24524,8 @@ var render = function() {
                   attrs: { flat: "" },
                   on: {
                     click: function($event) {
-                      _vm.dialog = true
+                      _vm.openModalAdd = true
+                      _vm.clear()
                     }
                   }
                 },
@@ -90027,11 +90187,14 @@ exports.default = {
         add: function add(context, data) {
             var _this = this;
 
-            axios.post('api/user/kit/add', data, { headers: { 'Authorization': 'Bearer ' + this.getToken() } }).then(function (response) {
-                context.success = true;
-                context.successMsg = response.message;
+            axios.post('api/user/kit/add', {
+                user_id: __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].getters.userID,
+                name: data.name,
+                serial_number: data.serial_number
+            }, { headers: { 'Authorization': 'Bearer ' + this.getToken() } }).then(function (response) {
 
-                console.log(response);
+                context.success = true;
+                context.successMsg = response.data.message;
             }).catch(function (error) {
                 _this.handleError('ADD', context, error);
             });
@@ -90045,8 +90208,8 @@ exports.default = {
             }
         },
         clearInput: function clearInput(type, data) {
-            if (type == 'ADD') {
-                //
+            if (type === 'ADD') {
+                data.name = '', data.serial_number = '';
             }
         },
         getToken: function getToken() {
@@ -90060,12 +90223,6 @@ exports.default = {
                 return null;
             } else {
                 return token;
-            }
-        },
-
-        computed: {
-            userData: function userData() {
-                return this.$store.state.userData[0];
             }
         }
     };
