@@ -44,7 +44,7 @@ export default {
     },
     created(){
         this.$root.pageTitle = 'KITS'
-
+        
     },
     computed:{
         //

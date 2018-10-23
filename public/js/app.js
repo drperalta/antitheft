@@ -12020,24 +12020,34 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
         },
         kitData: function kitData(state) {
             return state.kitData;
+        },
+        userEmail: function userEmail(state) {
+            return state.userEmail;
         }
     },
 
     mutations: {
         SET_USERDATA: function SET_USERDATA(state, data) {
-            state.userData.push(data);
+            state.userData = data;
         },
         SET_EMAIL: function SET_EMAIL(state, data) {
-            state.userEmail = data;
+            state.userEmail.push(data);
         },
         SET_KITDATA: function SET_KITDATA(state) {
+
             axios.get('api/user/kit/set/' + state.userData[0].id, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } }).then(function (response) {
                 state.kitData = response.data;
             });
         }
     },
 
-    actions: {}
+    actions: {
+        SET_KITDATA: function SET_KITDATA(_ref) {
+            var commit = _ref.commit;
+
+            commit('SET_KITDATA');
+        }
+    }
 
 }));
 
@@ -21673,7 +21683,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.container[data-v-3d2ec509]{\n    text-align: center;\n}\n.title[data-v-3d2ec509] {\n  text-align: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.title h1[data-v-3d2ec509]{\n  font-weight: 600;\n  font-size: 22px !important;\n  display: inline-flex;\n}\n.title h2[data-v-3d2ec509]{\n  font-weight: 400;\n  font-size: 22px !important;\n  display: inline-flex;\n}\n", ""]);
+exports.push([module.i, "\n.container[data-v-3d2ec509]{\r\n    text-align: center;\n}\n.title[data-v-3d2ec509] {\r\n  text-align: center;\r\n  padding-top: 10px;\r\n  padding-bottom: 10px;\n}\n.title h1[data-v-3d2ec509]{\r\n  font-weight: 600;\r\n  font-size: 22px !important;\r\n  display: inline-flex;\n}\n.title h2[data-v-3d2ec509]{\r\n  font-weight: 400;\r\n  font-size: 22px !important;\r\n  display: inline-flex;\n}\r\n", ""]);
 
 // exports
 
@@ -21857,7 +21867,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.index[data-v-2e17d91c] {\n    width: 100vw;\n    height: 100vh;\n    background: url(" + escape(__webpack_require__(115)) + ")\n}\n.logo[data-v-2e17d91c] {\n    width: 110px\n}\n.vContainer[data-v-2e17d91c] {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    max-width: 380px;\n    text-align: center;\n}\n.title[data-v-2e17d91c] {\n    display: block;\n    font-weight: 600;\n    margin-bottom: 8px;\n    color: white;\n}\n", ""]);
+exports.push([module.i, "\n.index[data-v-2e17d91c] {\r\n    width: 100vw;\r\n    height: 100vh;\r\n    background: url(" + escape(__webpack_require__(115)) + ")\n}\n.logo[data-v-2e17d91c] {\r\n    width: 110px\n}\n.vContainer[data-v-2e17d91c] {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    max-width: 380px;\r\n    text-align: center;\n}\n.title[data-v-2e17d91c] {\r\n    display: block;\r\n    font-weight: 600;\r\n    margin-bottom: 8px;\r\n    color: white;\n}\r\n", ""]);
 
 // exports
 
@@ -22014,7 +22024,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.v-divider[data-v-6c4a3438]{\n  margin: 0 !important;\n}\n.main-container[data-v-6c4a3438] {\n  margin: 0;\n  padding: 0;\n}\n.navbar[data-v-6c4a3438]{\n  background-color: white;\n  padding: 0;\n  margin: 0;\n  height: 77px !important;\n}\n.v-toolbar[data-v-6c4a3438]{\n  box-shadow: none;\n  padding-top: 10px;\n  padding-bottom: 10px;\n  height: 77px;\n  background-color: #039BE5;\n}\n.sidebar[data-v-6c4a3438]{\n  height: 100vh;\n  width: 256px;\n  border: 0px;\n}\n.main[data-v-6c4a3438]{\n  padding: 0;\n  height: 100%;\n}\n.side-title[data-v-6c4a3438] {\n  text-align: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.side-title h1[data-v-6c4a3438]{\n  font-weight: 600;\n  font-size: 16px !important;\n  display: inline-flex;\n  color: white;\n}\n.side-title h2[data-v-6c4a3438]{\n  font-weight: 400;\n  font-size: 16px !important;\n  display: inline-flex;\n  color:   whitesmoke;\n}\n.side_title[data-v-6c4a3438] {\n  font-weight: 500;\n  font-size: 14px;\n}\n.side-menu[data-v-6c4a3438] {\n    width: 256px !important;\n}\n.side-menu span[data-v-6c4a3438]{\n  font-weight: 500;\n}\n.navbottom[data-v-6c4a3438]{\n    bottom: 0;\n    position: absolute;\n}\n.icon[data-v-6c4a3438] {\n  margin-left: 12px;\n  margin-right: 20px;\n  width: 14px !important;\n  color: white;\n}\n.name[data-v-6c4a3438]{\n  font-weight: 600;\n  font-size: 18px;\n  right: 0;\n  color: white;\n}\n.email[data-v-6c4a3438]{\n  font-weight: 400;\n  font-size: 12px;\n  color: lightblue;\n}\n.button[data-v-6c4a3438]{\n  width: 57px !important;\n  height: 57px !important;\n  margin: 0;\n  padding: 0;\n}\n.divider[data-v-6c4a3438]{\n  margin-left: 15px !important;\n  margin-right: 24px !important;\n  max-height: 57px !important;\n  min-height: 57px !important;\n}\n", ""]);
+exports.push([module.i, "\n.v-divider[data-v-6c4a3438]{\r\n  margin: 0 !important;\n}\n.main-container[data-v-6c4a3438] {\r\n  margin: 0;\r\n  padding: 0;\n}\n.navbar[data-v-6c4a3438]{\r\n  background-color: white;\r\n  padding: 0;\r\n  margin: 0;\r\n  height: 77px !important;\n}\n.v-toolbar[data-v-6c4a3438]{\r\n  box-shadow: none;\r\n  padding-top: 10px;\r\n  padding-bottom: 10px;\r\n  height: 77px;\r\n  background-color: #039BE5;\n}\n.sidebar[data-v-6c4a3438]{\r\n  height: 100vh;\r\n  width: 256px;\r\n  border: 0px;\n}\n.main[data-v-6c4a3438]{\r\n  padding: 0;\r\n  height: 100%;\n}\n.side-title[data-v-6c4a3438] {\r\n  text-align: center;\r\n  padding-top: 10px;\r\n  padding-bottom: 10px;\n}\n.side-title h1[data-v-6c4a3438]{\r\n  font-weight: 600;\r\n  font-size: 16px !important;\r\n  display: inline-flex;\r\n  color: white;\n}\n.side-title h2[data-v-6c4a3438]{\r\n  font-weight: 400;\r\n  font-size: 16px !important;\r\n  display: inline-flex;\r\n  color:   whitesmoke;\n}\n.side_title[data-v-6c4a3438] {\r\n  font-weight: 500;\r\n  font-size: 14px;\n}\n.side-menu[data-v-6c4a3438] {\r\n    width: 256px !important;\n}\n.side-menu span[data-v-6c4a3438]{\r\n  font-weight: 500;\n}\n.navbottom[data-v-6c4a3438]{\r\n    bottom: 0;\r\n    position: absolute;\n}\n.icon[data-v-6c4a3438] {\r\n  margin-left: 12px;\r\n  margin-right: 20px;\r\n  width: 14px !important;\r\n  color: white;\n}\n.name[data-v-6c4a3438]{\r\n  font-weight: 600;\r\n  font-size: 18px;\r\n  right: 0;\r\n  color: white;\n}\n.email[data-v-6c4a3438]{\r\n  font-weight: 400;\r\n  font-size: 12px;\r\n  color: lightblue;\n}\n.button[data-v-6c4a3438]{\r\n  width: 57px !important;\r\n  height: 57px !important;\r\n  margin: 0;\r\n  padding: 0;\n}\n.divider[data-v-6c4a3438]{\r\n  margin-left: 15px !important;\r\n  margin-right: 24px !important;\r\n  max-height: 57px !important;\r\n  min-height: 57px !important;\n}\r\n", ""]);
 
 // exports
 
@@ -22173,9 +22183,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     created: function created() {
         Vue.auth.user();
     },
-    mounted: function mounted() {
-        this.$store.commit('SET_KITDATA');
-    },
+    mounted: function mounted() {},
 
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['userData', 'kitData']))
 });
@@ -22357,11 +22365,11 @@ var render = function() {
                       _vm._v(" "),
                       _c("div", { staticClass: "hidden-xs-only" }, [
                         _c("h1", { staticClass: "name" }, [
-                          _vm._v(_vm._s(_vm.userData[0].fullname))
+                          _vm._v(_vm._s(_vm.userData.fullname))
                         ]),
                         _vm._v(" "),
                         _c("p", { staticClass: "email" }, [
-                          _vm._v(_vm._s(_vm.userData[0].email))
+                          _vm._v(_vm._s(_vm.userData.email))
                         ])
                       ]),
                       _vm._v(" "),
@@ -22599,7 +22607,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-f297c6ec] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.notification[data-v-f297c6ec]{\n    margin-bottom: 8px;\n    background-color: rgba(255, 0, 0, 0.3);\n    color: whitesmoke;\n}\n.el-input[data-v-f297c6ec] {\n    padding: 4px;\n}\n.singin[data-v-f297c6ec] {\n    color: #00afec;\n    margin-bottom: 20px;\n}\n.resetpassword[data-v-f297c6ec] {\n    float: right;\n    padding: 4px;\n}\n.forgotPassword[data-v-f297c6ec] {\n    font-size: 13px;\n}\n.needAccount[data-v-f297c6ec] {\n    font-size: 15px;\n    margin-top: 10px;\n}\n.formBottom[data-v-f297c6ec] {\n    margin-top: 50px;\n    padding: 4px;\n}\n.loginButton[data-v-f297c6ec] {\n    width: 100%;\n    color: #00afec;\n    background-color: transparent;\n    margin: 0;\n    margin-bottom: 10px;\n    padding: 4px;\n}\n.rememberMe[data-v-f297c6ec] {\n    font-weight: 400;\n    color: white;\n}\n.div-rememberMe[data-v-f297c6ec] {\n    padding: 4px;\n    float: left;\n    margin: 0;\n}\n", ""]);
+exports.push([module.i, "\na[data-v-f297c6ec] {\r\n    text-decoration: none;\r\n    color: white;\r\n    opacity: 0.8;\n}\n.notification[data-v-f297c6ec]{\r\n    margin-bottom: 8px;\r\n    background-color: rgba(255, 0, 0, 0.3);\r\n    color: whitesmoke;\n}\n.el-input[data-v-f297c6ec] {\r\n    padding: 4px;\n}\n.singin[data-v-f297c6ec] {\r\n    color: #00afec;\r\n    margin-bottom: 20px;\n}\n.resetpassword[data-v-f297c6ec] {\r\n    float: right;\r\n    padding: 4px;\n}\n.forgotPassword[data-v-f297c6ec] {\r\n    font-size: 13px;\n}\n.needAccount[data-v-f297c6ec] {\r\n    font-size: 15px;\r\n    margin-top: 10px;\n}\n.formBottom[data-v-f297c6ec] {\r\n    margin-top: 50px;\r\n    padding: 4px;\n}\n.loginButton[data-v-f297c6ec] {\r\n    width: 100%;\r\n    color: #00afec;\r\n    background-color: transparent;\r\n    margin: 0;\r\n    margin-bottom: 10px;\r\n    padding: 4px;\n}\n.rememberMe[data-v-f297c6ec] {\r\n    font-weight: 400;\r\n    color: white;\n}\n.div-rememberMe[data-v-f297c6ec] {\r\n    padding: 4px;\r\n    float: left;\r\n    margin: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -22903,7 +22911,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-58163812] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.notification[data-v-58163812] {\n    margin-bottom: 8px;\n    color: whitesmoke;\n}\n#error[data-v-58163812] {\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-58163812] {\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-58163812] {\n    padding: 4px;\n}\n.signup[data-v-58163812] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.alreadyMember[data-v-58163812] {\n    font-size: 15px\n}\n.formBottom[data-v-58163812] {\n    margin-top: 25px;\n    padding: 4px;\n}\n.registerButton[data-v-58163812] {\n    width: 100%;\n    color: #00afec;\n    background-color: transparent;\n    margin: 0;\n    margin-bottom: 10px;\n    padding: 4px;\n}\n", ""]);
+exports.push([module.i, "\na[data-v-58163812] {\r\n    text-decoration: none;\r\n    color: white;\r\n    opacity: 0.8;\n}\n.notification[data-v-58163812] {\r\n    margin-bottom: 8px;\r\n    color: whitesmoke;\n}\n#error[data-v-58163812] {\r\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-58163812] {\r\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-58163812] {\r\n    padding: 4px;\n}\n.signup[data-v-58163812] {\r\n    color: #428ccb;\r\n    margin-bottom: 20px;\n}\n.alreadyMember[data-v-58163812] {\r\n    font-size: 15px\n}\n.formBottom[data-v-58163812] {\r\n    margin-top: 25px;\r\n    padding: 4px;\n}\n.registerButton[data-v-58163812] {\r\n    width: 100%;\r\n    color: #00afec;\r\n    background-color: transparent;\r\n    margin: 0;\r\n    margin-bottom: 10px;\r\n    padding: 4px;\n}\r\n", ""]);
 
 // exports
 
@@ -23230,7 +23238,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-5988d8ab] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.notification[data-v-5988d8ab] {\n    margin-bottom: 8px;\n    color: whitesmoke;\n}\n#error[data-v-5988d8ab] {\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-5988d8ab] {\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-5988d8ab]{\n    padding: 4px;\n}\n.resetpassword[data-v-5988d8ab] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.formBottom[data-v-5988d8ab] {\n    margin-top: 15px;\n    padding: 4px;\n}\n.sendButton[data-v-5988d8ab] {\n    width: 100%;\n    color: #00afec;\n    background-color: transparent;\n    margin: 0;\n    margin-bottom: 10px;\n    padding: 4px;\n}\n", ""]);
+exports.push([module.i, "\na[data-v-5988d8ab] {\r\n    text-decoration: none;\r\n    color: white;\r\n    opacity: 0.8;\n}\n.notification[data-v-5988d8ab] {\r\n    margin-bottom: 8px;\r\n    color: whitesmoke;\n}\n#error[data-v-5988d8ab] {\r\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-5988d8ab] {\r\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-5988d8ab]{\r\n    padding: 4px;\n}\n.resetpassword[data-v-5988d8ab] {\r\n    color: #428ccb;\r\n    margin-bottom: 20px;\n}\n.formBottom[data-v-5988d8ab] {\r\n    margin-top: 15px;\r\n    padding: 4px;\n}\n.sendButton[data-v-5988d8ab] {\r\n    width: 100%;\r\n    color: #00afec;\r\n    background-color: transparent;\r\n    margin: 0;\r\n    margin-bottom: 10px;\r\n    padding: 4px;\n}\r\n", ""]);
 
 // exports
 
@@ -23493,7 +23501,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-19158a9a] {\n    text-decoration: none;\n    color: white;\n    opacity: 0.8;\n}\n.notification[data-v-19158a9a] {\n    margin-bottom: 8px;\n    color: whitesmoke;\n}\n#error[data-v-19158a9a] {\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-19158a9a] {\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-19158a9a] {\n    padding: 4px;\n}\n.changepassword[data-v-19158a9a] {\n    color: #428ccb;\n    margin-bottom: 20px;\n}\n.formBottom[data-v-19158a9a] {\n    margin-top: 20px;\n    padding: 4px;\n}\n.changePassButton[data-v-19158a9a] {\n    width: 100%;\n    color: #00afec;\n    background-color: transparent;\n    margin: 0;\n    margin-bottom: 10px;\n    padding: 4px;\n}\n.backToLogin[data-v-19158a9a] {\n    width: 100%;\n    color: #00afec;\n    background-color: transparent;\n    margin: 0;\n    margin-bottom: 10px;\n    padding: 4px;\n}\n", ""]);
+exports.push([module.i, "\na[data-v-19158a9a] {\r\n    text-decoration: none;\r\n    color: white;\r\n    opacity: 0.8;\n}\n.notification[data-v-19158a9a] {\r\n    margin-bottom: 8px;\r\n    color: whitesmoke;\n}\n#error[data-v-19158a9a] {\r\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-19158a9a] {\r\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.el-input[data-v-19158a9a] {\r\n    padding: 4px;\n}\n.changepassword[data-v-19158a9a] {\r\n    color: #428ccb;\r\n    margin-bottom: 20px;\n}\n.formBottom[data-v-19158a9a] {\r\n    margin-top: 20px;\r\n    padding: 4px;\n}\n.changePassButton[data-v-19158a9a] {\r\n    width: 100%;\r\n    color: #00afec;\r\n    background-color: transparent;\r\n    margin: 0;\r\n    margin-bottom: 10px;\r\n    padding: 4px;\n}\n.backToLogin[data-v-19158a9a] {\r\n    width: 100%;\r\n    color: #00afec;\r\n    background-color: transparent;\r\n    margin: 0;\r\n    margin-bottom: 10px;\r\n    padding: 4px;\n}\r\n", ""]);
 
 // exports
 
@@ -23832,7 +23840,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.notification[data-v-60d5fe2b] {\n    margin-bottom: 15px;\n    color: whitesmoke;\n}\n#error[data-v-60d5fe2b] {\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-60d5fe2b] {\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.successconfirm[data-v-60d5fe2b] {\n    color: #00afec;\n    margin-bottom: 20px;\n}\n.confirmEmail[data-v-60d5fe2b] {\n    width: 100%;\n    color: #00afec;\n    background-color: transparent;\n    margin: 0;\n    margin-bottom: 10px;\n    padding: 4px;\n}\n.backToLogin[data-v-60d5fe2b]{\n    width: 100%;\n    color: #00afec;\n    background-color: transparent;\n    margin: 0;\n    margin-bottom: 10px;\n    padding: 4px;\n}\n.card[data-v-60d5fe2b]{\n    height: 40px;\n    padding: 6px;\n    margin-bottom: 20px;\n}\n.email[data-v-60d5fe2b]{\n    font-size: 16px;\n    font-weight: 400;\n}\n", ""]);
+exports.push([module.i, "\n.notification[data-v-60d5fe2b] {\r\n    margin-bottom: 15px;\r\n    color: whitesmoke;\n}\n#error[data-v-60d5fe2b] {\r\n    background-color: rgba(255, 0, 0, 0.3);\n}\n#success[data-v-60d5fe2b] {\r\n    background-color: rgba(0, 255, 0, 0.3);\n}\n.successconfirm[data-v-60d5fe2b] {\r\n    color: #00afec;\r\n    margin-bottom: 20px;\n}\n.confirmEmail[data-v-60d5fe2b] {\r\n    width: 100%;\r\n    color: #00afec;\r\n    background-color: transparent;\r\n    margin: 0;\r\n    margin-bottom: 10px;\r\n    padding: 4px;\n}\n.backToLogin[data-v-60d5fe2b]{\r\n    width: 100%;\r\n    color: #00afec;\r\n    background-color: transparent;\r\n    margin: 0;\r\n    margin-bottom: 10px;\r\n    padding: 4px;\n}\n.card[data-v-60d5fe2b]{\r\n    height: 40px;\r\n    padding: 6px;\r\n    margin-bottom: 20px;\n}\n.email[data-v-60d5fe2b]{\r\n    font-size: 16px;\r\n    font-weight: 400;\n}\r\n", ""]);
 
 // exports
 
@@ -23843,7 +23851,10 @@ exports.push([module.i, "\n.notification[data-v-60d5fe2b] {\n    margin-bottom: 
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_store__ = __webpack_require__(7);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 //
 //
 //
@@ -23864,6 +23875,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -23887,11 +23899,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         Vue.auth.setConfirmationEmail(this.$route.params.activation_token);
     },
 
-    computed: {
-        userEmail: function userEmail() {
-            return __WEBPACK_IMPORTED_MODULE_0__store_store__["a" /* default */].state.userEmail;
-        }
-    }
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['userEmail']))
 });
 
 /***/ }),
@@ -23946,7 +23954,7 @@ var render = function() {
             },
             [
               _c("p", { staticClass: "email" }, [
-                _vm._v(_vm._s(this.userEmail))
+                _vm._v(_vm._s(_vm.userEmail[0]))
               ])
             ]
           )
@@ -24099,7 +24107,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.container[data-v-5c0265b4]{\n    height: 100%;\n}\n.toolbar[data-v-5c0265b4]{\n}\n.title[data-v-5c0265b4]{\n  font-weight: 600;\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-5c0265b4]{\n    margin: 0;\n}\n", ""]);
+exports.push([module.i, "\n.container[data-v-5c0265b4]{\r\n    height: 100%;\n}\n.toolbar[data-v-5c0265b4]{\n}\n.title[data-v-5c0265b4]{\r\n  font-weight: 600;\r\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-5c0265b4]{\r\n    margin: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -24263,7 +24271,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.container[data-v-072ba7d0]{\n    height: 100%;\n}\n.toolbar[data-v-072ba7d0]{\n}\n.title[data-v-072ba7d0]{\n  font-weight: 600;\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-072ba7d0]{\n    margin: 0;\n}\n", ""]);
+exports.push([module.i, "\n.container[data-v-072ba7d0]{\r\n    height: 100%;\n}\n.toolbar[data-v-072ba7d0]{\n}\n.title[data-v-072ba7d0]{\r\n  font-weight: 600;\r\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-072ba7d0]{\r\n    margin: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -24476,7 +24484,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.container[data-v-efe90520]{\n    height: 100%;\n}\n.toolbar[data-v-efe90520]{\n}\n.title[data-v-efe90520]{\n  font-weight: 600;\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-efe90520]{\n    margin: 0;\n}\n", ""]);
+exports.push([module.i, "\n.container[data-v-efe90520]{\r\n    height: 100%;\n}\n.toolbar[data-v-efe90520]{\n}\n.title[data-v-efe90520]{\r\n  font-weight: 600;\r\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-efe90520]{\r\n    margin: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -24640,7 +24648,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.container[data-v-e8fc872c]{\n    height: 100%;\n}\n.toolbar[data-v-e8fc872c]{\n}\n.title[data-v-e8fc872c]{\n  font-weight: 600;\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-e8fc872c]{\n    margin: 0;\n}\n", ""]);
+exports.push([module.i, "\n.container[data-v-e8fc872c]{\r\n    height: 100%;\n}\n.toolbar[data-v-e8fc872c]{\n}\n.title[data-v-e8fc872c]{\r\n  font-weight: 600;\r\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-e8fc872c]{\r\n    margin: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -89595,7 +89603,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "@media only screen and (max-width:599px){\n    .hidden-xs-only{\n        display:none!important\n    }\n}\n@media only screen and (min-width:600px){\n    .hidden-sm-and-up{display:none!important}\n}\n@media only screen and (min-width:600px) and (max-width:959px){\n    .hidden-sm-only{display:none!important}\n}\n@media only screen and (max-width:959px){\n    .hidden-sm-and-down{display:none!important}\n}\n@media only screen and (min-width:960px){\n    .hidden-md-and-up{display:none!important}\n}\n@media only screen and (min-width:960px) and (max-width:1263px){\n    .hidden-md-only{display:none!important}\n}\n@media only screen and (max-width:1263px){\n    .hidden-md-and-down{display:none!important}\n}\n@media only screen and (min-width:1264px){\n    .hidden-lg-and-up{display:none!important}\n}\n@media only screen and (min-width:1264px) and (max-width:1903px){\n    .hidden-lg-only{display:none!important}\n}\n@media only screen and (max-width:1903px){\n    .hidden-lg-and-down{display:none!important}\n}\n@media only screen and (min-width:1904px){\n    .hidden-xl-only{display:none!important}\n}\n", ""]);
+exports.push([module.i, "@media only screen and (max-width:767px){.hidden-xs-only{display:none!important}}@media only screen and (min-width:768px){.hidden-sm-and-up{display:none!important}}@media only screen and (min-width:768px) and (max-width:991px){.hidden-sm-only{display:none!important}}@media only screen and (max-width:991px){.hidden-sm-and-down{display:none!important}}@media only screen and (min-width:992px){.hidden-md-and-up{display:none!important}}@media only screen and (min-width:992px) and (max-width:1199px){.hidden-md-only{display:none!important}}@media only screen and (max-width:1199px){.hidden-md-and-down{display:none!important}}@media only screen and (min-width:1200px){.hidden-lg-and-up{display:none!important}}@media only screen and (min-width:1200px) and (max-width:1919px){.hidden-lg-only{display:none!important}}@media only screen and (max-width:1919px){.hidden-lg-and-down{display:none!important}}@media only screen and (min-width:1920px){.hidden-xl-only{display:none!important}}", ""]);
 
 // exports
 
@@ -89805,6 +89813,7 @@ exports.default = {
                     headers: { 'Authorization': 'Bearer ' + this.getToken() }
                 }).then(function (response) {
                     __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].commit('SET_USERDATA', response.data);
+                    __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].dispatch('SET_KITDATA');
                 });
             }
             return Vue.auth;

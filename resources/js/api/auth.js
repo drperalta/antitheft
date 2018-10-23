@@ -73,6 +73,7 @@ export default function(Vue){
                     headers: { 'Authorization': 'Bearer ' + this.getToken() }
                 }).then(response => {
                     store.commit('SET_USERDATA', response.data)
+                    store.dispatch('SET_KITDATA')
                 })
             }
             return Vue.auth

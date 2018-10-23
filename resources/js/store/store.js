@@ -19,27 +19,32 @@ export default new Vuex.Store({
         },
         kitData: (state) => {
             return state.kitData
+        },
+        userEmail: (state) => {
+            return state.userEmail
         }
     },
 
     mutations:{
         SET_USERDATA: (state, data) => {
-            state.userData.push(data)
+            state.userData = data
         },
         SET_EMAIL: (state, data) => {
-            state.userEmail = data
+            state.userEmail.push(data)
         },
         SET_KITDATA: (state) => {
+
             axios.get('api/user/kit/set/' + state.userData[0].id, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } })
             .then(response => {
                 state.kitData = response.data
             })
-
         }
     },
 
     actions:{
-
+        SET_KITDATA({commit}){
+            commit('SET_KITDATA')
+        }
     }
 
 

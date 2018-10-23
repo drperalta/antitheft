@@ -54,8 +54,8 @@
 
                     <!-- NAME AND EMAIL -->
                     <div class="hidden-xs-only">
-                        <h1 class="name">{{userData[0].fullname}}</h1>
-                        <p class="email">{{userData[0].email}}</p>
+                        <h1 class="name">{{userData.fullname}}</h1>
+                        <p class="email">{{userData.email}}</p>
                     </div>
                     <v-divider class="divider" vertical></v-divider>
                     <!-- OPTIONS -->
@@ -138,7 +138,6 @@ export default {
         Vue.auth.user()
     },
     mounted(){
-        this.$store.commit('SET_KITDATA')
     },
     computed:{
         ...mapGetters([

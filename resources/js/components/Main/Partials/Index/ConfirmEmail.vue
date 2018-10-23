@@ -5,7 +5,7 @@
         <el-alert id="success" class="notification" type="success" v-if="success" :closable="false" center>{{successMsg}}</el-alert>
         <!-- Email -->
         <el-card class="card" shadow="never" v-if="!hide" body-style="padding: 0">
-            <p class="email" >{{this.userEmail}}</p>
+            <p class="email" >{{userEmail[0]}}</p>
         </el-card>
         <!-- Confirm Email Button -->
         <v-btn outline v-if="!hide" class="confirmEmail" type="submit" @click="confirm">Confirm Email</v-btn>
@@ -19,32 +19,33 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import store from '../../../../store/store'
-    export default {
-        data(){
-            return {
-               success: false,
-               error: false,
-               errorMsg: null,
-               successMsg: null,
-               hide: false
-            }
-        },
-        methods:{
-            confirm(){
-                Vue.auth.confirm(this, this.$route.params.activation_token)
-            }
-        },
-        created(){
-            Vue.auth.check(this, this.$route.params.activation_token)
-            Vue.auth.setConfirmationEmail(this.$route.params.activation_token)
-        },
-        computed:{
-            userEmail(){
-                return store.state.userEmail
-            }
+export default {
+    data(){
+        return {
+            success: false,
+            error: false,
+            errorMsg: null,
+            successMsg: null,
+            hide: false
         }
+    },
+    methods:{
+        confirm(){
+            Vue.auth.confirm(this, this.$route.params.activation_token)
+        }
+    },
+    created(){
+        Vue.auth.check(this, this.$route.params.activation_token)
+        Vue.auth.setConfirmationEmail(this.$route.params.activation_token)
+    },
+    computed:{
+        ...mapGetters([
+            'userEmail'
+        ])
     }
+}
 </script>
 
 <style scoped>
