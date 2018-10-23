@@ -12035,7 +12035,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
         },
         SET_KITDATA: function SET_KITDATA(state) {
 
-            axios.get('api/user/kit/set/' + state.userData[0].id, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } }).then(function (response) {
+            axios.get('api/user/kit/set/' + state.userData.id, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } }).then(function (response) {
                 state.kitData = response.data;
             });
         }

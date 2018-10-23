@@ -34,7 +34,7 @@ export default new Vuex.Store({
         },
         SET_KITDATA: (state) => {
 
-            axios.get('api/user/kit/set/' + state.userData[0].id, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } })
+            axios.get('api/user/kit/set/' + state.userData.id, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } })
             .then(response => {
                 state.kitData = response.data
             })
