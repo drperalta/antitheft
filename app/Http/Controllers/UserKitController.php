@@ -35,9 +35,44 @@ class UserKitController extends Controller
          }
     }
 
+    public function edit(Request $request){
+        
+        $request->validate([
+            'serial_number' => 'required|unique:user_kits,serial_number,'. $request['id']
+        ]);
+
+
+        $name = UserKit::select('name')->where('id', $request['id'])->get();
+        $serial = UserKit::select('serial_number')->where('serial_number', $request['serial_number']);
+
+        if(Kit::where('serial_number', $request['serial_number'])->exists()){
+          UserKit::where('id', $request['id'])->update(array('name' => $request['name'], 'serial_number' => $request['serial_number']));
+          return response()->json([
+              'message' => 'Successfully Updated!'
+          ], 201);
+        }else{
+            return response()->json([
+                'errors' => ['message' => ['Invalid Serial Number']]
+            ], 402);
+        }
+        
+      }
+
     public function set($id){
 
         return UserKit::select('id','serial_number','name')->where('user_id', $id)->get();
 
+    }
+
+    public function remove(Request $request){
+
+        UserKit::destroy($request['kitId']);
+        return response()->json([
+            'message' => 'Successfully Deleted!'
+        ], 201);
+    }
+
+    public function edit_set($id){
+        return UserKit::select('serial_number','name')->where('id', $id)->get();
     }
 }

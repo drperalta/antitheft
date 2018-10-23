@@ -12010,7 +12010,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
     state: {
         userData: [],
         userEmail: [],
-        kitData: []
+        kitData: [],
+        editKitData: []
 
     },
 
@@ -12026,6 +12027,10 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
         },
         userID: function userID(state) {
             return state.userData.id;
+        },
+
+        editKitData: function editKitData(state) {
+            return state.editKitData;
         }
 
     },
@@ -12041,6 +12046,11 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
             axios.get('api/user/kit/set/' + state.userData.id, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } }).then(function (response) {
                 state.kitData = response.data;
             });
+        },
+        SET_EDITKITDATA: function SET_EDITKITDATA(state, id) {
+            axios.get('api/user/kit/edit/set/' + id, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } }).then(function (response) {
+                state.editKitData = response.data[0];
+            });
         }
     },
 
@@ -12049,6 +12059,12 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
             var commit = _ref.commit;
 
             commit('SET_KITDATA');
+            __WEBPACK_IMPORTED_MODULE_2__router_router__["a" /* default */].push({ path: '/kits' });
+        },
+        SET_EDITKITDATA: function SET_EDITKITDATA(_ref2, id) {
+            var commit = _ref2.commit;
+
+            commit('SET_EDITKITDATA', id);
         }
     }
 
@@ -24274,7 +24290,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.container[data-v-072ba7d0]{\r\n    height: 100%;\n}\n.toolbar[data-v-072ba7d0]{\n}\n.title[data-v-072ba7d0]{\r\n  font-weight: 600;\r\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-072ba7d0]{\r\n    margin: 0;\n}\n.input[data-v-072ba7d0]{\r\n    margin: 5px;\n}\n.notification[data-v-072ba7d0]{\r\n    margin-bottom: 15px;\n}\r\n", ""]);
+exports.push([module.i, "\n.container[data-v-072ba7d0]{\r\n    margin: auto;\n}\n.toolbar[data-v-072ba7d0]{\n}\n.title[data-v-072ba7d0]{\r\n  font-weight: 600;\r\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-072ba7d0]{\r\n    margin: 0;\n}\n.input[data-v-072ba7d0]{\r\n    margin: 5px;\n}\n.notification[data-v-072ba7d0]{\r\n    margin-bottom: 15px;\n}\r\n", ""]);
 
 // exports
 
@@ -24286,6 +24302,9 @@ exports.push([module.i, "\n.container[data-v-072ba7d0]{\r\n    height: 100%;\n}\
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(61);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 //
 //
 //
@@ -24326,6 +24345,65 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -24336,12 +24414,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 name: '',
                 serial_number: ''
             },
+            kitID: '',
+
             error: false,
             success: false,
             errorMsg: null,
             successMsg: null,
 
-            openModalAdd: false
+            openModalAdd: false,
+            openModalEdit: false
         };
     },
 
@@ -24354,21 +24435,60 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             Vue.kit.add(this, this.kitDetails);
         },
+        edit: function edit() {
+            this.error = false;
+            this.success = false;
+            this.errorMsg = null;
+            this.successMsg = null;
+
+            Vue.kit.edit(this, __WEBPACK_IMPORTED_MODULE_0__store_store__["a" /* default */].getters.editKitData.name, __WEBPACK_IMPORTED_MODULE_0__store_store__["a" /* default */].getters.editKitData.serial_number, this.kitID);
+        },
         clear: function clear() {
 
             this.error = false;
             this.success = false;
             this.errorMsg = null;
             this.successMsg = null;
+        },
+        set: function set() {
+            __WEBPACK_IMPORTED_MODULE_0__store_store__["a" /* default */].dispatch('SET_EDITKITDATA', this.kitID);
+        },
+        removeWarning: function removeWarning() {
+            var _this = this;
+
+            this.$confirm('Do you want to remove your Kit?', 'Warning', {
+                confirmButtonText: 'OK',
+                cancelButtonText: 'Cancel',
+                type: 'warning'
+            }).then(function () {
+                Vue.kit.remove(_this.kitID);
+                _this.$message({
+                    type: 'success',
+                    message: 'Delete completed'
+                });
+            }).catch(function () {
+                _this.$message({
+                    type: 'info',
+                    message: 'Delete canceled'
+                });
+            });
+        },
+        id: function id(_id) {
+            this.kitID = _id;
+        },
+        handleKitCommand: function handleKitCommand(command) {
+            if (command == 'remove') {
+                this.removeWarning();
+            } else {
+                this.openModalEdit = true;
+            }
         }
     },
     created: function created() {
         this.$root.pageTitle = 'KITS';
     },
 
-    computed: {
-        //
-    }
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapGetters */])(['kitData', 'editKitData']))
 });
 
 /***/ }),
@@ -24508,6 +24628,124 @@ var render = function() {
       ),
       _vm._v(" "),
       _c(
+        "v-layout",
+        { attrs: { row: "", "justify-center": "" } },
+        [
+          _c(
+            "v-dialog",
+            {
+              attrs: { "max-width": "420" },
+              model: {
+                value: _vm.openModalEdit,
+                callback: function($$v) {
+                  _vm.openModalEdit = $$v
+                },
+                expression: "openModalEdit"
+              }
+            },
+            [
+              _c(
+                "v-card",
+                [
+                  _c(
+                    "v-card-title",
+                    { staticClass: "headline grey lighten-4" },
+                    [_vm._v("Edit Kit")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-text",
+                    [
+                      _c(
+                        "v-container",
+                        { attrs: { "grid-list-md": "" } },
+                        [
+                          this.error
+                            ? _c(
+                                "el-alert",
+                                {
+                                  staticClass: "notification",
+                                  attrs: { type: "error" }
+                                },
+                                [_vm._v(_vm._s(this.errorMsg))]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _c("el-input", {
+                            staticClass: "input",
+                            attrs: { placeholder: "Name" },
+                            model: {
+                              value: _vm.editKitData.name,
+                              callback: function($$v) {
+                                _vm.$set(_vm.editKitData, "name", $$v)
+                              },
+                              expression: "editKitData.name"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("el-input", {
+                            staticClass: "input",
+                            attrs: { placeholder: "Serial Number" },
+                            model: {
+                              value: _vm.editKitData.serial_number,
+                              callback: function($$v) {
+                                _vm.$set(_vm.editKitData, "serial_number", $$v)
+                              },
+                              expression: "editKitData.serial_number"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-actions",
+                    [
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "green darken-1", flat: "" },
+                          nativeOn: {
+                            click: function($event) {
+                              _vm.openModalEdit = false
+                            }
+                          }
+                        },
+                        [_vm._v("Close")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "green darken-1", flat: "" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.edit($event)
+                            }
+                          }
+                        },
+                        [_vm._v("Edit")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
         "v-toolbar",
         { staticClass: "toolbar", attrs: { flat: "", height: "56px" } },
         [
@@ -24540,10 +24778,173 @@ var render = function() {
       _vm._v(" "),
       _c("v-divider", { staticClass: "divider" }),
       _vm._v(" "),
-      _c("v-container", {
-        staticClass: "container",
-        attrs: { "justify-center": "" }
-      })
+      _c(
+        "v-container",
+        { staticClass: "container", attrs: { "justify-center": "" } },
+        [
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            _vm._l(_vm.kitData, function(kit) {
+              return _c(
+                "div",
+                {
+                  key: kit.name,
+                  staticStyle: { width: "290px", margin: "15px" }
+                },
+                [
+                  _c(
+                    "v-card",
+                    [
+                      _c("div", [
+                        _c(
+                          "div",
+                          {
+                            staticStyle: {
+                              "background-color": "#757575",
+                              height: "100px"
+                            }
+                          },
+                          [
+                            _c(
+                              "v-container",
+                              {
+                                staticStyle: { margin: "10px" },
+                                attrs: {
+                                  "fill-height": "",
+                                  fluid: "",
+                                  "pa-2": ""
+                                }
+                              },
+                              [
+                                _c(
+                                  "v-layout",
+                                  { attrs: { "fill-height": "" } },
+                                  [
+                                    _c(
+                                      "v-flex",
+                                      {
+                                        attrs: {
+                                          xs12: "",
+                                          "align-end": "",
+                                          flexbox: ""
+                                        }
+                                      },
+                                      [
+                                        _c("span", {
+                                          staticClass: "headline white--text",
+                                          staticStyle: { weight: "600" },
+                                          domProps: {
+                                            textContent: _vm._s(kit.name)
+                                          }
+                                        })
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-actions",
+                        [
+                          _c("v-spacer"),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            { attrs: { icon: "" } },
+                            [
+                              _c("v-icon", { attrs: { color: "success" } }, [
+                                _vm._v("play_arrow")
+                              ])
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            { attrs: { icon: "" } },
+                            [
+                              _c("v-icon", { attrs: { color: "error" } }, [
+                                _vm._v("stop")
+                              ])
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "el-dropdown",
+                            {
+                              attrs: { trigger: "click" },
+                              on: { command: _vm.handleKitCommand }
+                            },
+                            [
+                              _c(
+                                "span",
+                                { staticClass: "el-dropdown-link" },
+                                [
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      attrs: { icon: "" },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.id(kit.id)
+                                          _vm.set()
+                                        }
+                                      }
+                                    },
+                                    [_c("v-icon", [_vm._v("more_vert")])],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "el-dropdown-menu",
+                                {
+                                  attrs: { slot: "dropdown" },
+                                  slot: "dropdown"
+                                },
+                                [
+                                  _c(
+                                    "el-dropdown-item",
+                                    { attrs: { command: "edit" } },
+                                    [_vm._v("Edit")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "el-dropdown-item",
+                                    { attrs: { command: "remove" } },
+                                    [_vm._v("Remove")]
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            })
+          )
+        ],
+        1
+      )
     ],
     1
   )
@@ -90195,8 +90596,31 @@ exports.default = {
 
                 context.success = true;
                 context.successMsg = response.data.message;
+
+                __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].dispatch('SET_KITDATA');
             }).catch(function (error) {
                 _this.handleError('ADD', context, error);
+            });
+        },
+        edit: function edit(context, name, serial, id) {
+            axios.post('api/user/kit/edit', {
+                user_id: __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].getters.userID,
+                id: id,
+                name: name,
+                serial_number: serial
+            }, { headers: { 'Authorization': 'Bearer ' + this.getToken() } }).then(function (response) {
+                context.success = true;
+                context.successMsg = response.data.message;
+
+                __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].dispatch('SET_KITDATA');
+            }).catch(function (error) {
+
+                console.log(error);
+            });
+        },
+        remove: function remove(id) {
+            axios.post('api/user/kit/remove', { kitId: id }, { headers: { 'Authorization': 'Bearer ' + this.getToken() } }).then(function (response) {
+                __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].dispatch('SET_KITDATA');
             });
         },
         handleError: function handleError(type, context, error) {

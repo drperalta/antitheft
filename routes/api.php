@@ -52,4 +52,7 @@ Route::group([ 'middleware' => 'auth:api', 'prefix' => 'user'  ], function()
 {
     Route::post('kit/add', 'UserKitController@add');
     Route::get('kit/set/{id}', 'UserKitController@set');
+    Route::post('kit/remove', 'UserKitController@remove');
+    Route::get('kit/edit/set/{id}', 'UserKitController@edit_set');
+    Route::post('kit/edit', 'UserKitController@edit');
 });

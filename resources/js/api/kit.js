@@ -14,12 +14,38 @@ export default function(Vue){
 
                 context.success = true;
                 context.successMsg = response.data.message
-                
+
+                store.dispatch('SET_KITDATA')
+
             }).catch(error => {
                 this.handleError('ADD', context, error)
             })
         },
+        edit(context, name, serial, id){
+            axios.post('api/user/kit/edit', {
+              user_id: store.getters.userID,
+              id: id,
+              name: name,
+              serial_number: serial
+            },{ headers: { 'Authorization': 'Bearer ' + this.getToken() } })
+            .then(response =>{
+                context.success = true;
+                context.successMsg = response.data.message
 
+                store.dispatch('SET_KITDATA')
+
+            }).catch(error => {
+                
+                console.log(error)
+            })
+         },
+        remove(id){
+            axios.post('api/user/kit/remove', {kitId: id},
+            { headers: { 'Authorization': 'Bearer ' + this.getToken() } })
+            .then(response => {
+                store.dispatch('SET_KITDATA')
+            })
+        },
         handleError(type,context,error){
             if(type === 'ADD'){
                 context.error = true;

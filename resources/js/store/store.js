@@ -10,6 +10,7 @@ export default new Vuex.Store({
         userData: [],
         userEmail: [],
         kitData: [],
+        editKitData: []
 
     },
 
@@ -25,6 +26,10 @@ export default new Vuex.Store({
         },
         userID: (state) => {
             return state.userData.id
+        },
+
+        editKitData: (state) => {
+            return state.editKitData
         }
 
     },
@@ -41,12 +46,22 @@ export default new Vuex.Store({
             .then(response => {
                 state.kitData = response.data
             })
+        },
+        SET_EDITKITDATA: (state, id) => {
+            axios.get('api/user/kit/edit/set/'+ id , { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } })
+            .then(response => {
+                state.editKitData = response.data[0]
+            })
         }
     },
 
     actions:{
         SET_KITDATA({commit}){
             commit('SET_KITDATA')
+            router.push({ path: '/kits' })
+        },
+        SET_EDITKITDATA({commit}, id){
+            commit('SET_EDITKITDATA', id)
         }
     }
 

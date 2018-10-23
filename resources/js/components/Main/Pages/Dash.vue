@@ -103,7 +103,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters , mapState} from 'vuex'
 import store from '../../../store/store'
 
 export default {
