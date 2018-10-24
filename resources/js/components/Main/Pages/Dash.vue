@@ -177,7 +177,6 @@ export default {
 }
 .main{
   padding: 0;
-  height: 100%;
 }
 .side-title {
   text-align: center;

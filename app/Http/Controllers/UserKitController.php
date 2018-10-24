@@ -13,7 +13,7 @@ class UserKitController extends Controller
     public function add(Request $request){
 
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|max:10',
             'serial_number' => 'required|unique:user_kits'
         ]);
         if(Kit::where('serial_number', $request['serial_number'])->exists()) {
@@ -36,7 +36,7 @@ class UserKitController extends Controller
     }
 
     public function edit(Request $request){
-        
+
         $request->validate([
             'serial_number' => 'required|unique:user_kits,serial_number,'. $request['id']
         ]);
@@ -55,7 +55,7 @@ class UserKitController extends Controller
                 'errors' => ['message' => ['Invalid Serial Number']]
             ], 400);
         }
-        
+
       }
 
     public function set($id){

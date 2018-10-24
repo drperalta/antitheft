@@ -58,7 +58,6 @@ export default new Vuex.Store({
     actions:{
         SET_KITDATA({commit}){
             commit('SET_KITDATA')
-            router.push({ path: '/kits' })
         },
         SET_EDITKITDATA({commit}, id){
             commit('SET_EDITKITDATA', id)

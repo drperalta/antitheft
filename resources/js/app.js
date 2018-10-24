@@ -14,6 +14,7 @@ import 'element-ui/lib/theme-chalk/display.css'
 import lang from 'element-ui/lib/locale/lang/en'
 import locale from 'element-ui/lib/locale'
 import VueProgressBar from 'vue-progressbar'
+import VeeValidate from 'vee-validate'
 
 import Auth from '../js/api/auth'
 import Reset from '../js/api/reset'
@@ -23,9 +24,12 @@ Vue.use(Vuetify)
 Vue.use(ElementUI)
 locale.use(lang)
 Vue.use(VueProgressBar)
+Vue.use(VeeValidate);
+
 Vue.use(Auth);
 Vue.use(Reset);
 Vue.use(Kit);
+
 
 window.axios=axios
 
