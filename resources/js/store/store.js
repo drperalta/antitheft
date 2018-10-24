@@ -10,7 +10,9 @@ export default new Vuex.Store({
         userData: [],
         userEmail: [],
         kitData: [],
-        editKitData: []
+        editKitData: [],
+        imageData: [],
+        selectedKit: ''
 
     },
 
@@ -30,6 +32,10 @@ export default new Vuex.Store({
 
         editKitData: (state) => {
             return state.editKitData
+        },
+
+        imageData: (state) => {
+            return state.imageData
         }
 
     },
@@ -52,6 +58,15 @@ export default new Vuex.Store({
             .then(response => {
                 state.editKitData = response.data[0]
             })
+        },
+        SET_IMAGEDATA: (state) => {
+            var id = state.userData.id;
+            var serial = state.selectedKit;
+
+            axios.get('api/event/get/'+id+'/'+serial)
+            .then(response => {
+                state.imageData = response.data
+            })
         }
     },
 
@@ -61,6 +76,9 @@ export default new Vuex.Store({
         },
         SET_EDITKITDATA({commit}, id){
             commit('SET_EDITKITDATA', id)
+        },
+        SET_IMAGEDATA({commit}){
+            commit('SET_IMAGEDATA')
         }
     }
 

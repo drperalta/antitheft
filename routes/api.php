@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Intervention\Image\ImageManager;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,4 +61,7 @@ Route::group([ 'middleware' => 'auth:api', 'prefix' => 'user'  ], function()
 Route::group(['prefix' => 'event'], function()
 {
     Route::post('upload', 'EventController@upload');
+
+    Route::get('get/{serial_number}', 'EventController@get');
+
 });

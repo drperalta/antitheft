@@ -19,6 +19,7 @@ import VeeValidate from 'vee-validate'
 import Auth from '../js/api/auth'
 import Reset from '../js/api/reset'
 import Kit from '../js/api/kit'
+import Picture from '../js/api/picture'
 
 Vue.use(Vuetify)
 Vue.use(ElementUI)
@@ -29,6 +30,7 @@ Vue.use(VeeValidate);
 Vue.use(Auth);
 Vue.use(Reset);
 Vue.use(Kit);
+Vue.use(Picture);
 
 
 window.axios=axios
