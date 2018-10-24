@@ -12059,7 +12059,6 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
             var commit = _ref.commit;
 
             commit('SET_KITDATA');
-            __WEBPACK_IMPORTED_MODULE_2__router_router__["a" /* default */].push({ path: '/kits' });
         },
         SET_EDITKITDATA: function SET_EDITKITDATA(_ref2, id) {
             var commit = _ref2.commit;
@@ -22202,7 +22201,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     created: function created() {
         Vue.auth.user();
     },
-    mounted: function mounted() {},
 
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['userData', 'kitData']))
 });
@@ -25096,6 +25094,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -25129,10 +25141,52 @@ var render = function() {
       _vm._v(" "),
       _c("v-divider", { staticClass: "divider" }),
       _vm._v(" "),
-      _c("v-container", {
-        staticClass: "container",
-        attrs: { "justify-center": "" }
-      })
+      _c(
+        "div",
+        {
+          staticClass: "scroll-y",
+          staticStyle: { "max-height": "79vh" },
+          attrs: { id: "scrolling-techniques" }
+        },
+        [
+          _c(
+            "v-container",
+            { staticClass: "container", attrs: { "justify-center": "" } },
+            [
+              _c(
+                "v-expansion-panel",
+                { attrs: { flat: "" } },
+                _vm._l(20, function(item, i) {
+                  return _c(
+                    "v-expansion-panel-content",
+                    { key: i },
+                    [
+                      _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                        _vm._v("Item")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-card",
+                        [
+                          _c("v-card-text", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                            )
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                })
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
     ],
     1
   )
