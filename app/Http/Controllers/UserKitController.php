@@ -38,6 +38,7 @@ class UserKitController extends Controller
     public function edit(Request $request){
 
         $request->validate([
+            'name' => 'required|max:10',
             'serial_number' => 'required|unique:user_kits,serial_number,'. $request['id']
         ]);
 
@@ -60,7 +61,7 @@ class UserKitController extends Controller
 
     public function set($id){
 
-        return UserKit::select('id','serial_number','name')->where('user_id', $id)->get();
+        return UserKit::select('id','serial_number','name','status')->where('user_id', $id)->get();
 
     }
 

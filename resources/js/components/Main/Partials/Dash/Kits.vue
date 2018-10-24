@@ -32,11 +32,8 @@
                     <v-container grid-list-md>
                         <el-alert class="notification" type="error" v-if="editNotif.error" :title="editNotif.errorMsg" :closable="false"/>
                         <el-alert class="notification" type="success" v-if="editNotif.success" :title="editNotif.successMsg" :closable="false"/>
-                        <span class="validation">{{ errors.first('name') }}</span>
-                        <el-input class="input" name="name" placeholder="Name" v-model="editKitData.name" v-validate="'required|max:10'"></el-input>.
-
-                        <span class="validation">{{ errors.first('serial') }}</span>
-                        <el-input class="input" name="serial"  placeholder="Serial Number" v-model="editKitData.serial_number" v-validate="'required'"></el-input>
+                        <el-input class="input" name="name" placeholder="Name" v-model="editKitData.name"></el-input>
+                        <el-input class="input" name="serial"  placeholder="Serial Number" v-model="editKitData.serial_number"></el-input>
                     </v-container>
                 </v-card-text>
                 <v-card-actions>
@@ -60,33 +57,29 @@
 
         <v-container class="container" justify-center>
             <v-layout row wrap>
-                <v-card >
-                    <v-container grid-list-sm fluid>
-                        <v-layout row wrap>
-                            <div v-for="kit in kitData" :key="kit.name" style="width: 150px; margin: 12px">
-                                <v-card >
-                                    <v-card-actions>
-                                        <span class="kitname" v-text="kit.name"></span>
-                                        <v-spacer></v-spacer>
-                                        <div>
-                                            <el-dropdown trigger="click" @command="handleKitCommand">
-                                                <span class="el-dropdown-link">
-                                                    <v-btn icon v-on:click="id(kit.id); set()">
-                                                        <v-icon>more_vert</v-icon>
-                                                    </v-btn>
-                                                </span>
-                                                <el-dropdown-menu slot="dropdown">
-                                                    <el-dropdown-item command="edit">Edit</el-dropdown-item>
-                                                    <el-dropdown-item command="remove" >Remove</el-dropdown-item>
-                                                </el-dropdown-menu>
-                                            </el-dropdown>
-                                        </div>
-                                    </v-card-actions>
-                                </v-card>
+                <div v-for="kit in kitData" :key="kit.name" style="width: 160px; margin: 12px">
+                    <v-card >
+                        <v-card-actions>
+                            <v-icon class="online" v-if="kit.status" size="12px">fiber_manual_record</v-icon>
+                            <v-icon class="offline" v-if="!kit.status" size="12px">fiber_manual_record</v-icon>
+                            <span class="kitname" v-text="kit.name"></span>
+                            <v-spacer></v-spacer>
+                            <div>
+                                <el-dropdown trigger="click" @command="handleKitCommand">
+                                    <span class="el-dropdown-link">
+                                        <v-btn icon v-on:click="id(kit.id); set()">
+                                            <v-icon>more_vert</v-icon>
+                                        </v-btn>
+                                    </span>
+                                    <el-dropdown-menu slot="dropdown">
+                                        <el-dropdown-item command="edit">Edit</el-dropdown-item>
+                                        <el-dropdown-item command="remove" >Remove</el-dropdown-item>
+                                    </el-dropdown-menu>
+                                </el-dropdown>
                             </div>
-                        </v-layout>
-                    </v-container>
-                </v-card>
+                        </v-card-actions>
+                    </v-card>
+                </div>
             </v-layout>
         </v-container>
     </div>
@@ -198,7 +191,13 @@ export default {
 .toolbar{
 
 }
-
+.online{
+    color: greenyellow;
+    margin-left: 8px
+}
+.offline{
+    margin-left: 8px
+}
 .title{
   font-weight: 600;
   color: rgb(68, 68, 68);

@@ -56,3 +56,8 @@ Route::group([ 'middleware' => 'auth:api', 'prefix' => 'user'  ], function()
     Route::get('kit/edit/set/{id}', 'UserKitController@edit_set');
     Route::post('kit/edit', 'UserKitController@edit');
 });
+
+Route::group(['prefix' => 'event'], function()
+{
+    Route::post('upload', 'EventController@upload');
+});

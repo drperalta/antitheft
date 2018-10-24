@@ -35,7 +35,7 @@ export default function(Vue){
                 store.dispatch('SET_KITDATA')
 
             }).catch(error => {
-                handleError('EDIT', context, error)
+                this.handleError('EDIT', context, error)
             })
          },
         remove(id){

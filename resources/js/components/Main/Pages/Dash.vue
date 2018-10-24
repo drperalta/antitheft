@@ -47,7 +47,12 @@
 
                     <!-- SELECTED KIT -->
                     <el-select class="select" v-model="value" placeholder="Select your Kit">
-                        <el-option v-for="kit in kitData" :key="kit.id" :label="kit.name" :value="kit.id"></el-option>
+                        
+                        <el-option v-for="kit in kitData" :key="kit.id" :label="kit.name" :value="kit.id">
+                            <v-icon class="online" v-if="kit.status" size="12px">fiber_manual_record</v-icon>
+                            <v-icon class="offline" v-if="!kit.status" size="12px">fiber_manual_record</v-icon>
+                            <span v-text="kit.name"></span>
+                        </el-option>
                     </el-select>
                     <v-spacer></v-spacer>
                     <!-- BADGES -->
@@ -176,6 +181,16 @@ export default {
 .main{
   padding: 0;
 }
+.online{
+    color: greenyellow;
+    margin-right: 5px;
+    margin-bottom: 2px;
+    
+}
+.offline{
+    margin-right: 5px;
+    margin-bottom: 2px;
+}   
 .side-title {
   text-align: center;
   padding-top: 10px;
