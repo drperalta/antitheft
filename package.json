@@ -20,6 +20,7 @@
     "dependencies": {
         "element-ui": "^2.4.8",
         "nprogress": "^0.2.0",
+        "vee-validate": "^2.1.0-beta.11",
         "vue-progressbar": "^0.7.5",
         "vue-router": "^3.0.1",
         "vuetify": "^1.2.5",
