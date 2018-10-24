@@ -137,8 +137,6 @@ export default {
     created(){
         Vue.auth.user()
     },
-    mounted(){
-    },
     computed:{
         ...mapGetters([
             'userData',

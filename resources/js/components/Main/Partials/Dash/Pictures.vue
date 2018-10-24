@@ -7,9 +7,23 @@
 
         </v-toolbar>
         <v-divider class="divider"></v-divider>
-        <v-container class="container" justify-center>
-
+        <div class="scroll-y" id="scrolling-techniques" style="max-height: 79vh;">
+            <v-container class="container" justify-center >
+            <v-expansion-panel flat>
+                <v-expansion-panel-content
+                v-for="(item,i) in 20"
+                :key="i"
+                >
+                <div slot="header">Item</div>
+                <v-card>
+                    <v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</v-card-text>
+                </v-card>
+                </v-expansion-panel-content>
+            </v-expansion-panel>
+            
         </v-container>
+        </div>
+        
     </div>
 </template>
 

@@ -22046,7 +22046,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.v-divider[data-v-6c4a3438]{\n  margin: 0 !important;\n}\n.main-container[data-v-6c4a3438] {\n  margin: 0;\n  padding: 0;\n}\n.navbar[data-v-6c4a3438]{\n  background-color: white;\n  padding: 0;\n  margin: 0;\n  height: 77px !important;\n}\n.v-toolbar[data-v-6c4a3438]{\n  box-shadow: none;\n  padding-top: 10px;\n  padding-bottom: 10px;\n  height: 77px;\n  background-color: #039BE5;\n}\n.sidebar[data-v-6c4a3438]{\n  height: 100vh;\n  width: 256px;\n  border: 0px;\n}\n.main[data-v-6c4a3438]{\n  padding: 0;\n}\n.side-title[data-v-6c4a3438] {\n  text-align: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.side-title h1[data-v-6c4a3438]{\n  font-weight: 600;\n  font-size: 16px !important;\n  display: inline-flex;\n  color: white;\n}\n.side-title h2[data-v-6c4a3438]{\n  font-weight: 400;\n  font-size: 16px !important;\n  display: inline-flex;\n  color:   whitesmoke;\n}\n.side_title[data-v-6c4a3438] {\n  font-weight: 500;\n  font-size: 14px;\n}\n.side-menu[data-v-6c4a3438] {\n    width: 256px !important;\n}\n.side-menu span[data-v-6c4a3438]{\n  font-weight: 500;\n}\n.navbottom[data-v-6c4a3438]{\n    bottom: 0;\n    position: absolute;\n}\n.icon[data-v-6c4a3438] {\n  margin-left: 12px;\n  margin-right: 20px;\n  width: 14px !important;\n  color: white;\n}\n.name[data-v-6c4a3438]{\n  font-weight: 600;\n  font-size: 18px;\n  right: 0;\n  color: white;\n}\n.email[data-v-6c4a3438]{\n  font-weight: 400;\n  font-size: 12px;\n  color: lightblue;\n}\n.button[data-v-6c4a3438]{\n  width: 57px !important;\n  height: 57px !important;\n  margin: 0;\n  padding: 0;\n}\n.divider[data-v-6c4a3438]{\n  margin-left: 15px !important;\n  margin-right: 24px !important;\n  max-height: 57px !important;\n  min-height: 57px !important;\n}\n", ""]);
+exports.push([module.i, "\n.v-divider[data-v-6c4a3438]{\r\n  margin: 0 !important;\n}\n.main-container[data-v-6c4a3438] {\r\n  margin: 0;\r\n  padding: 0;\n}\n.navbar[data-v-6c4a3438]{\r\n  background-color: white;\r\n  padding: 0;\r\n  margin: 0;\r\n  height: 77px !important;\n}\n.v-toolbar[data-v-6c4a3438]{\r\n  box-shadow: none;\r\n  padding-top: 10px;\r\n  padding-bottom: 10px;\r\n  height: 77px;\r\n  background-color: #039BE5;\n}\n.sidebar[data-v-6c4a3438]{\r\n  height: 100vh;\r\n  width: 256px;\r\n  border: 0px;\n}\n.main[data-v-6c4a3438]{\r\n  padding: 0;\n}\n.side-title[data-v-6c4a3438] {\r\n  text-align: center;\r\n  padding-top: 10px;\r\n  padding-bottom: 10px;\n}\n.side-title h1[data-v-6c4a3438]{\r\n  font-weight: 600;\r\n  font-size: 16px !important;\r\n  display: inline-flex;\r\n  color: white;\n}\n.side-title h2[data-v-6c4a3438]{\r\n  font-weight: 400;\r\n  font-size: 16px !important;\r\n  display: inline-flex;\r\n  color:   whitesmoke;\n}\n.side_title[data-v-6c4a3438] {\r\n  font-weight: 500;\r\n  font-size: 14px;\n}\n.side-menu[data-v-6c4a3438] {\r\n    width: 256px !important;\n}\n.side-menu span[data-v-6c4a3438]{\r\n  font-weight: 500;\n}\n.navbottom[data-v-6c4a3438]{\r\n    bottom: 0;\r\n    position: absolute;\n}\n.icon[data-v-6c4a3438] {\r\n  margin-left: 12px;\r\n  margin-right: 20px;\r\n  width: 14px !important;\r\n  color: white;\n}\n.name[data-v-6c4a3438]{\r\n  font-weight: 600;\r\n  font-size: 18px;\r\n  right: 0;\r\n  color: white;\n}\n.email[data-v-6c4a3438]{\r\n  font-weight: 400;\r\n  font-size: 12px;\r\n  color: lightblue;\n}\n.button[data-v-6c4a3438]{\r\n  width: 57px !important;\r\n  height: 57px !important;\r\n  margin: 0;\r\n  padding: 0;\n}\n.divider[data-v-6c4a3438]{\r\n  margin-left: 15px !important;\r\n  margin-right: 24px !important;\r\n  max-height: 57px !important;\r\n  min-height: 57px !important;\n}\r\n", ""]);
 
 // exports
 
@@ -22205,7 +22205,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     created: function created() {
         Vue.auth.user();
     },
-    mounted: function mounted() {},
 
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['userData', 'kitData']))
 });
@@ -25071,7 +25070,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.container[data-v-efe90520]{\n}\n.toolbar[data-v-efe90520]{\n}\n.title[data-v-efe90520]{\n  font-weight: 600;\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-efe90520]{\n    margin: 0;\n}\n", ""]);
+exports.push([module.i, "\n.container[data-v-efe90520]{\n}\n.toolbar[data-v-efe90520]{\n}\n.title[data-v-efe90520]{\r\n  font-weight: 600;\r\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-efe90520]{\r\n    margin: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -25083,6 +25082,20 @@ exports.push([module.i, "\n.container[data-v-efe90520]{\n}\n.toolbar[data-v-efe9
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store__ = __webpack_require__(7);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -25131,10 +25144,52 @@ var render = function() {
       _vm._v(" "),
       _c("v-divider", { staticClass: "divider" }),
       _vm._v(" "),
-      _c("v-container", {
-        staticClass: "container",
-        attrs: { "justify-center": "" }
-      })
+      _c(
+        "div",
+        {
+          staticClass: "scroll-y",
+          staticStyle: { "max-height": "79vh" },
+          attrs: { id: "scrolling-techniques" }
+        },
+        [
+          _c(
+            "v-container",
+            { staticClass: "container", attrs: { "justify-center": "" } },
+            [
+              _c(
+                "v-expansion-panel",
+                { attrs: { flat: "" } },
+                _vm._l(20, function(item, i) {
+                  return _c(
+                    "v-expansion-panel-content",
+                    { key: i },
+                    [
+                      _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                        _vm._v("Item")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-card",
+                        [
+                          _c("v-card-text", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                            )
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                })
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
     ],
     1
   )
