@@ -19,6 +19,7 @@ class Event extends Model
         'serial_number',
         'folder_name',
         'file_name',
+        'path',
         'created_at',
         'updated_at'
     ];

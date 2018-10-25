@@ -11,6 +11,7 @@ export default new Vuex.Store({
         userEmail: [],
         kitData: [],
         editKitData: [],
+        imageFolder: [],
         imageData: [],
         selectedKit: ''
 
@@ -33,7 +34,9 @@ export default new Vuex.Store({
         editKitData: (state) => {
             return state.editKitData
         },
-
+        imageFolder: (state) => {
+            return state.imageFolder
+        },
         imageData: (state) => {
             return state.imageData
         },
@@ -61,8 +64,14 @@ export default new Vuex.Store({
                 state.editKitData = response.data[0]
             })
         },
+        SET_IMAGEFOLDER: (state) => {
+            axios.get('api/event/get/folder/'+state.userData.id+'/'+state.selectedKit)
+            .then(response => {
+                state.imageFolder = response.data
+            })
+        },
         SET_IMAGEDATA: (state) => {
-            axios.get('api/event/get/'+state.userData.id+'/'+state.selectedKit)
+            axios.get('api/event/get/file/'+state.userData.id+'/'+state.selectedKit)
             .then(response => {
                 state.imageData = response.data
             })
@@ -84,6 +93,10 @@ export default new Vuex.Store({
         },
         SET_SELECTEDKIT({commit},serial){
             commit('SET_SELECTEDKIT',serial)
+            
+        },
+        SET_IMAGEFOLDER({commit}){
+            commit('SET_IMAGEFOLDER')
         }
     }
 

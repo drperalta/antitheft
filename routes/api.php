@@ -62,22 +62,20 @@ Route::group(['prefix' => 'event'], function()
 {
     Route::post('upload', 'EventController@upload');
 
-    Route::get('get/{user_id}/{serial_number}', 'EventController@get');
+    Route::get('get/folder/{user_id}/{serial_number}', 'EventController@getFolder');
+    Route::get('get/file/{folder_name}/{serial_number}', 'EventController@getFile');
 
-    Route::get('get/{filename}',['as' => 'getImage'], function($filename)
-    {   
-        Image::configure(array('driver' => 'local', 'root' => storage_path('app')));
+    // Route::get('get/{filename}',['as' => 'getImage'], function($filename)
+    // {   
+    //     Image::configure(array('driver' => 'local', 'root' => storage_path('app')));
 
-        $img = Image::make($filename)->resize(300, 200);
+    //     $img = Image::make($filename)->resize(300, 200);
 
-        return $img->response('jpg');
-    });
+    //     return $img->response('jpg');
+    // });
 
 
-    Route::get('image/{user_id}/{serial_number}/{folder_name}/{file_name}', [
-        'as'   => 'event.image',
-        'uses' => 'EventController@getImage',
-    ]);
+    
 
     Route::post('ping', 'EventController@ping' );
 
@@ -87,4 +85,10 @@ Route::group(['prefix' => 'event'], function()
 
 });
 
+Route::get('storage/{filePath}', function($filePath) {
+    $path = storage_path('app/'.$filePath);
+    $mime = \File::mimeType($path);
+    header('Content-type: ' . $mime);
 
+    return readfile($path);
+})->where('filePath', '(.*)');

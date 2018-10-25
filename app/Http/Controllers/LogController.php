@@ -16,13 +16,13 @@ class LogController extends Controller
             $log = new Log([
                 'serial_number' => $request['serial_number'],
                 'message' => $request['message'],
-                'created_at' => Carbon::now()->setTimezone('GMT+8'),
-                'updated_at' => Carbon::now()->setTimezone('GMT+8')
+                'created_at' => $request['timestamp'],
+                'updated_at' => $request['timestamp']
             ]);
             $log->save();
         }
         else{
-            abort(404);
+            abort(401);
         }
     }
 }

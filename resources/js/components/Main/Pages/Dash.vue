@@ -110,6 +110,7 @@
 <script>
 import { mapGetters , mapState} from 'vuex'
 import store from '../../../store/store'
+import router from '../../../router/router';
 
 export default {
     data(){

@@ -12012,6 +12012,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
         userEmail: [],
         kitData: [],
         editKitData: [],
+        imageFolder: [],
         imageData: [],
         selectedKit: ''
 
@@ -12034,7 +12035,9 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
         editKitData: function editKitData(state) {
             return state.editKitData;
         },
-
+        imageFolder: function imageFolder(state) {
+            return state.imageFolder;
+        },
         imageData: function imageData(state) {
             return state.imageData;
         },
@@ -12060,8 +12063,13 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
                 state.editKitData = response.data[0];
             });
         },
+        SET_IMAGEFOLDER: function SET_IMAGEFOLDER(state) {
+            axios.get('api/event/get/folder/' + state.userData.id + '/' + state.selectedKit).then(function (response) {
+                state.imageFolder = response.data;
+            });
+        },
         SET_IMAGEDATA: function SET_IMAGEDATA(state) {
-            axios.get('api/event/get/' + state.userData.id + '/' + state.selectedKit).then(function (response) {
+            axios.get('api/event/get/file/' + state.userData.id + '/' + state.selectedKit).then(function (response) {
                 state.imageData = response.data;
             });
         },
@@ -12090,6 +12098,11 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
             var commit = _ref4.commit;
 
             commit('SET_SELECTEDKIT', serial);
+        },
+        SET_IMAGEFOLDER: function SET_IMAGEFOLDER(_ref5) {
+            var commit = _ref5.commit;
+
+            commit('SET_IMAGEFOLDER');
         }
     }
 
@@ -22088,6 +22101,7 @@ exports.push([module.i, "\n.v-divider[data-v-6c4a3438]{\r\n  margin: 0 !importan
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_store__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router_router__ = __webpack_require__(12);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -22199,6 +22213,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+
 
 
 
@@ -25142,9 +25157,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
 
 
 
@@ -25153,15 +25165,16 @@ var interval = void 0;
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
-        return {
-            storage_path: '../../../../../../storage/app/1/000000001417758e/2018-10-25 09-01-03.409486/1.jpg'
-        };
+        return {};
     },
 
     methods: {},
     created: function created() {
         this.$root.pageTitle = 'PICTURES';
-        Vue.picture.get();
+        if (this.selectedKit) {
+            Vue.picture.getFile();
+            Vue.picture.getFolder();
+        }
     },
     mounted: function mounted() {
         // interval = setInterval(() => {
@@ -25172,7 +25185,7 @@ var interval = void 0;
         clearInterval(interval);
     },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapGetters */])(['imageData', 'selectedKit']))
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapGetters */])(['imageData', 'imageFolder', 'selectedKit']))
 });
 
 /***/ }),
@@ -25199,7 +25212,79 @@ var render = function() {
       _vm._v(" "),
       _c("v-divider", { staticClass: "divider" }),
       _vm._v(" "),
-      _c("v-container", { attrs: { "pa-0": "" } })
+      _c("v-container", { attrs: { "pa-0": "" } }, [
+        _c(
+          "div",
+          {
+            staticClass: "scroll-y",
+            staticStyle: { "max-height": "79vh" },
+            attrs: { id: "scrolling-techniques" }
+          },
+          [
+            _c(
+              "v-container",
+              { staticClass: "container", attrs: { "justify-center": "" } },
+              [
+                _c(
+                  "v-expansion-panel",
+                  { attrs: { flat: "" } },
+                  _vm._l(_vm.imageFolder, function(folder) {
+                    return _c(
+                      "v-expansion-panel-content",
+                      { key: folder.folder_name },
+                      [
+                        _c(
+                          "div",
+                          { attrs: { slot: "header" }, slot: "header" },
+                          [_vm._v(_vm._s(folder.folder_name))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-card",
+                          [
+                            _c(
+                              "v-layout",
+                              { attrs: { row: "", wrap: "" } },
+                              _vm._l(_vm.imageData, function(image) {
+                                return _c(
+                                  "v-flex",
+                                  { key: image.id, attrs: { xs4: "" } },
+                                  [
+                                    _c("img", {
+                                      staticClass: "image",
+                                      attrs: {
+                                        src:
+                                          "api/storage/" +
+                                          image.user_id +
+                                          "/" +
+                                          image.serial_number +
+                                          "/" +
+                                          folder.folder_name +
+                                          "/" +
+                                          image.file_name,
+                                        width: "100%",
+                                        height: "100%"
+                                      }
+                                    })
+                                  ]
+                                )
+                              })
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  })
+                )
+              ],
+              1
+            )
+          ],
+          1
+        )
+      ])
     ],
     1
   )
@@ -98802,8 +98887,12 @@ VeeValidate$1.use(rulesPlugin);
 
 /* harmony default export */ __webpack_exports__["a"] = (function (Vue) {
     Vue.picture = {
-        get: function get() {
+        getFile: function getFile() {
+
             __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].dispatch('SET_IMAGEDATA');
+        },
+        getFolder: function getFolder() {
+            __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].dispatch('SET_IMAGEFOLDER');
         }
     };
 });

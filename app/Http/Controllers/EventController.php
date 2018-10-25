@@ -33,6 +33,7 @@ class EventController extends Controller
                 'serial_number' => $request['serial_number'],
                 'folder_name' => $request['folder_name'],
                 'file_name' => $request['file_name'],
+                'path' => 'path',
                 'created_at' => Carbon::now()->setTimezone('GMT+8'),
                 'updated_at' => Carbon::now()->setTimezone('GMT+8')
             ]);
@@ -49,7 +50,16 @@ class EventController extends Controller
         }
     }
 
-    public function get($user_id,$serial_number){
+    public function getFolder($user_id,$serial_number){
+        //return $user_id.' '. $serial_number;
+        $folder = Event::select('folder_name')->where('user_id', $user_id)->where('serial_number', $serial_number)->get();
+
+        $collection = collect($folder);
+        $unique = $collection->unique()->values()->all();
+
+        return $unique;
+    }
+    public function getFile($user_id,$serial_number){
         return Event::select('id','user_id','serial_number','folder_name','file_name')->where('user_id', $user_id)->where('serial_number', $serial_number)->get();
     }
 
