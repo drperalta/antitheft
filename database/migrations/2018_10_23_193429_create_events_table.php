@@ -19,6 +19,7 @@ class CreateEventsTable extends Migration
             $table->string('serial_number');
             $table->string('folder_name');
             $table->string('file_name');
+            $table->string('path');
             $table->timestamps();
         });
     }

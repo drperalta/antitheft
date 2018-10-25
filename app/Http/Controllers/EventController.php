@@ -47,8 +47,15 @@ class EventController extends Controller
             ], 401);
         }
     }
+
     public function get($user_id,$serial_number){
-        return Event::select('user_id','serial_number','folder_name','file_name')->where('user_id', $user_id)->where('serial_number', $serial_number)->get();
+        return Event::select('id','user_id','serial_number','folder_name','file_name')->where('user_id', $user_id)->where('serial_number', $serial_number)->get();
+    }
+
+    public function getImage($user_id, $serial_number, $folder_name, $file_name){
+        $path = $user_id.'/'.$serial_number.'/'.$folder_name.'/'.$file_name;
+
+        return Storage::disk('local')->get($path);
     }
 }
 
