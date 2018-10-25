@@ -71,4 +71,8 @@ Route::group(['prefix' => 'event'], function()
 
     Route::post('ping', 'EventController@ping' );
 
+    Route::post('log', 'LogController@log');
+
 });
+
+

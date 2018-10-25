@@ -61,7 +61,10 @@ class EventController extends Controller
     public function ping(Request $request){
         
         if(Userkit::where('serial_number', $request['serial_number'])->first()){
-            UserKit::where('serial_number', $request['serial_number'])->update('last_activity', $request['last_activity']);
+
+            UserKit::where('serial_number', $request['serial_number'])->update(['last_activity' => $request['last_activity']]);
+        }else{
+            abort(401);
         }
     }
 }
