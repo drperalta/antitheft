@@ -21,11 +21,12 @@
                 </v-container>
             </div> -->
 
-            <v-layout row wrap>
-                <v-flex v-for="image in imageData" :key="image" xs4>
-                <img :src="imageData.path" class="image" width="100%" height="100%">
+            <!-- <v-layout row wrap>
+                <v-flex v-for="image in imageData" :key="image.id" xs4>
+                <img :src="this.storage_path+imageData.user_id+'/'+imageData.serial_number+'/'+imageData.folder_name+'/'+imageData.file_name" class="image" width="100%" height="100%">
                 </v-flex>
-            </v-layout>
+            </v-layout> -->
+
         </v-container>
         
     </div>
@@ -38,6 +39,11 @@ import { mapGetters } from 'vuex'
 let interval;
 
 export default {
+    data(){
+        return{
+            storage_path: '../../../../../../storage/app/1/000000001417758e/2018-10-25 09-01-03.409486/1.jpg'
+        }
+    },
     methods:{
     },
     created(){
@@ -45,16 +51,17 @@ export default {
         Vue.picture.get()
     },
     mounted(){
-        interval = setInterval(() => {
-                store.dispatch('SET_IMAGEDATA')
-        }, 1000)
+        // interval = setInterval(() => {
+        //         store.dispatch('SET_IMAGEDATA',store.getters.selectedKit)
+        //     }, 1000)
     },
     beforeDestroy(){
         clearInterval(interval)
     },
     computed:{
         ...mapGetters([
-            'imageData'
+            'imageData',
+            'selectedKit'
         ])
     }
 }

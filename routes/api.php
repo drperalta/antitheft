@@ -62,6 +62,11 @@ Route::group(['prefix' => 'event'], function()
 {
     Route::post('upload', 'EventController@upload');
 
-    Route::get('get/{serial_number}', 'EventController@get');
+    Route::get('get/{user_id}/{serial_number}', 'EventController@get');
+
+    Route::get('image/{user_id}/{serial_number}/{folder_name}/{file_name}', [
+        'as'   => 'event.image',
+        'uses' => 'EventController@getImage',
+    ]);
 
 });

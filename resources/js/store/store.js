@@ -36,8 +36,10 @@ export default new Vuex.Store({
 
         imageData: (state) => {
             return state.imageData
+        },
+        selectedKit: (state) => {
+            return state.selectedKit
         }
-
     },
 
     mutations:{
@@ -60,13 +62,13 @@ export default new Vuex.Store({
             })
         },
         SET_IMAGEDATA: (state) => {
-            var id = state.userData.id;
-            var serial = state.selectedKit;
-
-            axios.get('api/event/get/'+id+'/'+serial)
+            axios.get('api/event/get/'+state.userData.id+'/'+state.selectedKit)
             .then(response => {
                 state.imageData = response.data
             })
+        },
+        SET_SELECTEDKIT: (state, serial) =>{
+            state.selectedKit = serial
         }
     },
 
@@ -79,6 +81,9 @@ export default new Vuex.Store({
         },
         SET_IMAGEDATA({commit}){
             commit('SET_IMAGEDATA')
+        },
+        SET_SELECTEDKIT({commit},serial){
+            commit('SET_SELECTEDKIT',serial)
         }
     }
 
