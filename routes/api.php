@@ -64,6 +64,16 @@ Route::group(['prefix' => 'event'], function()
 
     Route::get('get/{user_id}/{serial_number}', 'EventController@get');
 
+    Route::get('get/{filename}',['as' => 'getImage'], function($filename)
+    {   
+        Image::configure(array('driver' => 'local', 'root' => storage_path('app')));
+
+        $img = Image::make($filename)->resize(300, 200);
+
+        return $img->response('jpg');
+    });
+
+
     Route::get('image/{user_id}/{serial_number}/{folder_name}/{file_name}', [
         'as'   => 'event.image',
         'uses' => 'EventController@getImage',
@@ -72,6 +82,8 @@ Route::group(['prefix' => 'event'], function()
     Route::post('ping', 'EventController@ping' );
 
     Route::post('log', 'LogController@log');
+
+    Route::get('user/{serial_number}', 'EventController@user');
 
 });
 

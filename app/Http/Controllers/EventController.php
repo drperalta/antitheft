@@ -9,6 +9,7 @@ use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 use App\UserKit;
 use App\Event;
+use App\User;
 
 class EventController extends Controller
 {
@@ -61,10 +62,24 @@ class EventController extends Controller
     public function ping(Request $request){
         
         if(Userkit::where('serial_number', $request['serial_number'])->first()){
-
-            UserKit::where('serial_number', $request['serial_number'])->update(['last_activity' => $request['last_activity']]);
+            $time =  Carbon::now()->setTimezone('GMT+8');
+            UserKit::where('serial_number', $request['serial_number'])->update(['last_activity' => $time]);
         }else{
             abort(401);
+        }
+    }
+
+    public function user($serial_number){
+
+        if(UserKit::where('serial_number', $serial_number)->first()){
+            $id = UserKit::select('user_id')->where('serial_number', $serial_number)->first();
+            $user = User::select('id','fullname','username','email')->where('id', $id['user_id'])->get();
+
+            return $user;
+        }else{
+            return response()->json([
+                'errors' => ['message' => ['This kit is not linked to any User.']]
+            ], 400);
         }
     }
 }
