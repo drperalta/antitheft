@@ -46,9 +46,9 @@
                 <v-toolbar class="v-toolbar" flat>
 
                     <!-- SELECTED KIT -->
-                    <el-select class="select" v-model="value" placeholder="Select your Kit">
+                    <el-select class="select" v-model="value" placeholder="Select your Kit" :change="this.selected()">
                         
-                        <el-option v-for="kit in kitData" :key="kit.id" :label="kit.name" :value="kit.id">
+                        <el-option v-for="kit in kitData" :key="kit.id" :label="kit.name" :value="kit.serial_number">
                             <v-icon class="online" v-if="kit.status" size="12px">fiber_manual_record</v-icon>
                             <v-icon class="offline" v-if="!kit.status" size="12px">fiber_manual_record</v-icon>
                             <span v-text="kit.name"></span>
@@ -137,6 +137,9 @@ export default {
                 Vue.auth.logout(this.logout);
             }
         },
+        selected(){
+            store.dispatch('SET_SELECTEDKIT', this.value)
+        }
     },
 
     created(){
