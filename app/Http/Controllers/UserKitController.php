@@ -21,6 +21,7 @@ class UserKitController extends Controller
                 'user_id' => $request['user_id'],
                 'serial_number' => $request['serial_number'],
                 'name' => $request['name'],
+                'last_activity' => Carbon::now()->setTimezone('GMT+8'),
                 'created_at' => Carbon::now()->setTimezone('GMT+8'),
                 'updated_at' => Carbon::now()->setTimezone('GMT+8')
             ]);

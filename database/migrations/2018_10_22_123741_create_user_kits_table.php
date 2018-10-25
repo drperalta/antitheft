@@ -19,6 +19,7 @@ class CreateUserKitsTable extends Migration
             $table->string('serial_number');
             $table->string('name');
             $table->boolean('status')->default(false);
+            $table->timestamp('last_activity');
             $table->timestamps();
         });
     }

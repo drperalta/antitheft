@@ -69,4 +69,6 @@ Route::group(['prefix' => 'event'], function()
         'uses' => 'EventController@getImage',
     ]);
 
+    Route::post('ping', 'EventController@ping' );
+
 });

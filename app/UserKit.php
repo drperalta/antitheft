@@ -20,6 +20,7 @@ class UserKit extends Model
         'serial_number',
         'name',
         'status',
+        'last_activity',
         'created_at',
         'udpated_at'
     ];

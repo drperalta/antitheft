@@ -57,5 +57,10 @@ class EventController extends Controller
 
         return Storage::disk('local')->get($path);
     }
+
+    public function ping(Request $request){
+        
+        UserKit::where('serial_number', $request['serial_number'])->update('last_activity', $request['last_activity']);
+    }
 }
 
