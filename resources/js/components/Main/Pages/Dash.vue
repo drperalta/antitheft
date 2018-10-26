@@ -142,8 +142,7 @@ export default {
     },
 
     created(){
-        Vue.auth.user()
-        
+        Vue.auth.user()  
     },
     computed:{
         ...mapGetters([

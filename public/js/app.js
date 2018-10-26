@@ -12070,11 +12070,13 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
         SET_IMAGEFOLDER: function SET_IMAGEFOLDER(state) {
             axios.get('api/event/get/folder/' + state.userData.id + '/' + state.selectedKitData.serial_number).then(function (response) {
                 state.imageFolder = response.data;
+                //console.log(state.selectedKitData.serial_number)  
             });
         },
         SET_IMAGEDATA: function SET_IMAGEDATA(state) {
             axios.get('api/event/get/file/' + state.userData.id + '/' + state.selectedKitData.serial_number).then(function (response) {
                 state.imageData = response.data;
+                //console.log(state.selectedKitData.serial_number)
             });
         },
         SET_SELECTEDKIT: function SET_SELECTEDKIT(state, id) {
@@ -25197,7 +25199,7 @@ var interval = void 0;
         clearInterval(interval);
     },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapGetters */])(['imageData', 'imageFolder', 'selected_kit']))
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapGetters */])(['imageData', 'imageFolder']))
 });
 
 /***/ }),
