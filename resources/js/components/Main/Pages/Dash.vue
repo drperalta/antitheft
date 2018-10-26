@@ -59,7 +59,7 @@
                     <!-- BADGES -->
 
                     <!-- NAME AND EMAIL -->
-                    <div class="hidden-xs-only">
+                    <div>
                         <h1 class="name">{{userData.fullname}}</h1>
                         <p class="email">{{userData.email}}</p>
                     </div>

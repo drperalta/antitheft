@@ -22466,7 +22466,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("v-spacer"),
                       _vm._v(" "),
-                      _c("div", { staticClass: "hidden-xs-only" }, [
+                      _c("div", [
                         _c("h1", { staticClass: "name" }, [
                           _vm._v(_vm._s(_vm.userData.fullname))
                         ]),
