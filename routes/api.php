@@ -46,6 +46,8 @@ Route::group([ 'middleware' => 'api', 'prefix' => 'password'], function ()
 Route::group(['prefix' => 'kit' ], function()
 {
     Route::post('add', 'KitController@add');
+    Route::get('/{id}/logs', 'UserKitController@logs');
+    Route::status('/{id}/status', 'UserKitController@status');
 });
 
 // USER KIT ROUTES
@@ -67,7 +69,7 @@ Route::group(['prefix' => 'event'], function()
     Route::get('get/folder/{user_id}/{serial_number}', 'EventController@getFolder');
     Route::get('get/file/{folder_name}/{serial_number}', 'EventController@getFile');
     // Route::get('get/{filename}',['as' => 'getImage'], function($filename)
-    // {   
+    // {
     //     Image::configure(array('driver' => 'local', 'root' => storage_path('app')));
 
     //     $img = Image::make($filename)->resize(300, 200);

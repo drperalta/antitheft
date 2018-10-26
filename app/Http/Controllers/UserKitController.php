@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Kit;
+use App\Log;
 use App\UserKit;
 use Carbon\Carbon;
 
@@ -34,6 +35,14 @@ class UserKitController extends Controller
                 'errors' => [ 'message' => ['Invalid Serial Number'] ]
             ], 400);
          }
+    }
+
+    public function logs(Request $request, $id){
+        return Log::where('serial_number', $id)->orderBy('created_at', 'DESC')->get();
+    }
+
+    public function status(Request $request, $id){
+
     }
 
     public function edit(Request $request){

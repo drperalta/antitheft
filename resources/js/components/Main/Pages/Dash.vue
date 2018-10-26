@@ -4,11 +4,11 @@
 		<!-- SIDEBAR -->
 		<el-aside width="256" class="hidden-sm-and-down">
 			<el-menu class="sidebar" background-color="#262F3D" text-color="#C0C2C5" active-text-color="#4FC3F7">
-                   
+
 				<!-- SIDEBAR TITLE -->
-                
+
 				<div class="side-title">
-                    
+
 					<img src="../../../img/logo.png" height="30px">
 					<br>
 					<h1 class="title">ANTI-THEFT</h1>
@@ -44,17 +44,20 @@
                 <v-toolbar class="v-toolbar" flat>
                     <v-btn flat icon style="margin-right: 15px" @click="kits">
                         <v-icon>keyboard_arrow_left</v-icon>
-                    </v-btn> 
+                    </v-btn>
                     <!-- SELECTED KIT -->
                     <!-- <el-select class="select" v-model="value" placeholder="Select your Kit" :change="this.selected()">
-                        
+
                         <el-option v-for="kit in kitData" :key="kit.id" :label="kit.name" :value="kit.serial_number">
                             <v-icon class="online" v-if="kit.status" size="12px">fiber_manual_record</v-icon>
                             <v-icon class="offline" v-if="!kit.status" size="12px">fiber_manual_record</v-icon>
                             <span v-text="kit.name"></span>
                         </el-option>
                     </el-select> -->
-                    <span>{{selectedKitData.name}}</span>
+                    <span style="margin-right: 1rem;">{{selectedKitData.name}}</span>
+                    <el-switch v-model="kitSwitch"
+                        active-color="#13ce66"
+                        inactive-color="#ff4949" />
                     <v-spacer></v-spacer>
                     <!-- BADGES -->
 
@@ -120,6 +123,7 @@ export default {
                 { title: 'Accounts', command: 'account' },
                 { title: 'Logout', command: 'logout' }
             ],
+            kitSwitch: false,
             logout: false,
             bottomNav: 'overview',
             value: ''
@@ -143,7 +147,7 @@ export default {
 
     created(){
         Vue.auth.user()
-        
+
     },
     computed:{
         ...mapGetters([
@@ -189,12 +193,12 @@ export default {
     color: greenyellow;
     margin-right: 5px;
     margin-bottom: 2px;
-    
+
 }
 .offline{
     margin-right: 5px;
     margin-bottom: 2px;
-}   
+}
 .side-title {
   text-align: center;
   padding-top: 10px;

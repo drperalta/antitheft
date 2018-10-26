@@ -22117,7 +22117,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.v-divider[data-v-6c4a3438]{\r\n  margin: 0 !important;\n}\n.main-container[data-v-6c4a3438] {\r\n  margin: 0;\r\n  padding: 0;\n}\n.navbar[data-v-6c4a3438]{\r\n  background-color: white;\r\n  padding: 0;\r\n  margin: 0;\r\n  height: 77px !important;\n}\n.v-toolbar[data-v-6c4a3438]{\r\n  box-shadow: none;\r\n  padding-top: 10px;\r\n  padding-bottom: 10px;\r\n  height: 77px;\r\n  background-color: #039BE5;\n}\n.sidebar[data-v-6c4a3438]{\r\n  height: 100vh;\r\n  width: 256px;\r\n  border: 0px;\n}\n.main[data-v-6c4a3438]{\r\n  padding: 0;\n}\n.online[data-v-6c4a3438]{\r\n    color: greenyellow;\r\n    margin-right: 5px;\r\n    margin-bottom: 2px;\n}\n.offline[data-v-6c4a3438]{\r\n    margin-right: 5px;\r\n    margin-bottom: 2px;\n}\n.side-title[data-v-6c4a3438] {\r\n  text-align: center;\r\n  padding-top: 10px;\r\n  padding-bottom: 10px;\n}\n.side-title h1[data-v-6c4a3438]{\r\n  font-weight: 600;\r\n  font-size: 16px !important;\r\n  display: inline-flex;\r\n  color: white;\n}\n.side-title h2[data-v-6c4a3438]{\r\n  font-weight: 400;\r\n  font-size: 16px !important;\r\n  display: inline-flex;\r\n  color:   whitesmoke;\n}\n.side_title[data-v-6c4a3438] {\r\n  font-weight: 500;\r\n  font-size: 14px;\n}\n.side-menu[data-v-6c4a3438] {\r\n    width: 256px !important;\n}\n.side-menu span[data-v-6c4a3438]{\r\n  font-weight: 500;\n}\n.navbottom[data-v-6c4a3438]{\r\n    bottom: 0;\r\n    position: absolute;\n}\n.icon[data-v-6c4a3438] {\r\n  margin-left: 12px;\r\n  margin-right: 20px;\r\n  width: 14px !important;\r\n  color: white;\n}\n.name[data-v-6c4a3438]{\r\n  font-weight: 600;\r\n  font-size: 18px;\r\n  right: 0;\r\n  color: white;\n}\n.email[data-v-6c4a3438]{\r\n  font-weight: 400;\r\n  font-size: 12px;\r\n  color: lightblue;\n}\n.button[data-v-6c4a3438]{\r\n  width: 57px !important;\r\n  height: 57px !important;\r\n  margin: 0;\r\n  padding: 0;\n}\n.divider[data-v-6c4a3438]{\r\n  margin-left: 15px !important;\r\n  margin-right: 24px !important;\r\n  max-height: 57px !important;\r\n  min-height: 57px !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.v-divider[data-v-6c4a3438]{\n  margin: 0 !important;\n}\n.main-container[data-v-6c4a3438] {\n  margin: 0;\n  padding: 0;\n}\n.navbar[data-v-6c4a3438]{\n  background-color: white;\n  padding: 0;\n  margin: 0;\n  height: 77px !important;\n}\n.v-toolbar[data-v-6c4a3438]{\n  box-shadow: none;\n  padding-top: 10px;\n  padding-bottom: 10px;\n  height: 77px;\n  background-color: #039BE5;\n}\n.sidebar[data-v-6c4a3438]{\n  height: 100vh;\n  width: 256px;\n  border: 0px;\n}\n.main[data-v-6c4a3438]{\n  padding: 0;\n}\n.online[data-v-6c4a3438]{\n    color: greenyellow;\n    margin-right: 5px;\n    margin-bottom: 2px;\n}\n.offline[data-v-6c4a3438]{\n    margin-right: 5px;\n    margin-bottom: 2px;\n}\n.side-title[data-v-6c4a3438] {\n  text-align: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.side-title h1[data-v-6c4a3438]{\n  font-weight: 600;\n  font-size: 16px !important;\n  display: inline-flex;\n  color: white;\n}\n.side-title h2[data-v-6c4a3438]{\n  font-weight: 400;\n  font-size: 16px !important;\n  display: inline-flex;\n  color:   whitesmoke;\n}\n.side_title[data-v-6c4a3438] {\n  font-weight: 500;\n  font-size: 14px;\n}\n.side-menu[data-v-6c4a3438] {\n    width: 256px !important;\n}\n.side-menu span[data-v-6c4a3438]{\n  font-weight: 500;\n}\n.navbottom[data-v-6c4a3438]{\n    bottom: 0;\n    position: absolute;\n}\n.icon[data-v-6c4a3438] {\n  margin-left: 12px;\n  margin-right: 20px;\n  width: 14px !important;\n  color: white;\n}\n.name[data-v-6c4a3438]{\n  font-weight: 600;\n  font-size: 18px;\n  right: 0;\n  color: white;\n}\n.email[data-v-6c4a3438]{\n  font-weight: 400;\n  font-size: 12px;\n  color: lightblue;\n}\n.button[data-v-6c4a3438]{\n  width: 57px !important;\n  height: 57px !important;\n  margin: 0;\n  padding: 0;\n}\n.divider[data-v-6c4a3438]{\n  margin-left: 15px !important;\n  margin-right: 24px !important;\n  max-height: 57px !important;\n  min-height: 57px !important;\n}\n", ""]);
 
 // exports
 
@@ -22243,6 +22243,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 
 
@@ -22252,6 +22255,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     data: function data() {
         return {
             items: [{ title: 'Accounts', command: 'account' }, { title: 'Logout', command: 'logout' }],
+            kitSwitch: false,
             logout: false,
             bottomNav: 'overview',
             value: ''
@@ -22435,7 +22439,23 @@ var render = function() {
                         1
                       ),
                       _vm._v(" "),
-                      _c("span", [_vm._v(_vm._s(_vm.selectedKitData.name))]),
+                      _c("span", { staticStyle: { "margin-right": "1rem" } }, [
+                        _vm._v(_vm._s(_vm.selectedKitData.name))
+                      ]),
+                      _vm._v(" "),
+                      _c("el-switch", {
+                        attrs: {
+                          "active-color": "#13ce66",
+                          "inactive-color": "#ff4949"
+                        },
+                        model: {
+                          value: _vm.kitSwitch,
+                          callback: function($$v) {
+                            _vm.kitSwitch = $$v
+                          },
+                          expression: "kitSwitch"
+                        }
+                      }),
                       _vm._v(" "),
                       _c("v-spacer"),
                       _vm._v(" "),
@@ -25414,7 +25434,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.container[data-v-e8fc872c]{\n}\n.toolbar[data-v-e8fc872c]{\n}\n.title[data-v-e8fc872c]{\r\n  font-weight: 600;\r\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-e8fc872c]{\r\n    margin: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n.container[data-v-e8fc872c]{\n}\n.toolbar[data-v-e8fc872c]{\n}\n.title[data-v-e8fc872c]{\n  font-weight: 600;\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-e8fc872c]{\n    margin: 0;\n}\n", ""]);
 
 // exports
 
@@ -25441,12 +25461,41 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
+
+var interval = void 0;
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      headers: [{ text: 'Message', value: 'message', sortable: false }, { text: 'Timestamp', value: 'created_at', sortable: false }],
+      entries: []
+    };
+  },
   created: function created() {
     this.$root.pageTitle = 'LOGS';
+  },
+  mounted: function mounted() {
+    interval = setInterval(this.load, 1000);
+  },
+  beforeDestroy: function beforeDestroy() {
+    clearInterval(interval);
+  },
+
+  methods: {
+    load: function load() {
+      var _this = this;
+
+      Vue.kit.logs(this).then(function (response) {
+        _this.entries = response.data;
+      });
+    }
   }
 });
 
@@ -25474,10 +25523,34 @@ var render = function() {
       _vm._v(" "),
       _c("v-divider", { staticClass: "divider" }),
       _vm._v(" "),
-      _c("v-container", {
-        staticClass: "container",
-        attrs: { "justify-center": "" }
-      })
+      _c(
+        "v-container",
+        { staticClass: "container", attrs: { "justify-center": "" } },
+        [
+          _c("v-data-table", {
+            staticClass: "elevation-1",
+            attrs: {
+              headers: _vm.headers,
+              items: _vm.entries,
+              "hide-actions": "",
+              "disable-initial-sort": ""
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "items",
+                fn: function(props) {
+                  return [
+                    _c("td", [_vm._v(_vm._s(props.item.message))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(props.item.created_at))])
+                  ]
+                }
+              }
+            ])
+          })
+        ],
+        1
+      )
     ],
     1
   )
@@ -98848,6 +98921,9 @@ VeeValidate$1.use(rulesPlugin);
             }).catch(function (error) {
                 _this.handleError('ADD', context, error);
             });
+        },
+        logs: function logs(context) {
+            return axios.get('/api/kit/' + __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].getters.selectedKitData.serial_number + '/logs');
         },
         edit: function edit(context, name, serial, id) {
             var _this2 = this;

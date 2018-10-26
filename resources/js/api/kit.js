@@ -8,7 +8,7 @@ export default function(Vue){
                 user_id: store.getters.userID,
                 name: data.name,
                 serial_number: data.serial_number
-            }, 
+            },
             { headers: { 'Authorization': 'Bearer ' + this.getToken() } })
             .then(response => {
 
@@ -20,6 +20,9 @@ export default function(Vue){
             }).catch(error => {
                 this.handleError('ADD', context, error)
             })
+        },
+        logs(context) {
+            return axios.get('/api/kit/' + store.getters.selectedKitData.serial_number + '/logs')
         },
         edit(context, name, serial, id){
             axios.post('api/user/kit/edit', {
