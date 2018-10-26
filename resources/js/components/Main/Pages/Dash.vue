@@ -4,8 +4,11 @@
 		<!-- SIDEBAR -->
 		<el-aside width="256" class="hidden-sm-and-down">
 			<el-menu class="sidebar" background-color="#262F3D" text-color="#C0C2C5" active-text-color="#4FC3F7">
+                   
 				<!-- SIDEBAR TITLE -->
+                
 				<div class="side-title">
+                    
 					<img src="../../../img/logo.png" height="30px">
 					<br>
 					<h1 class="title">ANTI-THEFT</h1>
@@ -31,11 +34,6 @@
 						<v-icon class="icon">subject</v-icon>
 						<span class="side_title">Logs</span>
 					</el-menu-item><v-divider></v-divider>
-					<!-- KITS -->
-					<el-menu-item index="kits" @click="kits">
-						<v-icon class="icon">settings_cell</v-icon>
-						<span class="side_title">Kits</span>
-					</el-menu-item><v-divider></v-divider>
 				</div>
 			</el-menu>
 		</el-aside>
@@ -44,16 +42,19 @@
 			<!-- NAVBAR -->
 			<el-header class="navbar">
                 <v-toolbar class="v-toolbar" flat>
-
+                    <v-btn flat icon style="margin-right: 15px" @click="kits">
+                        <v-icon>keyboard_arrow_left</v-icon>
+                    </v-btn> 
                     <!-- SELECTED KIT -->
-                    <el-select class="select" v-model="value" placeholder="Select your Kit" :change="this.selected()">
+                    <!-- <el-select class="select" v-model="value" placeholder="Select your Kit" :change="this.selected()">
                         
                         <el-option v-for="kit in kitData" :key="kit.id" :label="kit.name" :value="kit.serial_number">
                             <v-icon class="online" v-if="kit.status" size="12px">fiber_manual_record</v-icon>
                             <v-icon class="offline" v-if="!kit.status" size="12px">fiber_manual_record</v-icon>
                             <span v-text="kit.name"></span>
                         </el-option>
-                    </el-select>
+                    </el-select> -->
+                    <span>{{selectedKitData.name}}</span>
                     <v-spacer></v-spacer>
                     <!-- BADGES -->
 
@@ -138,18 +139,17 @@ export default {
                 Vue.auth.logout(this.logout);
             }
         },
-        selected(){
-            store.dispatch('SET_SELECTEDKIT', this.value)
-        }
     },
 
     created(){
         Vue.auth.user()
+        
     },
     computed:{
         ...mapGetters([
             'userData',
-            'kitData'
+            'kitData',
+            'selectedKitData'
         ])
     }
 }

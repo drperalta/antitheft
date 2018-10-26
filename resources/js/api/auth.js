@@ -74,6 +74,7 @@ export default function(Vue){
                 }).then(response => {
                     store.commit('SET_USERDATA', response.data)
                     store.dispatch('SET_KITDATA')
+                    store.dispatch('SET_SELECTEDKITDATA')
                 })
             }
             return Vue.auth

@@ -77,4 +77,16 @@ class UserKitController extends Controller
     public function edit_set($id){
         return UserKit::select('serial_number','name')->where('id', $id)->get();
     }
+
+    public function selected_kit(Request $request){
+        User::where('id', $request['user_id'])->update([ 'selected_kit' => $request['kit_id'] ]);
+
+    }
+
+    public function delete_selected_kit(Request $request){
+        User::where('id', $request['user_id'])->update([ 'selected_kit' => '' ]);
+    }
+    public function selected_kit_data($kit_id){
+        return UserKit::where('id', $kit_id)->get();
+    }
 }

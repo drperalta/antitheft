@@ -27,6 +27,7 @@ class AuthController extends Controller
             'email' => $request['email'],
             'password' => bcrypt($request['password']),
             'activation_token' => str_random(60),
+            'selected_kit' => '',
             'created_at' => Carbon::now()->setTimezone('GMT+8'),
             'updated_at' => Carbon::now()->setTimezone('GMT+8')
         ]);

@@ -66,11 +66,6 @@ let router = new Router({
                     meta: {forAuth: true}
                 },
                 {
-                    path: 'kits',
-                    component: Kits,
-                    meta: {forAuth: true}
-                },
-                {
                     path: 'pictures',
                     component: Pictures,
                     meta: {forAuth: true}
@@ -82,7 +77,11 @@ let router = new Router({
                 },
             ]
         },
-
+        {
+            path: '/kits',
+            component: Kits,
+            meta: {forAuth: true}
+        },
         {
             path: '*',
             component: PageNotFound

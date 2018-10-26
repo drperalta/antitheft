@@ -56,15 +56,16 @@ Route::group([ 'middleware' => 'auth:api', 'prefix' => 'user'  ], function()
     Route::post('kit/remove', 'UserKitController@remove');
     Route::get('kit/edit/set/{id}', 'UserKitController@edit_set');
     Route::post('kit/edit', 'UserKitController@edit');
+    Route::post('kit/set/selected_kit' , 'UserKitController@selected_kit');
+    Route::post('kit/delete/selected_kit' , 'UserKitController@delete_selected_kit');
+    Route::get('kit/set/selected_kit_data/{kit_id}' , 'UserKitController@selected_kit_data');
 });
 
 Route::group(['prefix' => 'event'], function()
 {
     Route::post('upload', 'EventController@upload');
-
     Route::get('get/folder/{user_id}/{serial_number}', 'EventController@getFolder');
     Route::get('get/file/{folder_name}/{serial_number}', 'EventController@getFile');
-
     // Route::get('get/{filename}',['as' => 'getImage'], function($filename)
     // {   
     //     Image::configure(array('driver' => 'local', 'root' => storage_path('app')));
@@ -73,16 +74,9 @@ Route::group(['prefix' => 'event'], function()
 
     //     return $img->response('jpg');
     // });
-
-
-    
-
     Route::post('ping', 'EventController@ping' );
-
     Route::post('log', 'LogController@log');
-
     Route::get('user/{serial_number}', 'EventController@user');
-
 });
 
 Route::get('storage/{filePath}', function($filePath) {

@@ -13,7 +13,8 @@ export default new Vuex.Store({
         editKitData: [],
         imageFolder: [],
         imageData: [],
-        selectedKit: ''
+        selectedKitData: [],
+        selected_kit: []
 
     },
 
@@ -40,8 +41,11 @@ export default new Vuex.Store({
         imageData: (state) => {
             return state.imageData
         },
-        selectedKit: (state) => {
-            return state.selectedKit
+        selected_kit: (state) => {
+            return state.selected_kit
+        },
+        selectedKitData: (state) => {
+            return state.selectedKitData
         }
     },
 
@@ -65,19 +69,39 @@ export default new Vuex.Store({
             })
         },
         SET_IMAGEFOLDER: (state) => {
-            axios.get('api/event/get/folder/'+state.userData.id+'/'+state.selectedKit)
+            axios.get('api/event/get/folder/'+state.userData.id+'/'+state.selectedKitData.serial_number)
             .then(response => {
                 state.imageFolder = response.data
             })
         },
         SET_IMAGEDATA: (state) => {
-            axios.get('api/event/get/file/'+state.userData.id+'/'+state.selectedKit)
+            axios.get('api/event/get/file/'+state.userData.id+'/'+state.selectedKitData.serial_number)
             .then(response => {
                 state.imageData = response.data
             })
         },
-        SET_SELECTEDKIT: (state, serial) =>{
-            state.selectedKit = serial
+        SET_SELECTEDKIT: (state, id) =>{
+            axios.post('api/user/kit/set/selected_kit/', {
+                user_id: state.userData.id,
+                kit_id: id
+            }, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } })
+            .then(response => {
+                router.push({path: 'overview'})
+            })
+        },
+        DELETE_SELECTEDKIT: (state) => {
+            axios.post('api/user/kit/delete/selected_kit/', {
+                user_id: state.userData.id,
+            }, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } })
+            .then(response => {
+            })
+        },
+        SET_SELECTEDKITDATA: (state) => {
+            axios.get('api/user/kit/set/selected_kit_data/'+ state.userData.selected_kit,
+            { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } })
+            .then(response => {
+                state.selectedKitData = response.data[0]             
+            })
         }
     },
 
@@ -91,12 +115,18 @@ export default new Vuex.Store({
         SET_IMAGEDATA({commit}){
             commit('SET_IMAGEDATA')
         },
-        SET_SELECTEDKIT({commit},serial){
-            commit('SET_SELECTEDKIT',serial)
+        SET_SELECTEDKIT({commit}, id){
+            commit('SET_SELECTEDKIT', id)
             
+        },
+        DELETE_SELECTEDKIT({commit}){
+            commit('DELETE_SELECTEDKIT')
         },
         SET_IMAGEFOLDER({commit}){
             commit('SET_IMAGEFOLDER')
+        },
+        SET_SELECTEDKITDATA({commit}){
+            commit('SET_SELECTEDKITDATA')
         }
     }
 

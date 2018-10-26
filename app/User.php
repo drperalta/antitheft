@@ -26,6 +26,7 @@ class User extends Authenticatable
         'password',
         'active',
         'activation_token',
+        'selected_kit',
         'created_at',
         'updated_at'
     ];

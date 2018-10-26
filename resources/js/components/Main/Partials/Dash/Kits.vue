@@ -59,10 +59,12 @@
             <v-layout row wrap>
                 <div v-for="kit in kitData" :key="kit.name" style="width: 160px; margin: 12px">
                     <v-card >
-                        <v-card-actions>
+                        <v-card-actions style="padding-bottom: 0">
                             <v-icon class="online" v-if="kit.status" size="12px">fiber_manual_record</v-icon>
+                            <span v-if="kit.status" >Online</span>
                             <v-icon class="offline" v-if="!kit.status" size="12px">fiber_manual_record</v-icon>
-                            <span class="kitname" v-text="kit.name"></span>
+                            <span v-if="!kit.status" >Offline</span>
+                            
                             <v-spacer></v-spacer>
                             <div>
                                 <el-dropdown trigger="click" @command="handleKitCommand">
@@ -77,6 +79,13 @@
                                     </el-dropdown-menu>
                                 </el-dropdown>
                             </div>
+                        </v-card-actions>
+                        <div class="name">
+                            <span class="kitname" v-text="kit.name"></span>
+                        </div>
+                        <v-card-actions>
+                            <el-button @click="manage(kit.id)" style="width: 100%">Manage</el-button>
+                            
                         </v-card-actions>
                     </v-card>
                 </div>
@@ -169,16 +178,21 @@ export default {
             }else{
                 this.openModalEdit = true;
             }
+        },
+        manage(id){
+            store.dispatch('SET_SELECTEDKIT', id)
         }
     },
     created(){
         this.$root.pageTitle = 'KITS'
-
+        Vue.auth.user()
+        store.dispatch('DELETE_SELECTEDKIT')
     },
     computed:{
         ...mapGetters([
             'kitData',
-            'editKitData'
+            'editKitData',
+            'userData'
         ])
     }
 }
@@ -187,16 +201,19 @@ export default {
 <style scoped>
 .container{
     margin: auto;
+    text-align: center;
 }
 .toolbar{
 
 }
 .online{
     color: greenyellow;
-    margin-left: 8px
+    margin-left: 5px;
+    margin-right: 5px;
 }
 .offline{
-    margin-left: 8px
+    margin-left: 5px;
+    margin-right: 5px;
 }
 .title{
   font-weight: 600;
@@ -217,5 +234,9 @@ export default {
 .validation{
     color: red;
     font-size: 12px;
+}
+.name{
+    padding: 10px;
+    font-weight: 500;
 }
 </style>

@@ -14,11 +14,15 @@
                         <v-expansion-panel-content v-for="folder in imageFolder" :key="folder.folder_name">
                                 <div slot="header">{{ folder.folder_name }}</div>
                                 <v-card>
-                                    <v-layout row wrap>
-                                        <v-flex v-for="image in imageData" :key="image.id" xs4>
-                                            <img :src="'api/storage/'+image.user_id+'/'+image.serial_number+'/'+folder.folder_name+'/'+image.file_name" class="image" width="100%" height="100%">
-                                        </v-flex>
-                                    </v-layout>
+                                    <v-container grid-list-sm fluid>
+                                         <v-layout row wrap>
+                                            <v-flex v-for="image in imageData" :key="image.id" xs4 d-flex>
+                                                <v-card flat tile>
+                                                    <img :src="'api/storage/'+image.user_id+'/'+image.serial_number+'/'+folder.folder_name+'/'+image.file_name" class="image" width="100%" height="100%">
+                                                </v-card>
+                                            </v-flex>
+                                        </v-layout>  
+                                    </v-container>
                                 </v-card>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
@@ -44,10 +48,8 @@ export default {
     },
     created(){
         this.$root.pageTitle = 'PICTURES'
-        if(this.selectedKit){
-            Vue.picture.getFile()
-            Vue.picture.getFolder()
-        }
+        Vue.picture.getFile()
+        Vue.picture.getFolder()
     },
     mounted(){
         // interval = setInterval(() => {
@@ -61,7 +63,7 @@ export default {
         ...mapGetters([
             'imageData',
             'imageFolder',
-            'selectedKit'
+            'selected_kit'
         ])
     }
 }
