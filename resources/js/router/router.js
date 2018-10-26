@@ -20,6 +20,10 @@ import Kits from '../components/Main/Partials/Dash/Kits.vue'
 import Pictures from '../components/Main/Partials/Dash/Pictures.vue'
 import Logs from '../components/Main/Partials/Dash/Logs.vue'
 
+import Admin from '../components/Admin/Admin'
+import AddKit from '../components/Admin/Pages/AddKit'
+import User from '../components/Admin/Pages/User'
+
 let router = new Router({
 
     mode: 'history',
@@ -85,6 +89,21 @@ let router = new Router({
         {
             path: '*',
             component: PageNotFound
+        },
+        {
+            path: '/', name: 'admin', component: Admin,meta: {forAdmin: true},
+            children: [
+                {
+                    path: 'user',
+                    component: User,
+                    meta: {forAdmin: true}
+                },
+                {
+                    path: 'addkit',
+                    component: AddKit,
+                    meta: {forAdmin: true}
+                }
+            ]
         }
     ]
 })

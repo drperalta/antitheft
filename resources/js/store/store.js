@@ -72,12 +72,14 @@ export default new Vuex.Store({
             axios.get('api/event/get/folder/'+state.userData.id+'/'+state.selectedKitData.serial_number)
             .then(response => {
                 state.imageFolder = response.data
+                //console.log(state.selectedKitData.serial_number)  
             })
         },
         SET_IMAGEDATA: (state) => {
             axios.get('api/event/get/file/'+state.userData.id+'/'+state.selectedKitData.serial_number)
             .then(response => {
                 state.imageData = response.data
+                //console.log(state.selectedKitData.serial_number)
             })
         },
         SET_SELECTEDKIT: (state, id) =>{
@@ -100,7 +102,7 @@ export default new Vuex.Store({
             axios.get('api/user/kit/set/selected_kit_data/'+ state.userData.selected_kit,
             { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } })
             .then(response => {
-                state.selectedKitData = response.data[0]             
+                state.selectedKitData = response.data[0]       
             })
         }
     },

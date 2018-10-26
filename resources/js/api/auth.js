@@ -176,6 +176,12 @@ export default function(Vue){
             else
                 return false;
         },
+        isAdmin(){
+            if(this.getToken())
+                return true;
+            else
+                return false;
+        },
 
         setConfirmationEmail(token){
             axios.get('/api/auth/setEmail/'+token)
