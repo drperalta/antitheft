@@ -55,6 +55,13 @@ router.beforeEach(
                 })
             }else next()
         }
+        else if(to.matched.some(record => record.meta.forAdmin)){
+            if(Vue.auth.isAdmin()){
+                next({
+                    path: '/user'
+                })
+            }else next()
+        }
 
         else next()
     }

@@ -97,10 +97,6 @@
                     <v-btn flat dark @click="logs" value="logs" color="#4FC3F7">
                         <v-icon>subject</v-icon>
                     </v-btn>
-
-                    <v-btn flat dark @click="kits" value="kits" color="#4FC3F7">
-                        <v-icon>settings_cell</v-icon>
-                    </v-btn>
 				</v-bottom-nav>
 			</el-footer>
 		</el-container>
