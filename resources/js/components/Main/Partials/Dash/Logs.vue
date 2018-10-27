@@ -8,12 +8,16 @@
         </v-toolbar>
         <v-divider class="divider"></v-divider>
         <v-container class="container" justify-center>
-            <v-data-table :headers="headers" :items="entries" hide-actions disable-initial-sort class="elevation-1">
-                <template slot="items" slot-scope="props">
-                    <td>{{ props.item.message }}</td>
-                    <td>{{ props.item.created_at }}</td>
-                </template>
-            </v-data-table>
+            <div class="scroll-y" id="scrolling-techniques" style="max-height: 79vh;">
+                <v-container class="container" justify-center >
+                    <v-data-table :headers="headers" :items="entries" hide-actions disable-initial-sort class="elevation-1">
+                        <template slot="items" slot-scope="props">
+                            <td>{{ props.item.message }}</td>
+                            <td>{{ props.item.created_at }}</td>
+                        </template>
+                    </v-data-table>
+                </v-container>
+            </div>
         </v-container>
     </div>
 </template>

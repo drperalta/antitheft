@@ -49,7 +49,7 @@ export default function(Vue){
                 context.$root.$emit('login:success')
 
                 this.setToken(response.data.access_token, response.data.expires_at)
-                router.push({ path: 'overview' })
+                router.push({ path: 'kits' })
             }).catch(error => {
                 context.$root.$emit('login:error')
 

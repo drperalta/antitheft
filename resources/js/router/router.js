@@ -64,11 +64,11 @@ let router = new Router({
         {
             path: '/', name: 'overview', component: Dash, meta: {forAuth: true},
             children: [
-                {
-                    path: 'overview',
-                    component: Overview,
-                    meta: {forAuth: true}
-                },
+                // {
+                //     path: 'overview',
+                //     component: Overview,
+                //     meta: {forAuth: true}
+                // },
                 {
                     path: 'pictures',
                     component: Pictures,

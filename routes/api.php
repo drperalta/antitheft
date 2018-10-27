@@ -47,7 +47,7 @@ Route::group(['prefix' => 'kit' ], function()
 {
     Route::post('add', 'KitController@add');
     Route::get('/{id}/logs', 'UserKitController@logs');
-    Route::status('/{id}/status', 'UserKitController@status');
+    Route::post('/{id}/status', 'UserKitController@status');
 });
 
 // USER KIT ROUTES

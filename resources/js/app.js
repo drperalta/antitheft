@@ -42,7 +42,7 @@ router.beforeEach(
         if(to.matched.some(record => record.meta.forVisitors)){
             if(Vue.auth.isAuthenticated()){
                 next({
-                    path: '/overview'
+                    path: '/kits'
                 })
             }else next()
 
@@ -52,13 +52,6 @@ router.beforeEach(
             if(!Vue.auth.isAuthenticated()){
                 next({
                     path: '/login'
-                })
-            }else next()
-        }
-        else if(to.matched.some(record => record.meta.forAdmin)){
-            if(Vue.auth.isAdmin()){
-                next({
-                    path: '/user'
                 })
             }else next()
         }

@@ -16,7 +16,7 @@
                                 <v-card>
                                     <v-container grid-list-sm fluid>
                                          <v-layout row wrap>
-                                            <v-flex v-for="image in imageData" :key="image.id" xs4 d-flex>
+                                            <v-flex v-for="image in imageData" v-if="image.folder_name == folder.folder_name" :key="image.id" xs4 d-flex>
                                                 <v-card flat tile>
                                                     <img :src="'api/storage/'+image.user_id+'/'+image.serial_number+'/'+folder.folder_name+'/'+image.file_name" class="image" width="100%" height="100%">
                                                 </v-card>
@@ -48,8 +48,9 @@ export default {
     },
     created(){
         this.$root.pageTitle = 'PICTURES'
-        Vue.picture.getFile()
         Vue.picture.getFolder()
+        Vue.picture.getFile()
+        
     },
     mounted(){
         // interval = setInterval(() => {

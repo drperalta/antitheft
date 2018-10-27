@@ -88,7 +88,7 @@ export default new Vuex.Store({
                 kit_id: id
             }, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } })
             .then(response => {
-                router.push({path: 'overview'})
+                router.push({path: 'pictures'})
             })
         },
         DELETE_SELECTEDKIT: (state) => {
