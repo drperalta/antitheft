@@ -60,11 +60,11 @@
                 <div v-for="kit in kitData" :key="kit.name" style="width: 160px; margin: 12px">
                     <v-card >
                         <v-card-actions style="padding-bottom: 0">
-                            <v-icon class="online" v-if="kit.status" size="12px">fiber_manual_record</v-icon>
-                            <span v-if="kit.status" >Online</span>
-                            <v-icon class="offline" v-if="!kit.status" size="12px">fiber_manual_record</v-icon>
-                            <span v-if="!kit.status" >Offline</span>
-                            
+                            <v-icon class="online" v-if="kit.is_active" size="12px">fiber_manual_record</v-icon>
+                            <span v-if="kit.is_active" >Online</span>
+                            <v-icon class="offline" v-if="!kit.is_active" size="12px">fiber_manual_record</v-icon>
+                            <span v-if="!kit.is_active" >Offline</span>
+
                             <v-spacer></v-spacer>
                             <div>
                                 <el-dropdown trigger="click" @command="handleKitCommand">
@@ -85,7 +85,7 @@
                         </div>
                         <v-card-actions>
                             <el-button @click="manage(kit.id)" style="width: 100%">Manage</el-button>
-                            
+
                         </v-card-actions>
                     </v-card>
                 </div>

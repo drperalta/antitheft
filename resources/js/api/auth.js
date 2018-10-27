@@ -80,6 +80,18 @@ export default function(Vue){
             return Vue.auth
         },
 
+        getUser(){
+            return axios.get('api/auth/user', {
+                headers: { 'Authorization': 'Bearer ' + this.getToken() }
+            })
+        },
+
+        setUser(data) {
+            return axios.post('api/auth/user', data, {
+                headers: { 'Authorization': 'Bearer ' + this.getToken() }
+            })
+        },
+
         // addKit(context,data){
         //     axios.post(
         //         'api/kit',data).then(response =>{

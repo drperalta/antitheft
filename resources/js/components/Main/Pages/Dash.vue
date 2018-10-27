@@ -106,6 +106,37 @@
 			</el-footer>
 		</el-container>
 	</el-container>
+
+        <v-dialog v-model="openModalAccount" max-width="420">
+            <v-card>
+                <v-card-title class="headline grey lighten-4">Edit Account</v-card-title>
+                <v-card-text>
+                    <v-container grid-list-md>
+                        <el-alert class="notification" type="error" v-if="editNotif.error" :title="editNotif.errorMsg" :closable="false"/>
+                        <el-alert class="notification" type="success" v-if="editNotif.success" :title="editNotif.successMsg" :closable="false"/>
+
+                        <el-input class="input" placeholder="Name" v-model="editUserData.fullname"></el-input>
+                        <el-input class="input" placeholder="Username" v-model="editUserData.username"></el-input>
+                        <el-input class="input" placeholder="Email" v-model="editUserData.email"></el-input>
+
+                        <br />
+                        <br />
+
+                        <p>
+                            <small>Fill only if you are changing password</small>
+                        </p>
+
+                        <el-input class="input" placeholder="Password" type="password" v-model="editUserData.password"></el-input>
+                        <el-input class="input" placeholder="Confirm Password" type="password" v-model="editUserData.password_confirm"></el-input>
+                    </v-container>
+                </v-card-text>
+                <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="green darken-1" flat @click.native="openModalAccount = false">Close</v-btn>
+                    <v-btn color="green darken-1" flat @click.prevent="saveAccount" :disabled="errors.has('name.serial')">Save</v-btn>
+                </v-card-actions>
+                </v-card>
+            </v-dialog>
 </div>
 </template>
 
@@ -126,7 +157,17 @@ export default {
             kitSwitch: false,
             logout: false,
             bottomNav: 'overview',
-            value: ''
+            value: '',
+
+            openModalAccount: false,
+            editNotif:{
+                error: false,
+                success: false,
+                errorMsg: null,
+                successMsg: null
+            },
+
+            editUserData: {}
         }
     },
     methods:{
@@ -137,7 +178,7 @@ export default {
 
         handleCommand(command){
             if(command == 'account'){
-                this.$router.push({path: 'account'})
+                this.openModalAccount = true
             }else{
                 this.logout = true;
                 Vue.auth.logout(this.logout);
@@ -154,6 +195,38 @@ export default {
 
                 this.kitSwitch = response.data == 1
             })
+        },
+
+        saveAccount() {
+            this.editNotif.error = false
+            this.editNotif.errorMsg = null
+
+            if (this.editUserData.password && this.editUserData.password != this.editUserData.password_confirm) {
+                this.editNotif.error = true
+                this.editNotif.errorMsg = 'Password does not match'
+
+                return
+            }
+
+            Vue.auth.setUser(this.editUserData)
+                .then(response => {
+                    Vue.auth.user()
+
+                    this.openModalAccount = false
+                })
+                .catch(error => {
+                    let errors = []
+                    let keys = Object.keys(error.response.data.errors)
+
+                    for (var i = 0; i < keys.length; i++) {
+                        error.response.data.errors[keys[i]].forEach(entry => {
+                            errors.push(entry)
+                        })
+                    }
+
+                    this.editNotif.error = true
+                    this.editNotif.errorMsg = errors.join("\n")
+                })
         }
     },
     watch: {
@@ -168,6 +241,10 @@ export default {
     },
     mounted(){
         interval = setInterval(this.loadKitStatus, 1000)
+
+        Vue.auth.getUser().then(response => {
+            this.editUserData = response.data
+        })
     },
     beforeDestroy(){
         clearInterval(interval)

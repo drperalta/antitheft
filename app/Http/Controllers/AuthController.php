@@ -39,7 +39,7 @@ class AuthController extends Controller
 
     }
     public function open($token){
-        
+
         return redirect('confirm-email/'.$token);
     }
     public function check($token){
@@ -127,6 +127,27 @@ class AuthController extends Controller
     public function user(Request $request)
     {
         return response()->json($request->user());
+    }
+
+    public function setUser(Request $request)
+    {
+        $id = $request->user()->id;
+
+        $data = $request->validate([
+            'fullname' => 'required',
+            'username' => 'required|unique:users,username,' . $id,
+            'email' => 'required|unique:users,email,' . $id,
+            'password' => 'nullable|min:8'
+        ]);
+
+        if (isset($data['password']) && !$data['password']) {
+            unset($data['password']);
+        } else {
+            $data['password'] = \Hash::make($data['password']);
+        }
+
+        $request->user()->fill($data);
+        $request->user()->save();
     }
 
     public function setEmail($token){

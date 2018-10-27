@@ -77,7 +77,7 @@ class UserKitController extends Controller
 
     public function set($id){
 
-        return UserKit::select('id','serial_number','name','status')->where('user_id', $id)->get();
+        return UserKit::where('user_id', $id)->get();
 
     }
 
