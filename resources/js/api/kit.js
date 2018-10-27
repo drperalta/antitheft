@@ -24,6 +24,12 @@ export default function(Vue){
         logs(context) {
             return axios.get('/api/kit/' + store.getters.selectedKitData.serial_number + '/logs')
         },
+        getStatus(context) {
+            return axios.get('/api/kit/' + store.getters.selectedKitData.serial_number + '/status', { status })
+        },
+        setStatus(context, status) {
+            return axios.post('/api/kit/' + store.getters.selectedKitData.serial_number + '/status', { status })
+        },
         edit(context, name, serial, id){
             axios.post('api/user/kit/edit', {
               user_id: store.getters.userID,

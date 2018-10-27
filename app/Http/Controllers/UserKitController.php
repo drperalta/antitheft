@@ -41,8 +41,14 @@ class UserKitController extends Controller
         return Log::where('serial_number', $id)->orderBy('created_at', 'DESC')->get();
     }
 
-    public function status(Request $request, $id){
+    public function getStatus(Request $request, $id){
+        return UserKit::where('serial_number', $id)->first()['status'];
+    }
 
+    public function setStatus(Request $request, $id){
+        $status = $request->input('status') == 'true';
+
+        UserKit::where('serial_number', $id)->update(['status' => $status]);
     }
 
     public function edit(Request $request){

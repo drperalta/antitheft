@@ -22278,6 +22278,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 
+var interval = void 0,
+    haltCheck = false;
+
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
@@ -22309,11 +22312,36 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 this.logout = true;
                 Vue.auth.logout(this.logout);
             }
+        },
+        loadKitStatus: function loadKitStatus() {
+            var _this = this;
+
+            Vue.kit.getStatus(this).then(function (response) {
+                if (haltCheck) {
+                    haltCheck = false;
+
+                    return;
+                }
+
+                _this.kitSwitch = response.data == 1;
+            });
         }
     },
+    watch: {
+        kitSwitch: function kitSwitch(value) {
+            haltCheck = true;
 
+            Vue.kit.setStatus(this, value);
+        }
+    },
     created: function created() {
         Vue.auth.user();
+    },
+    mounted: function mounted() {
+        interval = setInterval(this.loadKitStatus, 1000);
+    },
+    beforeDestroy: function beforeDestroy() {
+        clearInterval(interval);
     },
 
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['userData', 'kitData', 'selectedKitData']))
@@ -98939,6 +98967,12 @@ VeeValidate$1.use(rulesPlugin);
         },
         logs: function logs(context) {
             return axios.get('/api/kit/' + __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].getters.selectedKitData.serial_number + '/logs');
+        },
+        getStatus: function getStatus(context) {
+            return axios.get('/api/kit/' + __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].getters.selectedKitData.serial_number + '/status', { status: status });
+        },
+        setStatus: function setStatus(context, status) {
+            return axios.post('/api/kit/' + __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].getters.selectedKitData.serial_number + '/status', { status: status });
         },
         edit: function edit(context, name, serial, id) {
             var _this2 = this;

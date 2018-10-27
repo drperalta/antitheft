@@ -112,6 +112,8 @@ import { mapGetters , mapState} from 'vuex'
 import store from '../../../store/store'
 import router from '../../../router/router';
 
+let interval, haltCheck = false;
+
 export default {
     data(){
         return{
@@ -139,10 +141,34 @@ export default {
                 Vue.auth.logout(this.logout);
             }
         },
-    },
 
+        loadKitStatus(){
+            Vue.kit.getStatus(this).then(response => {
+                if (haltCheck) {
+                    haltCheck = false
+
+                    return
+                }
+
+                this.kitSwitch = response.data == 1
+            })
+        }
+    },
+    watch: {
+        kitSwitch(value){
+            haltCheck = true
+
+            Vue.kit.setStatus(this, value)
+        }
+    },
     created(){
         Vue.auth.user()
+    },
+    mounted(){
+        interval = setInterval(this.loadKitStatus, 1000)
+    },
+    beforeDestroy(){
+        clearInterval(interval)
     },
     computed:{
         ...mapGetters([
