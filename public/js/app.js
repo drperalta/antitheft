@@ -12084,7 +12084,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
                 user_id: state.userData.id,
                 kit_id: id
             }, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') } }).then(function (response) {
-                __WEBPACK_IMPORTED_MODULE_2__router_router__["a" /* default */].push({ path: 'overview' });
+                __WEBPACK_IMPORTED_MODULE_2__router_router__["a" /* default */].push({ path: 'pictures' });
             });
         },
         DELETE_SELECTEDKIT: function DELETE_SELECTEDKIT(state) {
@@ -12441,11 +12441,13 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
     // DASH ROUTES
     {
         path: '/', name: 'overview', component: __WEBPACK_IMPORTED_MODULE_4__components_Main_Pages_Dash_vue___default.a, meta: { forAuth: true },
-        children: [{
-            path: 'overview',
-            component: __WEBPACK_IMPORTED_MODULE_10__components_Main_Partials_Dash_Overview_vue___default.a,
-            meta: { forAuth: true }
-        }, {
+        children: [
+        // {
+        //     path: 'overview',
+        //     component: Overview,
+        //     meta: {forAuth: true}
+        // },
+        {
             path: 'pictures',
             component: __WEBPACK_IMPORTED_MODULE_12__components_Main_Partials_Dash_Pictures_vue___default.a,
             meta: { forAuth: true }
@@ -17900,7 +17902,7 @@ __WEBPACK_IMPORTED_MODULE_2__router_router__["a" /* default */].beforeEach(funct
     })) {
         if (__WEBPACK_IMPORTED_MODULE_0_vue___default.a.auth.isAuthenticated()) {
             next({
-                path: '/overview'
+                path: '/kits'
             });
         } else next();
     } else if (to.matched.some(function (record) {
@@ -17909,14 +17911,6 @@ __WEBPACK_IMPORTED_MODULE_2__router_router__["a" /* default */].beforeEach(funct
         if (!__WEBPACK_IMPORTED_MODULE_0_vue___default.a.auth.isAuthenticated()) {
             next({
                 path: '/login'
-            });
-        } else next();
-    } else if (to.matched.some(function (record) {
-        return record.meta.forAdmin;
-    })) {
-        if (__WEBPACK_IMPORTED_MODULE_0_vue___default.a.auth.isAdmin()) {
-            next({
-                path: '/user'
             });
         } else next();
     } else next();
@@ -22148,7 +22142,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.v-divider[data-v-6c4a3438]{\n  margin: 0 !important;\n}\n.main-container[data-v-6c4a3438] {\n  margin: 0;\n  padding: 0;\n}\n.navbar[data-v-6c4a3438]{\n  background-color: white;\n  padding: 0;\n  margin: 0;\n  height: 77px !important;\n}\n.v-toolbar[data-v-6c4a3438]{\n  box-shadow: none;\n  padding-top: 10px;\n  padding-bottom: 10px;\n  height: 77px;\n  background-color: #039BE5;\n}\n.sidebar[data-v-6c4a3438]{\n  height: 100vh;\n  width: 256px;\n  border: 0px;\n}\n.main[data-v-6c4a3438]{\n  padding: 0;\n}\n.online[data-v-6c4a3438]{\n    color: greenyellow;\n    margin-right: 5px;\n    margin-bottom: 2px;\n}\n.offline[data-v-6c4a3438]{\n    margin-right: 5px;\n    margin-bottom: 2px;\n}\n.side-title[data-v-6c4a3438] {\n  text-align: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.side-title h1[data-v-6c4a3438]{\n  font-weight: 600;\n  font-size: 16px !important;\n  display: inline-flex;\n  color: white;\n}\n.side-title h2[data-v-6c4a3438]{\n  font-weight: 400;\n  font-size: 16px !important;\n  display: inline-flex;\n  color:   whitesmoke;\n}\n.side_title[data-v-6c4a3438] {\n  font-weight: 500;\n  font-size: 14px;\n}\n.side-menu[data-v-6c4a3438] {\n    width: 256px !important;\n}\n.side-menu span[data-v-6c4a3438]{\n  font-weight: 500;\n}\n.navbottom[data-v-6c4a3438]{\n    bottom: 0;\n    position: absolute;\n}\n.icon[data-v-6c4a3438] {\n  margin-left: 12px;\n  margin-right: 20px;\n  width: 14px !important;\n  color: white;\n}\n.name[data-v-6c4a3438]{\n  font-weight: 600;\n  font-size: 18px;\n  right: 0;\n  color: white;\n}\n.email[data-v-6c4a3438]{\n  font-weight: 400;\n  font-size: 12px;\n  color: lightblue;\n}\n.button[data-v-6c4a3438]{\n  width: 57px !important;\n  height: 57px !important;\n  margin: 0;\n  padding: 0;\n}\n.divider[data-v-6c4a3438]{\n  margin-left: 15px !important;\n  margin-right: 24px !important;\n  max-height: 57px !important;\n  min-height: 57px !important;\n}\n", ""]);
+exports.push([module.i, "\n.v-divider[data-v-6c4a3438]{\r\n  margin: 0 !important;\n}\n.main-container[data-v-6c4a3438] {\r\n  margin: 0;\r\n  padding: 0;\n}\n.navbar[data-v-6c4a3438]{\r\n  background-color: white;\r\n  padding: 0;\r\n  margin: 0;\r\n  height: 77px !important;\n}\n.v-toolbar[data-v-6c4a3438]{\r\n  box-shadow: none;\r\n  padding-top: 10px;\r\n  padding-bottom: 10px;\r\n  height: 77px;\r\n  background-color: #039BE5;\n}\n.sidebar[data-v-6c4a3438]{\r\n  height: 100vh;\r\n  width: 256px;\r\n  border: 0px;\n}\n.main[data-v-6c4a3438]{\r\n  padding: 0;\n}\n.online[data-v-6c4a3438]{\r\n    color: greenyellow;\r\n    margin-right: 5px;\r\n    margin-bottom: 2px;\n}\n.offline[data-v-6c4a3438]{\r\n    margin-right: 5px;\r\n    margin-bottom: 2px;\n}\n.side-title[data-v-6c4a3438] {\r\n  text-align: center;\r\n  padding-top: 10px;\r\n  padding-bottom: 10px;\n}\n.side-title h1[data-v-6c4a3438]{\r\n  font-weight: 600;\r\n  font-size: 16px !important;\r\n  display: inline-flex;\r\n  color: white;\n}\n.side-title h2[data-v-6c4a3438]{\r\n  font-weight: 400;\r\n  font-size: 16px !important;\r\n  display: inline-flex;\r\n  color:   whitesmoke;\n}\n.side_title[data-v-6c4a3438] {\r\n  font-weight: 500;\r\n  font-size: 14px;\n}\n.side-menu[data-v-6c4a3438] {\r\n    width: 256px !important;\n}\n.side-menu span[data-v-6c4a3438]{\r\n  font-weight: 500;\n}\n.navbottom[data-v-6c4a3438]{\r\n    bottom: 0;\r\n    position: absolute;\n}\n.icon[data-v-6c4a3438] {\r\n  margin-left: 12px;\r\n  margin-right: 20px;\r\n  width: 14px !important;\r\n  color: white;\n}\n.name[data-v-6c4a3438]{\r\n  font-weight: 600;\r\n  font-size: 18px;\r\n  right: 0;\r\n  color: white;\n}\n.email[data-v-6c4a3438]{\r\n  font-weight: 400;\r\n  font-size: 12px;\r\n  color: lightblue;\n}\n.button[data-v-6c4a3438]{\r\n  width: 57px !important;\r\n  height: 57px !important;\r\n  margin: 0;\r\n  padding: 0;\n}\n.divider[data-v-6c4a3438]{\r\n  margin-left: 15px !important;\r\n  margin-right: 24px !important;\r\n  max-height: 57px !important;\r\n  min-height: 57px !important;\n}\r\n", ""]);
 
 // exports
 
@@ -22164,6 +22158,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router_router__ = __webpack_require__(10);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
 //
 //
 //
@@ -22293,9 +22289,7 @@ var interval = void 0,
     },
 
     methods: {
-        overview: function overview() {
-            this.$router.push({ path: 'overview' });
-        },
+        // overview(){ this.$router.push({path: 'overview'})},
         kits: function kits() {
             this.$router.push({ path: 'kits' });
         },
@@ -22412,25 +22406,6 @@ var render = function() {
                       _c(
                         "el-menu-item",
                         {
-                          attrs: { index: "overview" },
-                          on: { click: _vm.overview }
-                        },
-                        [
-                          _c("v-icon", { staticClass: "icon" }, [
-                            _vm._v("dashboard")
-                          ]),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "side_title" }, [
-                            _vm._v("Overview")
-                          ])
-                        ],
-                        1
-                      ),
-                      _c("v-divider"),
-                      _vm._v(" "),
-                      _c(
-                        "el-menu-item",
-                        {
                           attrs: { index: "pictures" },
                           on: { click: _vm.pictures }
                         },
@@ -22494,23 +22469,32 @@ var render = function() {
                         1
                       ),
                       _vm._v(" "),
-                      _c("span", { staticStyle: { "margin-right": "1rem" } }, [
-                        _vm._v(_vm._s(_vm.selectedKitData.name))
-                      ]),
-                      _vm._v(" "),
-                      _c("el-switch", {
-                        attrs: {
-                          "active-color": "#13ce66",
-                          "inactive-color": "#ff4949"
-                        },
-                        model: {
-                          value: _vm.kitSwitch,
-                          callback: function($$v) {
-                            _vm.kitSwitch = $$v
-                          },
-                          expression: "kitSwitch"
-                        }
-                      }),
+                      _c(
+                        "v-flex",
+                        { attrs: { sm1: "" } },
+                        [
+                          _c(
+                            "span",
+                            { staticStyle: { "margin-right": "1rem" } },
+                            [_vm._v(_vm._s(_vm.selectedKitData.name))]
+                          ),
+                          _vm._v(" "),
+                          _c("el-switch", {
+                            attrs: {
+                              "active-color": "#13ce66",
+                              "inactive-color": "#ff4949"
+                            },
+                            model: {
+                              value: _vm.kitSwitch,
+                              callback: function($$v) {
+                                _vm.kitSwitch = $$v
+                              },
+                              expression: "kitSwitch"
+                            }
+                          })
+                        ],
+                        1
+                      ),
                       _vm._v(" "),
                       _c("v-spacer"),
                       _vm._v(" "),
@@ -22587,21 +22571,6 @@ var render = function() {
                       }
                     },
                     [
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: {
-                            flat: "",
-                            dark: "",
-                            value: "overview",
-                            color: "#4FC3F7"
-                          },
-                          on: { click: _vm.overview }
-                        },
-                        [_c("v-icon", [_vm._v("dashboard")])],
-                        1
-                      ),
-                      _vm._v(" "),
                       _c(
                         "v-btn",
                         {
@@ -25245,8 +25214,8 @@ var interval = void 0;
     methods: {},
     created: function created() {
         this.$root.pageTitle = 'PICTURES';
-        Vue.picture.getFile();
         Vue.picture.getFolder();
+        Vue.picture.getFile();
     },
     mounted: function mounted() {
         // interval = setInterval(() => {
@@ -25322,38 +25291,41 @@ var render = function() {
                                   "v-layout",
                                   { attrs: { row: "", wrap: "" } },
                                   _vm._l(_vm.imageData, function(image) {
-                                    return _c(
-                                      "v-flex",
-                                      {
-                                        key: image.id,
-                                        attrs: { xs4: "", "d-flex": "" }
-                                      },
-                                      [
-                                        _c(
-                                          "v-card",
-                                          { attrs: { flat: "", tile: "" } },
+                                    return image.folder_name ==
+                                      folder.folder_name
+                                      ? _c(
+                                          "v-flex",
+                                          {
+                                            key: image.id,
+                                            attrs: { xs4: "", "d-flex": "" }
+                                          },
                                           [
-                                            _c("img", {
-                                              staticClass: "image",
-                                              attrs: {
-                                                src:
-                                                  "api/storage/" +
-                                                  image.user_id +
-                                                  "/" +
-                                                  image.serial_number +
-                                                  "/" +
-                                                  folder.folder_name +
-                                                  "/" +
-                                                  image.file_name,
-                                                width: "100%",
-                                                height: "100%"
-                                              }
-                                            })
-                                          ]
+                                            _c(
+                                              "v-card",
+                                              { attrs: { flat: "", tile: "" } },
+                                              [
+                                                _c("img", {
+                                                  staticClass: "image",
+                                                  attrs: {
+                                                    src:
+                                                      "api/storage/" +
+                                                      image.user_id +
+                                                      "/" +
+                                                      image.serial_number +
+                                                      "/" +
+                                                      folder.folder_name +
+                                                      "/" +
+                                                      image.file_name,
+                                                    width: "100%",
+                                                    height: "100%"
+                                                  }
+                                                })
+                                              ]
+                                            )
+                                          ],
+                                          1
                                         )
-                                      ],
-                                      1
-                                    )
+                                      : _vm._e()
                                   })
                                 )
                               ],
@@ -25474,7 +25446,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.container[data-v-e8fc872c]{\n}\n.toolbar[data-v-e8fc872c]{\n}\n.title[data-v-e8fc872c]{\n  font-weight: 600;\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-e8fc872c]{\n    margin: 0;\n}\n", ""]);
+exports.push([module.i, "\n.container[data-v-e8fc872c]{\n}\n.toolbar[data-v-e8fc872c]{\n}\n.title[data-v-e8fc872c]{\r\n  font-weight: 600;\r\n  color: rgb(68, 68, 68);\n}\n.divider[data-v-e8fc872c]{\r\n    margin: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -25486,6 +25458,10 @@ exports.push([module.i, "\n.container[data-v-e8fc872c]{\n}\n.toolbar[data-v-e8fc
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_store__ = __webpack_require__(7);
+//
+//
+//
+//
 //
 //
 //
@@ -25567,29 +25543,46 @@ var render = function() {
         "v-container",
         { staticClass: "container", attrs: { "justify-center": "" } },
         [
-          _c("v-data-table", {
-            staticClass: "elevation-1",
-            attrs: {
-              headers: _vm.headers,
-              items: _vm.entries,
-              "hide-actions": "",
-              "disable-initial-sort": ""
+          _c(
+            "div",
+            {
+              staticClass: "scroll-y",
+              staticStyle: { "max-height": "79vh" },
+              attrs: { id: "scrolling-techniques" }
             },
-            scopedSlots: _vm._u([
-              {
-                key: "items",
-                fn: function(props) {
-                  return [
-                    _c("td", [_vm._v(_vm._s(props.item.message))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(props.item.created_at))])
-                  ]
-                }
-              }
-            ])
-          })
-        ],
-        1
+            [
+              _c(
+                "v-container",
+                { staticClass: "container", attrs: { "justify-center": "" } },
+                [
+                  _c("v-data-table", {
+                    staticClass: "elevation-1",
+                    attrs: {
+                      headers: _vm.headers,
+                      items: _vm.entries,
+                      "hide-actions": "",
+                      "disable-initial-sort": ""
+                    },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "items",
+                        fn: function(props) {
+                          return [
+                            _c("td", [_vm._v(_vm._s(props.item.message))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(props.item.created_at))])
+                          ]
+                        }
+                      }
+                    ])
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ]
       )
     ],
     1
@@ -98710,7 +98703,7 @@ VeeValidate$1.use(rulesPlugin);
                 context.$root.$emit('login:success');
 
                 _this3.setToken(response.data.access_token, response.data.expires_at);
-                __WEBPACK_IMPORTED_MODULE_0__router_router__["a" /* default */].push({ path: 'overview' });
+                __WEBPACK_IMPORTED_MODULE_0__router_router__["a" /* default */].push({ path: 'kits' });
             }).catch(function (error) {
                 context.$root.$emit('login:error');
 

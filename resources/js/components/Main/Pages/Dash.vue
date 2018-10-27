@@ -20,10 +20,10 @@
 				<!-- SIDEBAR MENU -->
 				<div class="side-menu">
 					<!-- OVERVIEW -->
-					<el-menu-item index="overview" @click="overview">
+					<!-- <el-menu-item index="overview" @click="overview">
 						<v-icon class="icon">dashboard</v-icon>
 						<span class="side_title">Overview</span>
-					</el-menu-item><v-divider></v-divider>
+					</el-menu-item><v-divider></v-divider> -->
 					<!-- PICTURES -->
 					<el-menu-item index="pictures" @click="pictures">
 						<v-icon class="icon">photo</v-icon>
@@ -54,10 +54,12 @@
                             <span v-text="kit.name"></span>
                         </el-option>
                     </el-select> -->
-                    <span style="margin-right: 1rem;">{{selectedKitData.name}}</span>
-                    <el-switch v-model="kitSwitch"
+                    <v-flex sm1>
+                        <span style="margin-right: 1rem;">{{selectedKitData.name}}</span>
+                        <el-switch v-model="kitSwitch"
                         active-color="#13ce66"
                         inactive-color="#ff4949" />
+                    </v-flex>
                     <v-spacer></v-spacer>
                     <!-- BADGES -->
 
@@ -89,9 +91,9 @@
 			<!-- BOTTOM NAVBAR -->
 			<el-footer class="hidden-md-and-up">
 				<v-bottom-nav class="navbottom" :value="true" :active.sync="bottomNav" shift color="#262F3D">
-                    <v-btn flat dark @click="overview" value="overview" color="#4FC3F7">
+                    <!-- <v-btn flat dark @click="overview" value="overview" color="#4FC3F7">
                         <v-icon>dashboard</v-icon>
-                    </v-btn>
+                    </v-btn> -->
 
                     <v-btn flat dark @click="pictures" value="pictures" color="#4FC3F7">
                         <v-icon>photo</v-icon>
@@ -128,7 +130,7 @@ export default {
         }
     },
     methods:{
-        overview(){ this.$router.push({path: 'overview'})},
+        // overview(){ this.$router.push({path: 'overview'})},
         kits(){ this.$router.push({path: 'kits'})},
         pictures(){ this.$router.push({path: 'pictures'})},
         logs(){ this.$router.push({path: 'logs'})},
